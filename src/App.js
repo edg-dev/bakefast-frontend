@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import { Link, Route, Switch } from "react-router-dom";
+import { Button } from 'react-bootstrap';
+
 import './App.css';
+import TelaSejaBemVindoCliente from './TelaSejaBemVindoCliente';
+import TelaModoDeUsar from './TelaModoDeUsar';
+import TelaPedidos from './TelaPedidos';
+import TelaPerfil from './TelaPerfil';
+import Home from './Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Se você está lendo essa mensagem, conseguiu startar a aplicação com sucesso.</p>
-        <p>
-          Editar o arquivo <code>src/App.js</code> adicionando o nome e commitar no projeto.
-        </p>
-	      <p>
-          Hello Warudo!
-          Hello Yasuo!
-        </p>
-        <ul>
-          <li>Wender Lucas Souza</li>
-	        <li>Gustavo Henrique Dias Silva</li>
-          <li>Leonardo Lourenço Braga</li>
-        </ul>
-      </header>
+      <main>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/cliente/" component={TelaSejaBemVindoCliente} />
+          <Route path="/TelaModoDeUsar/" component={TelaModoDeUsar} />
+          <Route path="/TelaPedidos/" component={TelaPedidos} />
+          <Route path="/TelaPerfil/" component={TelaPerfil} />
+        </Switch>
+      </main>
+      <footer>
+      <Button variant="primary"> <Link to="/">Home</Link> </Button>
+      <Button variant="primary"> <Link to="/cliente/">TelaSejaBemVindoCliente</Link> </Button>
+      <Button variant="primary"> <Link to="/TelaModoDeUsar/">TelaModoDeUsar</Link> </Button>
+      <Button variant="primary"> <Link to="/TelaPedidos/">TelaPedidos</Link> </Button>
+      <Button variant="primary"> <Link to="/TelaPerfil/">TelaPerfil</Link> </Button>
+      </footer>
     </div>
   );
 }

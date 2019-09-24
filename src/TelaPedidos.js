@@ -9,8 +9,7 @@ class MyButton extends Component {
     }
 }
 
-class TelaPedido extends Component {
-    render() {
+function TelaPedido() {
         return (
             <div className="App">
                 <header className="App-header">
@@ -29,11 +28,11 @@ class TelaPedido extends Component {
                             <th>Valor</th>
                         </tr>
                         <tr>
-                            <td>Pão Frances</td>
+                            <td>PÃ£o FrancÃªs</td>
                             <td>R$0.25</td>
                         </tr>
                         <tr>
-                            <td>Pão de Queijo</td>
+                            <td>PÃ£o de Queijo</td>
                             <td>R$0.80</td>
                         </tr>
                     </table>
@@ -41,13 +40,12 @@ class TelaPedido extends Component {
                     <h3>Tempo estimado de chegada:</h3>
                     <label>Tempo</label>
 
-                    <p>Importante: o tempo de chegada é o tempo que você estima chegar a padaria para pegar o pedido</p>
+                    <p>Importante: o tempo de chegada Ã© o tempo que vocÃª estima chegar a padaria para pegar o pedido</p>
                     
                     <MyButton button="Pedir!" />
                 </header>
             </div>
         );
-    }
 }
 
 export default TelaPedido;
