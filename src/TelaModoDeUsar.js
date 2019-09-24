@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,25 +9,23 @@ class MyButton extends Component {
     }
 }
 
-class TelaModoDeUsar extends Component {
-    render() {
+function TelaModoDeUsar() {
         return (
             <div className="App">
                 <header className="App-header">
 
-                    <h1>Ent„o se interessou pelo App hein? Vamos colocar manteiga no p„o?</h1>
+                    <h1>Ent√£o se interessou pelo App hein? Vamos colocar manteiga no p√£o?</h1>
 
-                    <div><p> Primeiro de tudo ache uma padaria no aplicativo bem proxima a vocÍ.<img src={logo} className="App-logo" alt="logo" /></p></div>
+                    <div><p> Primeiro de tudo ache uma padaria no aplicativo bem proxima a voc√™.</p></div>
 
-                    <div><p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.<img src={logo} className="App-logo" alt="logo" /></p></div>
+                    <div><p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.</p></div>
 
-                    <div><p>Crie seu pedido e pegue o pombo, digo, o p„o!<img src={logo} className="App-logo" alt="logo" /></p></div>
+                    <div><p>Crie seu pedido e pegue o pombo, digo, o p√£o!</p></div>
 
-                    <MyButton button="Entendi" />
+                    <Link to="/TelaPedidos/">Entendi</Link>
                 </header>
             </div>
         );
-    }
 }
 
 export default TelaModoDeUsar;

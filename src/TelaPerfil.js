@@ -9,12 +9,11 @@ class MyButton extends Component {
     }
 }
 
-class TelaPerfil extends Component {
-    render() {
+function TelaPerfil() {
         return (
             <div className="App">
                 <header className="App-header">
-                    <h1>Logado como: Usu·rio</h1>
+                    <h1>Logado como: Usu√°rio</h1>
 
                     <label>Buscar Padarias</label>
 
@@ -24,8 +23,8 @@ class TelaPerfil extends Component {
 
                     <h3>Pedidos Recentes:</h3>
                     <ul>
-                        <li>3 p„es de dal</li>
-                        <li>2 p„o de queijo</li>
+                        <li>3 p√£es de dal</li>
+                        <li>2 p√£es de queijo</li>
                         <li>1 bolo</li>
                     </ul>
 
@@ -33,7 +32,6 @@ class TelaPerfil extends Component {
                 </header>
             </div>
         );
-    }
 }
 
 export default TelaPerfil;
