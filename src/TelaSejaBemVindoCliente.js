@@ -9,7 +9,7 @@ class MyButton extends Component {
     }
 }
 
-class Tela2 extends Component {
+class TelaSejaBemVindoCliente extends Component {
     render() {
         return (
             <div className="App">
@@ -27,4 +27,4 @@ class Tela2 extends Component {
     }
 }
 
-export default Tela2;
+export default TelaSejaBemVindoCliente;
