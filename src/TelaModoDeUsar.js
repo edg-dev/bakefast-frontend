@@ -16,11 +16,11 @@ class TelaModoDeUsar extends Component {
 
                     <h1>Então se interessou pelo App hein? Vamos colocar manteiga no pão?</h1>
 
-                    <p>Primeiro de tudo ache uma padaria no aplicativo bem proxima a você.<img src={logo} className="App-logo" alt="logo" /></p>
+                    <div><p> Primeiro de tudo ache uma padaria no aplicativo bem proxima a você.<img src={logo} className="App-logo" alt="logo" /></p></div>
 
-                    <p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.<img src={logo} className="App-logo" alt="logo" /></p>
+                    <div><p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.<img src={logo} className="App-logo" alt="logo" /></p></div>
 
-                    <p>Crie seu pedido e pegue o pombo, digo, o pão!<img src={logo} className="App-logo" alt="logo" /></p>
+                    <div><p>Crie seu pedido e pegue o pombo, digo, o pão!<img src={logo} className="App-logo" alt="logo" /></p></div>
 
                     <MyButton button="Entendi" />
                 </header>
@@ -29,4 +29,4 @@ class TelaModoDeUsar extends Component {
     }
 }
 
-export default TelaSejaBemVindoCliente;
+export default TelaModoDeUsar;
