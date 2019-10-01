@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link, Route, Switch } from "react-router-dom";
 import { Button } from 'react-bootstrap';
+import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 import './App.css';
 import SejaBemVindoCliente from './SejaBemVindoCliente';
@@ -19,6 +20,17 @@ import Home from './Home';
 function App() {
   return (
     <div className="App">
+      <header>
+        <Navbar bg="dark" variant="dark">
+            <Navbar.Brand><Link to="/"><Button variant="primary"> Home </Button></Link> </Navbar.Brand>
+            <Nav className="mr-auto">
+              <Nav.Link><Link to="/cliente/"><Button variant="primary"> SejaBemVindoCliente </Button></Link></Nav.Link>
+              <Nav.Link><Link to="/ModoDeUsar/"><Button variant="primary">ModoDeUsar </Button></Link></Nav.Link>
+              <Nav.Link><Link to="/Pedidos/"><Button variant="primary">Pedidos </Button></Link></Nav.Link>
+              <Nav.Link><Link to="/PerfilCliente/"><Button variant="primary">PerfilCliente </Button></Link></Nav.Link>
+            </Nav>
+        </Navbar>
+      </header>
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -36,18 +48,17 @@ function App() {
         </Switch>
       </main>
       <footer>
-      <Button variant="primary"> <Link to="/">Home</Link> </Button>
-      <Button variant="primary"> <Link to="/cliente/">SejaBemVindoCliente</Link> </Button>
-      <Button variant="primary"> <Link to="/ModoDeUsar/">ModoDeUsar</Link> </Button>
-      <Button variant="primary"> <Link to="/Pedidos/">Pedidos</Link> </Button>
-      <Button variant="primary"> <Link to="/PerfilCliente/">PerfilCliente</Link> </Button>
-      <Button variant="primary"> <Link to="/Login/">Login</Link> </Button>
-      <Button variant="primary"> <Link to="/IntroducaoPadaria/">IntroducaoPadaria</Link></Button>
-      <Button variant="primary"> <Link to="/CadastroPadaria/">CadastroPadaria</Link> </Button>
-      <Button variant="primary"> <Link to="/PerfilPadaria/">PerfilPadaria</Link> </Button>
-      <Button variant="primary"> <Link to="/CadastroCardapio/">CadastroCardapio</Link> </Button>
-      <Button variant="primary"> <Link to="/CadastroProdutos/">CadastroProdutos</Link> </Button>
-      <Button variant="primary"> <Link to="/Notificacoes/">Notificacoes</Link> </Button>
+      <Navbar bg="dark" variant="dark">
+        <Nav className="mr-auto">
+        <Nav.Link><Link to="/Login/"><Button variant="primary">Login </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/IntroducaoPadaria/"><Button variant="primary">IntroducaoPadaria </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/CadastroPadaria/"><Button variant="primary">CadastroPadaria </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/PerfilPadaria/"><Button variant="primary">PerfilPadaria </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/CadastroCardapio/"><Button variant="primary">CadastroCardapio </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/CadastroProdutos/"><Button variant="primary">CadastroProdutos </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/Notificacoes/"><Button variant="primary">Notificacoes </Button></Link></Nav.Link>
+        </Nav>
+      </Navbar>
       </footer>
     </div>
   );
