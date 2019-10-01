@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 
 class MyButton extends Component {
@@ -16,20 +16,20 @@ function IntrocucaoPadaria() {
                 <div>
 
                     <div>
-                        <h2>Seus cliente agora poder„o fazer pedidos antecipados!</h2>
+                        <h2>Seus cliente agora poder√£o fazer pedidos antecipados!</h2>
                     </div>
 
                     <div>
-                        <img src="logo.src" /><p>Aumente a quantidade de vendas em hor·rios de pico.</p>
+                        <img src="logo.src" /><p>Aumente a quantidade de vendas em hor√°rios de pico.</p>
                     </div>
 
                     <div>
-                        <h3>Com o App P„o Quente, seus cliente te encontram em nossa rede de padarias cadastradas em nossa rede de padarias cadastradas,
+                        <h3>Com o App Bake Fast, seus cliente te encontram em nossa rede de padarias cadastradas em nossa rede de padarias cadastradas,
 							efetuam "pedidos" de maneira antecipada e agilizam processos de pagamento.</h3>
                     </div>
 
                     <div>
-                        <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="logo.src" />
+                        <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="logo.png" />
                     </div>
 
                     <Link to="/CadastroPadaria/">Cadastrar Agora</Link>

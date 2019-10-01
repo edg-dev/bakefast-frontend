@@ -45,7 +45,7 @@ function CadastroPadaria() {
                         <div>
                             <label>
                                 N*
-                            <input type="number" name="numero" placeholder="Número" />
+                            <input type="number" name="numero" placeholder="NÃºmero" />
                             </label>
                         </div>
 
