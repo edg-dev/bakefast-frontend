@@ -4,6 +4,7 @@ import { Button } from 'react-bootstrap';
 
 import './App.css';
 import TelaSejaBemVindoCliente from './TelaSejaBemVindoCliente';
+import Login from './Login';
 import TelaModoDeUsar from './TelaModoDeUsar';
 import TelaPedidos from './TelaPedidos';
 import TelaPerfil from './TelaPerfil';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/TelaModoDeUsar/" component={TelaModoDeUsar} />
           <Route path="/TelaPedidos/" component={TelaPedidos} />
           <Route path="/TelaPerfil/" component={TelaPerfil} />
+          <Route path="/Login/" component={Login} />
         </Switch>
       </main>
       <footer>
@@ -27,6 +29,7 @@ function App() {
       <Button variant="primary"> <Link to="/TelaModoDeUsar/">TelaModoDeUsar</Link> </Button>
       <Button variant="primary"> <Link to="/TelaPedidos/">TelaPedidos</Link> </Button>
       <Button variant="primary"> <Link to="/TelaPerfil/">TelaPerfil</Link> </Button>
+      <Button variant="primary"> <Link to="/Login/">Login</Link> </Button>
       </footer>
     </div>
   );
