@@ -10,12 +10,12 @@ class MyButton extends Component {
     }
 }
 
-function TelaSejaBemVindoCliente() {
+function SejaBemVindoCliente() {
         return (
             <div className="App">
                 <header className="App-header">
                     <h1>Seja Bem Vindo Cliente</h1>
-                    <p>Já é Cadastrado? <MyButton button="Login"/></p>
+                    <p>Já é Cadastrado? <Link to="/Login"><MyButton button="Login" /></Link></p>
                     <p>Cansado de esperar na fila de atendimento ou no caixa?</p>
                     <p>Acordou atrasado para ir ao trabalho e não tem tempe de tomar um café, mas consegue ir a padaria?</p>
                     <p>Quer ganhar um tempinho antes daquela aula e ver aquele video que você deixou pra mais tarde?</p>
@@ -26,4 +26,4 @@ function TelaSejaBemVindoCliente() {
         );
 }
 
-export default TelaSejaBemVindoCliente;
+export default SejaBemVindoCliente;
