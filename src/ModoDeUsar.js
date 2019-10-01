@@ -9,7 +9,7 @@ class MyButton extends Component {
     }
 }
 
-function TelaModoDeUsar() {
+function ModoDeUsar() {
         return (
             <div className="App">
                 <header className="App-header">
@@ -28,4 +28,4 @@ function TelaModoDeUsar() {
         );
 }
 
-export default TelaModoDeUsar;
+export default ModoDeUsar;

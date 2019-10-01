@@ -9,7 +9,7 @@ class MyButton extends Component {
     }
 }
 
-function TelaPerfil() {
+function PerfilCliente() {
         return (
             <div className="App">
                 <header className="App-header">
@@ -34,4 +34,4 @@ function TelaPerfil() {
         );
 }
 
-export default TelaPerfil;
+export default PerfilCliente;

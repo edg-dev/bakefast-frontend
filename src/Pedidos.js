@@ -9,7 +9,7 @@ class MyButton extends Component {
     }
 }
 
-function TelaPedido() {
+function Pedido() {
         return (
             <div className="App">
                 <header className="App-header">
@@ -48,4 +48,4 @@ function TelaPedido() {
         );
 }
 
-export default TelaPedido;
+export default Pedido;

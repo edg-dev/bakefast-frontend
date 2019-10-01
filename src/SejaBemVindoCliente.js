@@ -10,7 +10,7 @@ class MyButton extends Component {
     }
 }
 
-function TelaSejaBemVindoCliente() {
+function SejaBemVindoCliente() {
         return (
             <div className="App">
                 <header className="App-header">
@@ -26,4 +26,4 @@ function TelaSejaBemVindoCliente() {
         );
 }
 
-export default TelaSejaBemVindoCliente;
+export default SejaBemVindoCliente;
