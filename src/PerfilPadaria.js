@@ -14,14 +14,14 @@ function PerfilPadaria() {
         <div className="App">
             <header className="App-header">
                 <div>
-                    <h1>Logado como: Vesúvio Padarias</h1>
+                    <h1>Logado como: VesÃºvio Padarias</h1>
                 </div>
 
                 <div>
 					<h3>Voce tem 3 Pedidos:</h3>
 					<ul>
-						<li>3 pães de dal</li>
-						<li>2 pães de queijo</li>
+						<li>3 pÃ£es de dal</li>
+						<li>2 pÃ£es de queijo</li>
 						<li>1 bolo</li>
 					</ul>
                 </div>
@@ -31,15 +31,15 @@ function PerfilPadaria() {
                 </div>
 
                 <div>
-                    <p>Acesse e dispare notificações aos seus clientes <MyButton button="Notificações" /></p>
+                    <p>Acesse e dispare notificaÃ§Ãµes aos seus clientes <MyButton button="NotificaÃ§Ãµes" /></p>
                 </div>
 
                 <div>
-                    <p>Cadastre uma imagem contendo seus produtos <MyButton button="Cardápio" /></p>
+                    <p>Cadastre uma imagem contendo seus produtos <MyButton button="CardÃ¡pio" /></p>
                 </div>
 
                 <div>
-                    <p>Veja informações sobre vendas<MyButton button="Informações" /></p>
+                    <p>Veja informaÃ§Ãµes sobre vendas<MyButton button="InformaÃ§Ãµes" /></p>
                 </div>
 
                 <div>

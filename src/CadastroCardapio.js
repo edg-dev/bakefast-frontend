@@ -15,22 +15,22 @@ function CadastroCardapio() {
         <div className="App">
             <header className="App-header">
                 <div>
-                    <h2>Coloque aqui uma imagem de seus cardápio contendo seus produtos.</h2>
+                    <h2>Coloque aqui uma imagem de seus cardÃ¡pio contendo seus produtos.</h2>
                 </div>
 
-                <p>Para facilitar sua vida e a dos clientes, os produtos não necessitam ser cadastrados, evitando assim gasto de tempo desnecessário em crição ou alteração de produtos para
-                    que você foque em suas vendas.</p>
+                <p>Para facilitar sua vida e a dos clientes, os produtos nÃ£o necessitam ser cadastrados, evitando assim gasto de tempo desnecessÃ¡rio em cadastro ou alteraÃ§Ã£o de produtos para
+                    que vocÃª foque em suas vendas.</p>
 
                 <div>
                     <MyButton button="Upload de Imagem" />
                 </div>
 
                 <div>
-                    <img src="logo.src" />
+                    <img src="logo.svg" />
                 </div>
 
                 <div>
-                    <Link to="/CadastroProdutos"><MyButton button="Cadastrar Cardápio" /></Link>
+                    <Link to="/CadastroProdutos"><MyButton button="Cadastrar CardÃ¡pio" /></Link>
                 </div>
                
             </header>

@@ -15,7 +15,7 @@ function Notificacoes() {
             <header className="App-header">
 
                 <div>
-                    <h2>Notificações</h2>
+                    <h2>NotificaÃ§Ãµes</h2>
                 </div>
 
                 <div>
@@ -23,7 +23,7 @@ function Notificacoes() {
                         <tr>
                             <th>Tipo</th>
                             <th>Texto</th>
-                            <th>Ação</th>
+                            <th>AÃ§Ã£o</th>
                         </tr>
                         <tr>
                             <td>Bolos</td>
@@ -31,13 +31,13 @@ function Notificacoes() {
                             <td><a href="">Edit</a></td>
                         </tr>
                         <tr>
-                            <td>Pães</td>
-                            <td>"Pães acabam de sair ..."</td>
+                            <td>PÃ£es</td>
+                            <td>"PÃ£es acabam de sair ..."</td>
                             <td><a href="">Edit</a></td>
                         </tr>
                         <tr>
                             <td>Doces</td>
-                            <td>"Bolos,tortas e etc ..."</td>
+                            <td>"Bolos, tortas e etc ..."</td>
                             <td><a href="">Edit</a></td>
                         </tr>
                     </table>
@@ -45,14 +45,14 @@ function Notificacoes() {
 
                 <div>
                     <label>
-                        Tipo da Notificação:
-                                <input type="text" name="notificacao" placeholder="Tipo da Notificação" />
+                        Tipo da NotificaÃ§Ã£o: 
+                                <input type="text" name="notificacao" placeholder="Tipo da NotificaÃ§Ã£o:" />
                     </label>
                 </div>
 
                 <div>
                     <label>
-                        Texto da Notificação:
+                        Texto da NotificaÃ§Ã£o: 
                                 <input type="text" name="textoNotificacao" placeholder="" />
                     </label>
                 </div>
