@@ -15,6 +15,10 @@ import PerfilPadaria from './PerfilPadaria';
 import CadastroCardapio from './CadastroCardapio';
 import CadastroProdutos from './CadastroProdutos';
 import Notificacoes from './Notificacoes';
+import Notificar from './Notificar';
+import InformacoesEstatisticas from './InformacoesEstatisticas';
+import VizualizarPadaria from './VizualizarPadaria';
+import RealizarPedido from './RealizarPedido';
 import Home from './Home';
 
 function App() {
@@ -45,6 +49,10 @@ function App() {
           <Route path="/CadastroCardapio/" component={CadastroCardapio} />
           <Route path="/CadastroProdutos/" component={CadastroProdutos} />
           <Route path="/Notificacoes/" component={Notificacoes} />
+          <Route path="/Notificar/" component={Notificar} />
+          <Route path="/InformacoesEstatisticas/" component={InformacoesEstatisticas} />
+          <Route path="/VizualizarPadaria/" component={VizualizarPadaria} />
+          <Route path="/RealizarPedido/" component={RealizarPedido} />
         </Switch>
       </main>
       <footer>
@@ -57,6 +65,10 @@ function App() {
         <Nav.Link><Link to="/CadastroCardapio/"><Button variant="primary">CadastroCardapio </Button></Link></Nav.Link>
         <Nav.Link><Link to="/CadastroProdutos/"><Button variant="primary">CadastroProdutos </Button></Link></Nav.Link>
         <Nav.Link><Link to="/Notificacoes/"><Button variant="primary">Notificacoes </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/Notificar/"><Button variant="primary">Notificar </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/InformacoesEstatisticas/"><Button variant="primary">InformacoesEstatisticas </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/VizualizarPadaria/"><Button variant="primary">VizualizarPadaria </Button></Link></Nav.Link>
+        <Nav.Link><Link to="/RealizarPedido/"><Button variant="primary">RealizarPedido </Button></Link></Nav.Link>
         </Nav>
       </Navbar>
       </footer>
