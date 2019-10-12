@@ -4,22 +4,22 @@ import { Button } from 'react-bootstrap';
 import { Nav, Navbar, NavItem } from "react-bootstrap";
 
 import './App.css';
-import SejaBemVindoCliente from './SejaBemVindoCliente';
-import Login from './Login';
-import ModoDeUsar from './ModoDeUsar';
-import Pedidos from './Pedidos';
-import PerfilCliente from './PerfilCliente';
-import IntroducaoPadaria from './IntroducaoPadaria';
-import CadastroPadaria from './CadastroPadaria';
-import PerfilPadaria from './PerfilPadaria';
-import CadastroCardapio from './CadastroCardapio';
-import CadastroProdutos from './CadastroProdutos';
-import Notificacoes from './Notificacoes';
-import Notificar from './Notificar';
-import InformacoesEstatisticas from './InformacoesEstatisticas';
-import VizualizarPadaria from './VizualizarPadaria';
-import RealizarPedido from './RealizarPedido';
-import Home from './Home';
+import SejaBemVindoCliente from './pages/Cliente/SejaBemVindoCliente';
+import Login from './pages/Login';
+import ModoDeUsar from './pages/Cliente/ModoDeUsar';
+import Pedidos from './pages/Cliente/Pedidos';
+import PerfilCliente from './pages/Cliente/PerfilCliente';
+import IntroducaoPadaria from './pages/Padaria/IntroducaoPadaria';
+import CadastroPadaria from './pages/Padaria/CadastroPadaria';
+import PerfilPadaria from './pages/Padaria/PerfilPadaria';
+import CadastroCardapio from './pages/Padaria/CadastroCardapio';
+import CadastroProdutos from './pages/Padaria/CadastroProdutos';
+import Notificacoes from './pages/Padaria/Notificacoes';
+import Notificar from './pages/Padaria/Notificar';
+import InformacoesEstatisticas from './pages/Padaria/InformacoesEstatisticas';
+import VizualizarPadaria from './pages/Padaria/VizualizarPadaria';
+import RealizarPedido from './pages/Cliente/RealizarPedido';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -29,6 +29,7 @@ function App() {
             <Navbar.Brand><Link to="/"><Button variant="primary"> Home </Button></Link> </Navbar.Brand>
             <Nav className="mr-auto">
               <Nav.Link><Link to="/cliente/"><Button variant="primary"> SejaBemVindoCliente </Button></Link></Nav.Link>
+              <Nav.Link><Link to="/padaria/"><Button variant="primary"> IntrocucaoPadaria </Button></Link></Nav.Link>
               <Nav.Link><Link to="/ModoDeUsar/"><Button variant="primary">ModoDeUsar </Button></Link></Nav.Link>
               <Nav.Link><Link to="/Pedidos/"><Button variant="primary">Pedidos </Button></Link></Nav.Link>
               <Nav.Link><Link to="/PerfilCliente/"><Button variant="primary">PerfilCliente </Button></Link></Nav.Link>
@@ -39,6 +40,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/cliente/" component={SejaBemVindoCliente} />
+          <Route path="/padaria/" component={IntroducaoPadaria} />
           <Route path="/ModoDeUsar/" component={ModoDeUsar} />
           <Route path="/Pedidos/" component={Pedidos} />
           <Route path="/PerfilCliente/" component={PerfilCliente} />
