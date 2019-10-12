@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.png';
-import './App.css';
+import '../../App.css';
 
 class MyButton extends Component {
     render() {
@@ -20,7 +19,7 @@ function IntrocucaoPadaria() {
                     </div>
 
                     <div>
-                        <img src="logo.src" /><p>Aumente a quantidade de vendas em horários de pico.</p>
+                        <img src="" /><p>Aumente a quantidade de vendas em horários de pico.</p>
                     </div>
 
                     <div>
@@ -29,7 +28,7 @@ function IntrocucaoPadaria() {
                     </div>
 
                     <div>
-                        <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="logo.png" />
+                        <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" />
                     </div>
 
                     <Link to="/CadastroPadaria/">Cadastrar Agora</Link>

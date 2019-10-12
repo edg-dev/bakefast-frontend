@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 
 class MyButton extends Component {
     render() {
@@ -15,7 +14,7 @@ function Login() {
             <header className="App-header">
                 <div>
                     <div>
-                        <img src="logo.src" />
+                        <img src="" />
                     </div>
 
                     <form>

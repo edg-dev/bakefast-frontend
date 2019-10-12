@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import logo from './logo.svg';
-import './App.css';
+import '../../App.css';
 
 class MyButton extends Component {
     render() {
@@ -9,32 +8,33 @@ class MyButton extends Component {
     }
 }
 
-function VizualizarPadaria() {
+function InformacoesEstatisticas() {
     return (
         <div className="App">
             <header className="App-header">
                 <div>
                     <div>
-                        <h2>Padaria X</h2>
-                    </div>
-                    <div>
-                        <h4>Cardapio</h4>
-                        <img src="logo.src" />
+                        <h2>Informações Estatisticas!</h2>
                     </div>
 
                     <div>
-                        <h2>Padaria X</h2>
-                    </div>
-                    <div>
-                        <h2>Padaria X</h2>
+                        <p>Foram concretizadas X vendas nos ultimos 30 dias</p>
                     </div>
 
                     <div>
-                        <MyButton button="Vizualizar Produtos" />
+                        <p>Foram canceladas X vendas nos ultimos 30 dias</p>
                     </div>
 
                     <div>
-                        <MyButton button="Fazer Pedido!" />
+                        <h4>Produtos mais vendidos</h4>
+                    </div>
+
+                    <div>
+                        <p>GRAFICO AKI</p>
+                    </div>
+
+                    <div>
+                        <p>Média de tempo de chegada dos clientes 3:13 min</p>
                     </div>
                 </div>
             </header>
@@ -42,6 +42,6 @@ function VizualizarPadaria() {
     );
 }
 
-export default VizualizarPadaria;
+export default InformacoesEstatisticas;
 
 
