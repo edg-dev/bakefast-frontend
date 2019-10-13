@@ -21,7 +21,7 @@ function ModoDeUsar() {
 
                     <div><p>Crie seu pedido e pegue o pombo, digo, o pão!</p></div>
 
-                    <Link to="/TelaPedidos/">Entendi</Link>
+                    <Link to="/Pedidos/">Entendi</Link>
                 </header>
             </div>
         );

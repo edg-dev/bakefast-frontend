@@ -18,8 +18,8 @@ function RealizarPedido() {
 
                 <div>
                     <ul>
-                        <li>3 p„es de dal</li>
-                        <li>2 p„es de queijo</li>
+                        <li>3 p√£es de dal</li>
+                        <li>2 p√£es de queijo</li>
                         <li>1 bolo</li>
                     </ul>
                 </div>
