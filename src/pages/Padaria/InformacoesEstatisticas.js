@@ -14,7 +14,7 @@ function InformacoesEstatisticas() {
             <header className="App-header">
                 <div>
                     <div>
-                        <h2>Informações Estatisticas!</h2>
+                        <h2>InformaÃ§Ãµes EstatÃ­sticas!</h2>
                     </div>
 
                     <div>
@@ -34,7 +34,7 @@ function InformacoesEstatisticas() {
                     </div>
 
                     <div>
-                        <p>Média de tempo de chegada dos clientes 3:13 min</p>
+                        <p>MÃ©dia de tempo de chegada dos clientes 3:13 min</p>
                     </div>
                 </div>
             </header>

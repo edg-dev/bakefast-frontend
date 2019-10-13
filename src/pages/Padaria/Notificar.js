@@ -14,7 +14,7 @@ function Notificar() {
             <header className="App-header">
 
                 <div>
-                    <h2>Notificações</h2>
+                    <h2>NotificaÃ§Ãµes</h2>
                 </div>
 
                 <div>
@@ -22,7 +22,7 @@ function Notificar() {
                 </div>
 
                 <div>
-                    <p>Pães quentinhos do forno <MyButton button="Notificar" /></p>
+                    <p>PÃ£es quentinhos do forno <MyButton button="Notificar" /></p>
                 </div>
 
                 <div>
@@ -30,11 +30,11 @@ function Notificar() {
                 </div>
 
                 <div>
-                    <p>Notificações cadastradas : 3/3</p>
+                    <p>NotificaÃ§Ãµes cadastradas : 3/3</p>
                 </div>
 
                 <div>
-                    <MyButton button="Gerenciar Notificações" />
+                    <MyButton button="Gerenciar NotificaÃ§Ãµes" />
                 </div>
             </header>
         </div>
