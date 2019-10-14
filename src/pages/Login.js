@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+
+import { Button, Image, Container, Row, Col, Form } from "react-bootstrap";
 import '../App.css';
+import logo_color from "../images/logo_256x.png";
 
 class MyButton extends Component {
     render() {
@@ -12,33 +15,28 @@ function Login() {
     return (
         <div className="App">
             <header className="App-header">
-                <div>
-                    <div>
-                        <img src="" />
-                    </div>
-
-                    <form>
-
-                        <div>
-                            <label>
-                                Nome:
-                                <input type="text" name="name" placeholder="Login" />
-                            </label>
-                        </div>
-
-                        <div>
-                        <label>
-                        Senha:
-                            <input type="password" name="senha" placeholder="Password"/>
-                        </label>
-                        </div>
-
-                        <div>
-                        <input type="submit" value="Logar" />
-                        </div>
-
-                    </form>
-                </div>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={4}>
+                                <div><Image src={logo_color} roundedCircle thumbnail/></div>
+                                <Form>
+                                    <Form.Group controlId="formBasicEmail">
+                                        <Form.Label>Usuário: </Form.Label>
+                                        <Form.Control type="email" placeholder="Enter email" />
+                                    </Form.Group>
+                                    <Form.Group controlId="formBasicPassword">
+                                        <Form.Label>Senha: </Form.Label>
+                                        <Form.Control type="password" placeholder="Password" />
+                                    </Form.Group>
+                                    <Button variant="primary" type="submit">
+                                        Login
+                                    </Button>
+                                </Form>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
             </header>
         </div>
     );

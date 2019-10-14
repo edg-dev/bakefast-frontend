@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Button, Image, Container, Row, Col } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
 
+import ButtonWarning from '../components/cssComponents/button';
 import logo_color from "../images/logo_256x.png";
 
 import '../App.css';
@@ -16,8 +17,8 @@ function Home() {
                                 <div><Image src={logo_color} roundedCircle thumbnail/></div>
                                 <div><h1>Bem vindo ao Bake Fast</h1></div>
                                 <div><h5>Escolha como deseja continuar:</h5></div>
-                                <div><Link to="/cliente/"><Button variant="outline-warning">Cliente</Button></Link></div>  
-                                <div><Link to="/padaria"><Button variant="outline-warning">Padaria</Button></Link></div>
+                                <div><Link to="/cliente/"><ButtonWarning button="Cliente"/></Link></div>  
+                                <div><Link to="/padaria"><ButtonWarning button="Padaria"/></Link></div>
                             </Col>
                             <Col></Col>
                         </Row>
