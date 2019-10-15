@@ -1,47 +1,77 @@
 import React, { Component } from 'react';
 import '../../App.css';
 
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import {Dropdown, Table, Container, Row, Col, Button } from "react-bootstrap";
 
 function Pedido() {
         return (
             <div className="App">
                 <header className="App-header">
-                    <h1>Fazer Pedido</h1>
-                    <div class="dropdown">
-                        <span>Selecionar padaria</span>
-                        <div class="dropdown-content">
-                            <p>ElisMarina!</p>
-                            <p>Vesuvio!</p>
-                        </div>
-                    </div>
-                    <h3>Produtos</h3>
-                    <table>
-                        <tr>
-                            <th>Produto</th>
-                            <th>Valor</th>
-                        </tr>
-                        <tr>
-                            <td>Pão Francês</td>
-                            <td>R$0.25</td>
-                        </tr>
-                        <tr>
-                            <td>Pão de Queijo</td>
-                            <td>R$0.80</td>
-                        </tr>
-                    </table>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={6}>
 
-                    <h3>Tempo estimado de chegada:</h3>
-                    <label>Tempo</label>
+                                <h1>Fazer Pedido</h1>
 
-                    <p>Importante: o tempo de chegada é o tempo que você estima chegar a padaria para pegar o pedido</p>
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                                        Selecionar padaria
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#/action-1">ElisMarina</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Vesúvio</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Pão Quente</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                        <Row><Col><p></p></Col></Row>
                     
-                    <MyButton button="Pedir!" />
+                        <Row>
+                        <Col></Col>
+                            <Col xs={8}>
+                            <h3>Produtos</h3>
+
+                            <Table responsive>
+                                <thead>
+                                    <tr>
+                                    <th>Produto</th>
+                                    <th>Valor</th>
+                                    <th>Quantidade</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>Pão Francês</td>
+                                    <td>R$0.25</td>
+                                    <td>4</td>
+                                    </tr>
+                                    <tr>
+                                    <td>Pão de Queijo</td>
+                                    <td>R$0.80</td>
+                                    <td>10</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                            </Col>
+                        <Col></Col>
+                        </Row>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8}>
+                                <h3>Tempo estimado de chegada:</h3>
+                                <label>20 minutos</label>
+
+                                <p>Importante: O tempo de chegada é o tempo que você estima chegar a padaria para pegar o pedido.</p>
+                                
+                                <Button type="submit" variant="primary">Pedir</Button> 
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
                 </header>
             </div>
         );
