@@ -13,8 +13,8 @@ function Header() {
                 <Nav.Link><Link to="/cliente/"><Button variant="success"> SejaBemVindoCliente </Button></Link></Nav.Link>
                 <Nav.Link><Link to="/padaria/"><Button variant="danger"> IntrocucaoPadaria </Button></Link></Nav.Link>
                 <Nav.Link><Link to="/ModoDeUsar/"><Button variant="success">ModoDeUsar </Button></Link></Nav.Link>
-                <Nav.Link><Link to="/Pedidos/"><Button variant="danger">Pedidos </Button></Link></Nav.Link>
-                <Nav.Link><Link to="/PerfilCliente/"><Button variant="danger">PerfilCliente </Button></Link></Nav.Link>
+                <Nav.Link><Link to="/Pedidos/"><Button variant="success">Pedidos </Button></Link></Nav.Link>
+                <Nav.Link><Link to="/PerfilCliente/"><Button variant="success">PerfilCliente </Button></Link></Nav.Link>
                 <Nav.Link><Link to="/InformacoesEstatisticas/"><Button variant="danger">InformacoesEstatisticas </Button></Link></Nav.Link>
                 <Nav.Link><Link to="/VizualizarPadaria/"><Button variant="danger">VizualizarPadaria </Button></Link></Nav.Link>       
             </Nav>
