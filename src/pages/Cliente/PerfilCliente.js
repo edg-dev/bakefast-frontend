@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
-
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function PerfilCliente() {
         return (
@@ -19,7 +17,7 @@ function PerfilCliente() {
 
                             <div>
                                 <h3>Padarias favoritas:</h3>
-
+          
                                 <Dropdown>
                                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
                                         Selecionar padaria
