@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
+
+import { Table, Container, Row, Col } from "react-bootstrap";
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
@@ -8,38 +10,47 @@ function PerfilPadaria() {
     return (
         <div className="App">
             <header className="App-header">
-                <div>
-                    <h1>Logado como: Vesúvio Padarias</h1>
-                </div>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8}>
 
-                <div>
-					<h3>Voce tem 3 Pedidos:</h3>
-					<ul>
-						<li>3 pães de dal</li>
-						<li>2 pães de queijo</li>
-						<li>1 bolo</li>
-					</ul>
-                </div>
-               
-                <div>
-                    <p>Foram realizado X pedidos nos ultimos 30min:</p>
-                </div>
+                                    <h1>Logado como: Vesúvio Padarias</h1>
+                                    <h3>Seus Pedidos:</h3>
+                                        <Table responsive>
+                                            <thead>
+                                                <tr>
+                                                <th>Produto</th>
+                                                <th>Quantidade</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                <td>Pão Francês</td>
+                                                <td>10</td>
+                                                </tr>
+                                                <tr>
+                                                <td>Pão de Queijo</td>
+                                                <td>2</td>
+                                                </tr>
+                                            </tbody>
+                                        </Table>
 
-                <div>
-                    <p>Acesse e dispare notificações aos seus clientes:<Link to="/Notificar/"><ButtonPrimary button="Notificar" /></Link></p>
-                </div>
+                                    <p>Foram realizados X pedidos nos ultimos 30min:</p>
+                                    <p>Acesse e dispare notificações aos seus clientes:
+                                        <div><Link to="/Notificar/"><ButtonPrimary button="Notificar"/></Link></div></p>
+                                    <p>Cadastre uma imagem de seu cardápio:
+                                        <div><Link to="/CadastroCardapio/"><ButtonPrimary button="Cadastrar"/></Link></div></p>
+                                    <p>Cadastre imagens de seus produtos:
+                                        <div><Link to="/CadastroProdutos/"><ButtonPrimary button="Cadastrar"/></Link></div></p>
+                                    <p>Veja informações sobre vendas:
+                                        <div><ButtonInfo button="Informações"/></div></p>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
 
-                <div>
-                    <p>Cadastre uma imagem de seu cardápio:<Link to="/CadastroCardapio/"><ButtonPrimary button="Cadastrar" /></Link></p>
-                </div>
 
-                <div>
-                    <p>Cadastre imagens de seus produtos:<Link to="/CadastroProdutos/"><ButtonPrimary button="Cadastrar" /></Link></p>
-                </div>
-
-                <div>
-                    <p>Veja informações sobre vendas:<ButtonInfo button="Informações" /></p>
-                </div>
 
             </header>
         </div>
