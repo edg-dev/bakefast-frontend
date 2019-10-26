@@ -2,12 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import '../../App.css';
 
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import {Link} from 'react-router-dom';
+import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
+import ButtonWarning from '../../components/cssComponents/button';
 
 
 
@@ -42,23 +39,44 @@ function RealizarPedido() {
     return (
         <div className="App">
             <header className="App-header">
-                <div>
-                    <h3>Seu Pedido foi:</h3>
-                </div>
+                <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={6}>
+                                
+                            <h3>Seu Pedido foi:</h3>
 
-                <div>
-                    <ul>
-                        <li>3 pães de dal</li>
-                        <li>2 pães de queijo</li>
-                        <li>1 bolo</li>
-                    </ul>
-                </div>
+                        <div>
+                            <Table responsive>
+                                <thead>
+                                    <tr>
+                                    <th>Produto</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                    <td>Pão Francês</td>
+                                    </tr>
+                                    <tr>
+                                    <td>Pão de Queijo</td>
+                                    </tr>
+                                </tbody>
+                            </Table>
+                        </div>
 
-                <div>
-                    <h4>Deseja realizar o pedido?</h4>
-                    <MyButton button="Confirmar" />
-                    <MyButton button="Voltar" />
-                </div>
+                        <div>
+                            <h4>Deseja realizar o pedido?</h4>
+                            <div><Link to="/"><ButtonWarning button="Confirmar"/></Link></div> 
+                            <div><Link to="/PerfilCliente/"><ButtonWarning button="Voltar"/></Link></div> 
+                        </div>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                </Container>
+
+
+
+                
             </header>
         </div>
     );

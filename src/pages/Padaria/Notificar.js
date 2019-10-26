@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
-
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import { Link } from "react-router-dom";
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function Notificar() {
     return (
@@ -18,15 +14,11 @@ function Notificar() {
                 </div>
 
                 <div>
-                    <p>Acabaram de sair bolos do forno! <MyButton button="Notificar" /></p>
+                    <p>Acabaram de sair bolos do forno! <ButtonPrimary button="Notificar" /></p>
                 </div>
 
                 <div>
-                    <p>Pães quentinhos do forno <MyButton button="Notificar" /></p>
-                </div>
-
-                <div>
-                    <p>Teste! <MyButton button="Notificar" /></p>
+                    <p>Pães quentinhos do forno <ButtonPrimary button="Notificar" /></p>
                 </div>
 
                 <div>
@@ -34,7 +26,7 @@ function Notificar() {
                 </div>
 
                 <div>
-                    <MyButton button="Gerenciar Notificações" />
+                    <Link to="/Notificacoes/"><ButtonInfo button="Gerenciar Notificações" /></Link>
                 </div>
             </header>
         </div>

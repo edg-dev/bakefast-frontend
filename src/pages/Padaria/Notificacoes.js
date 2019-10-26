@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
 
 function Notificacoes() {
     return (
@@ -45,7 +40,7 @@ function Notificacoes() {
                 <div>
                     <label>
                         Tipo da Notificação: 
-                                <input type="text" name="notificacao" placeholder="Tipo da Notificação:" />
+                                <input type="text" name="notificacao" placeholder="" />
                     </label>
                 </div>
 
@@ -57,7 +52,7 @@ function Notificacoes() {
                 </div>
 
 
-                <MyButton button="Realizar Pedido" />
+                <ButtonPrimary button="Realizar Pedido" />
             </header>
         </div>
     );

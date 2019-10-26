@@ -2,13 +2,8 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
 
-import { Button, Image, Container, Row, Col } from "react-bootstrap";
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import { Image, Container, Row, Col } from "react-bootstrap";
+import ButtonSucess from '../../components/cssComponents/buttonSucess';
 
 function ModoDeUsar() {
         return (
@@ -22,7 +17,7 @@ function ModoDeUsar() {
                                 <p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.</p>
                                 <p>Crie seu pedido e pegue o pombo, digo, o pão!</p>
                                 <Link to="/Pedidos/">
-                                    <Button variant="success">Entendi</Button>
+                                    <ButtonSucess button="Entendi"/>
                                 </Link>
                             </Col>
                             <Col></Col>
