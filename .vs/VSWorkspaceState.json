@@ -3,9 +3,11 @@
     "",
     "\\src",
     "\\src\\components",
+    "\\src\\components\\cssComponents",
     "\\src\\pages",
+    "\\src\\pages\\Cliente",
     "\\src\\pages\\Padaria"
   ],
-  "SelectedNode": "\\src\\App.js",
+  "SelectedNode": "\\src\\index.js",
   "PreviewInSolutionExplorer": false
 }

@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import {Image, Container, Row, Col, Form } from "react-bootstrap";
 import '../../App.css';
 import { thisExpression } from '@babel/types';
 import axios from 'axios';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
 
 export default class CadastroPadaria extends React.Component {
     constructor(props) {
@@ -62,64 +59,52 @@ export default class CadastroPadaria extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
-                    <div>
-                        <div>
-                            <h2>Cadastre sua Padaria aqui!</h2>
-                        </div>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={4}>
+                                <Form>
+                                    <div>
+                                        <h2>Cadastre sua Padaria aqui!</h2>
+                                    </div>
+                                    <Form.Group controlId="nome">
+                                        <Form.Label>Nome:</Form.Label>
+                                        <Form.Control type="text" name="nome" placeholder="Nome" value={this.state.value} onChange={this.handleChange}/>
+                                    </Form.Group>
 
-                        <form onSubmit={this.handleSubmit}>
+                                    <Form.Group controlId="telefone">
+                                        <Form.Label>Telefone:</Form.Label>
+                                        <Form.Control type="number" name="telefone" placeholder="Telefone" value={this.state.value} onChange={this.handleChange} />
+                                    </Form.Group>
 
-                            <div>
-                                <label>
-                                    Nome:
-                                    <input type="text" name="nome" placeholder="Nome" value={this.state.value} onChange={this.handleChange}/>
-                                </label>
-                            </div>
+                                    <Form.Group controlId="rua">
+                                        <Form.Label>Rua:</Form.Label>
+                                        <Form.Control type="text" name="rua" placeholder="Rua" value={this.state.value} onChange={this.handleChange}/>
+                                    </Form.Group>
 
-                            <div>
-                                <label>
-                                    Telefone:
-                                <input type="number" name="telefone" placeholder="Telefone" value={this.state.value} onChange={this.handleChange}/>
-                                </label>
-                            </div>
+                                    <Form.Group controlId="numero">
+                                         <Form.Label>Número:</Form.Label>
+                                        <Form.Control type="number" name="numero" placeholder="Número" value={this.state.value} onChange={this.handleChange} />
+                                    </Form.Group>
 
-                            <div>
-                                <label>
-                                    Rua:
-                                <input type="text" name="rua" placeholder="Rua" value={this.state.value} onChange={this.handleChange}/>
+                                    <Form.Group controlId="complemento">
+                                          <Form.Label>Complemento</Form.Label>
+                                        <Form.Control type="text" name="complemento" placeholder="Complemento" value={this.state.value} onChange={this.handleChange} />
+                                    </Form.Group>
 
-                                </label>
-                            </div>
+                                    <Form.Group controlId="bairro">
+                                        <Form.Label>Bairro</Form.Label>
+                                        <Form.Control type="text" name="bairro" placeholder="Bairro" value={this.state.value} onChange={this.handleChange} />
+                                    </Form.Group>
 
-                            <div>
-                                <label>
-                                    N*
-                                <input type="number" name="numero" placeholder="Número" value={this.state.value} onChange={this.handleChange}/>
-                                </label>
-                            </div>
-
-                            <div>
-                                <label>
-                                    Complemento
-                                <input type="text" name="complemento" placeholder="Complemento" value={this.state.value} onChange={this.handleChange}/>
-                                </label>
-                            </div>
-
-                            <div>
-                                <label>
-                                    Bairro
-                                <input type="text" name="bairro" placeholder="Bairro" value={this.state.value} onChange={this.handleChange}/>
-                                </label>
-                            </div>
-
-                            <div>
-                                <button type="submit">
-                                    Cadastrar
-                                </button>
-                            </div>
-
-                        </form>
-                    </div>
+                                    <div>
+                                        <ButtonPrimary type="submit" button="Cadastrar" />
+                                    </div>
+                                </Form>
+                                </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
                 </header>
             </div>
         );
