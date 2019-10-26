@@ -1,34 +1,36 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
+
+import { Image, Container, Row, Col } from "react-bootstrap";
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function IntrocucaoPadaria() {
     return (
         <div className="App">
             <header className="App-header">
-                <div>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8}>
+                            
+                                <h2>Seus cliente agora poderão fazer pedidos antecipados!</h2>                    
+                                <img src="" /><p>Aumente a quantidade de vendas em horários de pico.</p>
+                         
+                                <h3>
+                                    Com o App Bake Fast, seus cliente te encontram em nossa rede de padarias cadastradas em nossa rede de padarias cadastradas,
+                                    efetuam "pedidos" de maneira antecipada e agilizam processos de pagamento.
+                                </h3>
+                          
+                                <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" />
+                            
 
-                    <div>
-                        <h2>Seus cliente agora poderão fazer pedidos antecipados!</h2>
-                    </div>
+                            <Link to="/CadastroPadaria/"><ButtonPrimary button="Cadastrar Agora"/></Link>
 
-                    <div>
-                        <img src="" /><p>Aumente a quantidade de vendas em horários de pico.</p>
-                    </div>
-
-                    <div>
-                        <h3>Com o App Bake Fast, seus cliente te encontram em nossa rede de padarias cadastradas em nossa rede de padarias cadastradas,
-							efetuam "pedidos" de maneira antecipada e agilizam processos de pagamento.</h3>
-                    </div>
-
-                    <div>
-                        <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" />
-                    </div>
-
-                    <Link to="/CadastroPadaria/"><ButtonPrimary button="Cadastrar Agora"/></Link>
-                    
-                </div>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
             </header>
         </div>
     );
