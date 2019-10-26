@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function InformacoesEstatisticas() {
     return (
@@ -36,6 +31,7 @@ function InformacoesEstatisticas() {
                     <div>
                         <p>Média de tempo de chegada dos clientes 3:13 min</p>
                     </div>
+                    <Link to="/PerfilCliente/"><ButtonPrimary button="Voltar" /></Link>
                 </div>
             </header>
         </div>

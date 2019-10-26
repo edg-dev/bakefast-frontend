@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
-
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function CadastroCardapio() {
     return (
@@ -21,7 +16,7 @@ function CadastroCardapio() {
                     que você foque em suas vendas.</p>
 
                 <div>
-                    <MyButton button="Upload de Imagem" />
+                    <ButtonPrimary button="Upload de Imagem" />
                 </div>
 
                 <div>
@@ -29,7 +24,7 @@ function CadastroCardapio() {
                 </div>
 
                 <div>
-                    <Link to="/CadastroProdutos"><MyButton button="Cadastrar Cardápio" /></Link>
+                    <Link to="/CadastroProdutos"><ButtonPrimary button="Cadastrar Cardápio" /></Link>
                 </div>
                
             </header>

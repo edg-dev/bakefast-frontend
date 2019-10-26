@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
-
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import { Link } from "react-router-dom";
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function PerfilPadaria() {
     return (
@@ -30,19 +26,19 @@ function PerfilPadaria() {
                 </div>
 
                 <div>
-                    <p>Acesse e dispare notificações aos seus clientes <MyButton button="Notificações" /></p>
+                    <p>Acesse e dispare notificações aos seus clientes:<Link to="/Notificar/"><ButtonPrimary button="Notificar" /></Link></p>
                 </div>
 
                 <div>
-                    <p>Cadastre uma imagem contendo seus produtos <MyButton button="Cardápio" /></p>
+                    <p>Cadastre uma imagem de seu cardápio:<Link to="/CadastroCardapio/"><ButtonPrimary button="Cadastrar" /></Link></p>
                 </div>
 
                 <div>
-                    <p>Veja informações sobre vendas<MyButton button="Informações" /></p>
+                    <p>Cadastre imagens de seus produtos:<Link to="/CadastroProdutos/"><ButtonPrimary button="Cadastrar" /></Link></p>
                 </div>
 
                 <div>
-                    <p>Cadastre imagens de seus produtos<MyButton button="Imagens" /></p>
+                    <p>Veja informações sobre vendas:<ButtonInfo button="Informações" /></p>
                 </div>
 
             </header>

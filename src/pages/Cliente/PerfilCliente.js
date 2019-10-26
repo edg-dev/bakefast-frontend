@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
-
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import { Link } from "react-router-dom";
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function PerfilCliente() {
         return (
@@ -18,7 +14,7 @@ function PerfilCliente() {
 
                     <h3>Padarias favoritas:</h3>
 
-                    <p>Padaria X <MyButton button="Info" /></p>
+                    <p>Padaria X <Link to="/InformacoesEstatisticas/"><ButtonInfo button="Info" /></Link></p>
 
                     <h3>Pedidos Recentes:</h3>
                     <ul>
@@ -27,7 +23,7 @@ function PerfilCliente() {
                         <li>1 bolo</li>
                     </ul>
 
-                    <MyButton button="Realizar Pedido" />
+                    <Link to="/Pedidos/"><ButtonPrimary button="Realizar Pedido" /></Link>
                 </header>
             </div>
         );
