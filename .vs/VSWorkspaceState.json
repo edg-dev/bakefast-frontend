@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src"
+    "\\src",
+    "\\src\\components",
+    "\\src\\pages",
+    "\\src\\pages\\Padaria"
   ],
-  "SelectedNode": "\\src\\InformacoesEstatisticas.js",
+  "SelectedNode": "\\src\\App.js",
   "PreviewInSolutionExplorer": false
 }

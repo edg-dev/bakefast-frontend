@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import '../../App.css';
-
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
-import ButtonWarning from '../../components/cssComponents/button';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function PerfilCliente() {
         return (
@@ -18,7 +18,7 @@ function PerfilCliente() {
 
                             <div>
                                 <h3>Padarias favoritas:</h3>
-
+          
                                 <Dropdown>
                                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
                                         Selecionar padaria
@@ -48,7 +48,7 @@ function PerfilCliente() {
                                         </tbody>
                                     </Table>
                                 
-                                <div><Link to="/RealizarPedido/"><ButtonWarning button="Fazer Pedido"/></Link></div> 
+                                <div><Link to="/RealizarPedido/"><ButtonPrimary button="Fazer Pedido"/></Link></div> 
 
                             </Col>
                             <Col></Col>

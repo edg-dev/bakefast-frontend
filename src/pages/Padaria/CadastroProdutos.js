@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
-
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function CadastroProdutos() {
     return (
@@ -21,7 +15,7 @@ function CadastroProdutos() {
 					e por isso você pode colocar fotos de seus produtos, para que os clientes tambem fiquem com água na boca!</p>
 
                 <div>
-                    <MyButton button="Upload de Imagens" />
+                    <ButtonPrimary button="Upload de Imagens" />
                 </div>
 
                 <div>
@@ -29,7 +23,7 @@ function CadastroProdutos() {
                 </div>
 
                 <div>
-                    <Link to="/"><MyButton button="Cadastrar Imagens" /></Link>
+                    <Link to="/"><ButtonPrimary button="Cadastrar Imagens" /></Link>
                 </div>
 
             </header>

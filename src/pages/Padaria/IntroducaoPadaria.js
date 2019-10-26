@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function IntrocucaoPadaria() {
     return (
@@ -31,7 +26,7 @@ function IntrocucaoPadaria() {
                         <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" />
                     </div>
 
-                    <Link to="/CadastroPadaria/">Cadastrar Agora</Link>
+                    <Link to="/CadastroPadaria/"><ButtonPrimary button="Cadastrar Agora"/></Link>
                     
                 </div>
             </header>

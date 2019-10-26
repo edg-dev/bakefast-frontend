@@ -1,15 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 
-import { Button, Image, Container, Row, Col, Form } from "react-bootstrap";
+import {Image, Container, Row, Col, Form } from "react-bootstrap";
 import '../App.css';
 import logo_color from "../images/logo_256x.png";
+import ButtonPrimary from '../components/cssComponents/buttonPrimary';
 
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
 
 function Login() {
     return (
@@ -29,9 +25,7 @@ function Login() {
                                         <Form.Label>Senha: </Form.Label>
                                         <Form.Control type="password" placeholder="Password" />
                                     </Form.Group>
-                                    <Button variant="primary" type="submit">
-                                        Login
-                                    </Button>
+                                    <ButtonPrimary button="Login"/>
                                 </Form>
                             </Col>
                             <Col></Col>

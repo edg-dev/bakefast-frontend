@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
-
-class MyButton extends Component {
-    render() {
-        return <button variant="primary">{this.props.button}</button>
-    }
-}
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function VizualizarPadaria() {
     return (
@@ -29,11 +25,11 @@ function VizualizarPadaria() {
                     </div>
 
                     <div>
-                        <MyButton button="Vizualizar Produtos" />
+                        <ButtonInfo button="Vizualizar Produtos" />
                     </div>
 
                     <div>
-                        <MyButton button="Fazer Pedido!" />
+                        <Link to="/Pedidos/"><ButtonPrimary button="Fazer Pedido!" /></Link>
                     </div>
                 </div>
             </header>
