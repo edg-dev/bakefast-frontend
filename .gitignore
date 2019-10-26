@@ -26,3 +26,4 @@ package-lock.json
 .vs/bakefast-frontend/v16/.suo
 .vs/slnx.sqlite
 .vs/slnx.sqlite
+.vscode
