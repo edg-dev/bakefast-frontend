@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
+import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
@@ -8,22 +9,51 @@ function PerfilCliente() {
         return (
             <div className="App">
                 <header className="App-header">
-                    <h1>Logado como: Usuário</h1>
+                    <Container>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8}>
+                                <h1>Logado como: Usuário</h1>
+                                <label>Buscar Padarias</label>
 
-                    <label>Buscar Padarias</label>
+                            <div>
+                                <h3>Padarias favoritas:</h3>
+          
+                                <Dropdown>
+                                    <Dropdown.Toggle variant="warning" id="dropdown-basic">
+                                        Selecionar padaria
+                                    </Dropdown.Toggle>
+                                    <Dropdown.Menu>
+                                        <Dropdown.Item href="#/action-1">ElisMarina</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-2">Vesúvio</Dropdown.Item>
+                                        <Dropdown.Item href="#/action-3">Pão Quente</Dropdown.Item>
+                                    </Dropdown.Menu>
+                                </Dropdown>
+                            </div>
 
-                    <h3>Padarias favoritas:</h3>
+                                <h3>Pedidos Recentes:</h3>
+                                    <Table responsive>
+                                        <thead>
+                                            <tr>
+                                            <th>Produto</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                            <td>Pão Francês</td>
+                                            </tr>
+                                            <tr>
+                                            <td>Pão de Queijo</td>
+                                            </tr>
+                                        </tbody>
+                                    </Table>
+                                
+                                <div><Link to="/RealizarPedido/"><ButtonPrimary button="Fazer Pedido"/></Link></div> 
 
-                    <p>Padaria X <Link to="/InformacoesEstatisticas/"><ButtonInfo button="Info" /></Link></p>
-
-                    <h3>Pedidos Recentes:</h3>
-                    <ul>
-                        <li>3 pães de dal</li>
-                        <li>2 pães de queijo</li>
-                        <li>1 bolo</li>
-                    </ul>
-
-                    <Link to="/Pedidos/"><ButtonPrimary button="Realizar Pedido" /></Link>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>
                 </header>
             </div>
         );
