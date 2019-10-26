@@ -4,8 +4,8 @@ import {Image, Container, Row, Col, Form } from "react-bootstrap";
 import '../../App.css';
 import { thisExpression } from '@babel/types';
 import axios from 'axios';
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-
+import api from '../../config/api'
+import ButtonPrimary from '../../components/cssComponents/buttonSubmit';
 
 export default class CadastroPadaria extends React.Component {
     constructor(props) {
@@ -17,7 +17,9 @@ export default class CadastroPadaria extends React.Component {
             rua: '',
             numero: '',
             complemento: '',
-            bairro: ''
+            bairro: '',
+            username: '',
+            senha: ''
         }
         
         this.handleChange = this.handleChange.bind(this);
@@ -33,7 +35,7 @@ export default class CadastroPadaria extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        axios.post('http://localhost:4000/api/padaria/', 
+        api.post('padaria/', 
             {            
                 nome: this.state.nome,
                 telefone: parseInt(this.state.telefone),
@@ -42,6 +44,10 @@ export default class CadastroPadaria extends React.Component {
                     numero: parseInt(this.state.numero),             
                     bairro: this.state.bairro,
                     complemento: this.state.complemento,
+                },
+                usuario: {
+                    username: this.state.username,
+                    senha: this.state.senha
                 }
             }, 
             { headers: { 'Content-type': 'application/json' }})
@@ -63,7 +69,10 @@ export default class CadastroPadaria extends React.Component {
                         <Row>
                             <Col></Col>
                             <Col xs={4}>
-                                <Form>
+                            
+
+                                
+                                <Form onSubmit={this.handleSubmit}>
                                     <div>
                                         <h2>Cadastre sua Padaria aqui!</h2>
                                     </div>
@@ -97,10 +106,25 @@ export default class CadastroPadaria extends React.Component {
                                         <Form.Control type="text" name="bairro" placeholder="Bairro" value={this.state.value} onChange={this.handleChange} />
                                     </Form.Group>
 
+                                    <h2>Informações de Login</h2>
+
+                                    <Form.Group controlId="username">
+                                          <Form.Label>Login</Form.Label>
+                                        <Form.Control type="text" name="username" placeholder="Username" value={this.state.value} onChange={this.handleChange} />
+                                    </Form.Group>
+
+                                    <Form.Group controlId="senha">
+                                        <Form.Label>Senha</Form.Label>
+                                        <Form.Control type="password" name="senha" placeholder="Senha" value={this.state.value} onChange={this.handleChange} />
+                                    </Form.Group>
+
                                     <div>
-                                        <ButtonPrimary type="submit" button="Cadastrar" />
+                                        <ButtonPrimary type="submit" button="Cadastrar" >
+                                            Cadastrar
+                                        </ButtonPrimary>
                                     </div>
                                 </Form>
+                                
                                 </Col>
                             <Col></Col>
                         </Row>
