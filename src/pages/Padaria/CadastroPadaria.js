@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import '../../App.css';
 import { thisExpression } from '@babel/types';
 import axios from 'axios';
+import api from '../../config/api'
 
 class MyButton extends Component {
     render() {
@@ -36,7 +37,7 @@ export default class CadastroPadaria extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        axios.post('http://localhost:4000/api/padaria/', 
+        api.post('padaria/', 
             {            
                 nome: this.state.nome,
                 telefone: parseInt(this.state.telefone),

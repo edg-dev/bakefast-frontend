@@ -11,7 +11,7 @@ export default class RealizarPedido extends React.Component{
         super(props);
 
 
-    }
+            }
     
 
         // state = {
