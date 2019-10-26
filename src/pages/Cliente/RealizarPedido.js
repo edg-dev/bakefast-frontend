@@ -3,7 +3,7 @@ import '../../App.css';
 
 import {Link} from 'react-router-dom';
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
-import ButtonWarning from '../../components/cssComponents/button';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function RealizarPedido() {
     return (
@@ -36,8 +36,8 @@ function RealizarPedido() {
 
                         <div>
                             <h4>Deseja realizar o pedido?</h4>
-                            <div><Link to="/"><ButtonWarning button="Confirmar"/></Link></div> 
-                            <div><Link to="/PerfilCliente/"><ButtonWarning button="Voltar"/></Link></div> 
+                            <div><Link to="/"><ButtonPrimary button="Confirmar"/></Link></div> 
+                            <div><Link to="/PerfilCliente/"><ButtonPrimary button="Voltar"/></Link></div> 
                         </div>
                             </Col>
                             <Col></Col>
