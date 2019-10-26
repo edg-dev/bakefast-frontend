@@ -3,7 +3,6 @@ import '../../App.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function PerfilCliente() {
         return (
