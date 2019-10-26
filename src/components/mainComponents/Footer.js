@@ -17,7 +17,7 @@ function Footer() {
             <Nav.Link><Link to="/CadastroProdutos/"><Button variant="danger">CadastroProdutos </Button></Link></Nav.Link>
             <Nav.Link><Link to="/Notificacoes/"><Button variant="danger">Notificacoes </Button></Link></Nav.Link>
             <Nav.Link><Link to="/Notificar/"><Button variant="danger">Notificar </Button></Link></Nav.Link>
-            <Nav.Link><Link to="/RealizarPedido/"><Button variant="danger">RealizarPedido </Button></Link></Nav.Link>
+            <Nav.Link><Link to="/RealizarPedido/"><Button variant="success">RealizarPedido </Button></Link></Nav.Link>
             </Nav>
         </Navbar>
     </footer>
