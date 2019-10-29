@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {Dropdown, Image, Container, Row, Col, Form } from "react-bootstrap";
 import '../App.css';
 import logo_color from "../images/logo_256x.png";
-import ButtonPrimary from '../components/cssComponents/buttonPrimary';
+import ButtonSubmit from '../components/cssComponents/buttonSubmit';
 
 import api from '../config/api';
 
@@ -33,9 +33,13 @@ export default class Login extends React.Component {
 
         if(this.state.tipoLogin == 1){
             //Loga como usuário
-            api.get('cliente/${this.state.username}/${this.state.state}')
+            api.post('cliente/login', {
+                username: this.state.username,
+                senha: this.state.senha
+            })
             .then(res => {
                 //redireciona
+                console.log('cliente logado');
                 console.log(res);
             })
             .catch(error => {
@@ -45,8 +49,12 @@ export default class Login extends React.Component {
 
         if(this.state.tipoLogin == 2){
             //Loga como padaria
-            api.get('padaria/${this.state.username}/${this.state.state}')
+            api.post('padaria/login', {
+                username: this.state.username,
+                senha: this.state.senha
+            })
             .then(res => {
+                console.log('padaria logada');
                 console.log(res);
             })
             .catch(error => {
@@ -66,7 +74,7 @@ export default class Login extends React.Component {
                                 <Col></Col>
                                 <Col xs={4}>
                                     <div><Image src={logo_color} roundedCircle thumbnail/></div>
-                                    <Form>
+                                    <Form onSubmit={this.handleSubmit}>
                                         <Form.Group controlId="formUsername">
                                             <Form.Label>Usuário: </Form.Label>
                                             <Form.Control type="text" placeholder="Username" name="username" value={this.state.value} onChange={this.handleChange}/>
@@ -84,7 +92,7 @@ export default class Login extends React.Component {
                                             </select>
                                         </Form.Group>
 
-                                        <ButtonPrimary button="Login"/>
+                                        <ButtonSubmit button="Login"/>
                                     </Form>
                                 </Col>
                                 <Col></Col>

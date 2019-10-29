@@ -3,39 +3,33 @@ import axios from 'axios';
 import '../../App.css';
 
 import {Link} from 'react-router-dom';
-import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
+import { Container, Row, Col, Table, Form } from 'react-bootstrap';
 import ButtonWarning from '../../components/cssComponents/buttonPrimary';
+import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
 
 export default class RealizarPedido extends React.Component{
     constructor(props){
         super(props);
 
+        this.state = {
+            tempo: ''
+        }
 
-            }
-    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
 
-        // state = {
+    }
     
-        // }
-    
-        // handleChange = event => {
-        //     this.setState({name: event.target.value});
-        // }
-    
-        // handleSubmit = event => {
-        //     event.preventDefault();
-        // }
-    
-        // const pedido = {
-        //     //objeto pedido
-        //     name: this.state.name
-        // };
-    
-        // axios.post('url/da/api', {pedido})
-        //     .then(res => {
-        //         console.log(res);
-        //         console.log(res.data);
-        //     })
+    handleChange = event => {
+        let name = event.target.name;
+        let value = event.target.value;
+        this.setState({ [name]: value });  
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+    }
+
     //Informações importantes
     //<form onSubmit={this.handleSubmit}> => como o form vai dar o submit
     //<input type="text" name="name" onChange={this.handleChange}/> => atualiza o estado toda vez que for alterado
@@ -45,6 +39,14 @@ export default class RealizarPedido extends React.Component{
             <div className="App">
                 <header className="App-header">
                     <Container>
+                        <Form onSubmit={this.handleSubmit}>
+                            <Form.Group controlID="formTempoChegada">
+                                <Form.Label>Tempo de Chegada: </Form.Label>
+                                <Form.Control type="number" placeholder="Tempo de chegada" name="tempo" value={this.state.value} onChange={this.handleChange}/>
+                            </Form.Group>
+                        </Form>
+
+
                             <Row>
                                 <Col></Col>
                                 <Col xs={6}>
