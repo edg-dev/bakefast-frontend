@@ -93,7 +93,8 @@ export default class Login extends React.Component {
                                         </Form.Group>
 
                                         <ButtonSubmit button="Login"/>
-                                    </Form>
+                                </Form>
+                                <div><Link to="/CadastroCliente/">Não é Cadastrado?</Link></div>
                                 </Col>
                                 <Col></Col>
                             </Row>
