@@ -8,6 +8,10 @@ import api from '../../config/api'
 import ButtonPrimary from '../../components/cssComponents/buttonSubmit';
 
 export default class CadastroCliente extends React.Component {
+    shoot = (a) => {
+        alert(a);
+    }
+
     render() {
         return (
             <div className="App">
@@ -44,7 +48,7 @@ export default class CadastroCliente extends React.Component {
                                     </Form.Group>
 
                                     <div>
-                                        <ButtonPrimary type="submit" button="Cadastrar" >
+                                        <ButtonPrimary onClick={() => this.shoot("Cliente Cadastrado com Sucesso")} type="submit" button="Cadastrar" >
                                             Cadastrar
                                         </ButtonPrimary>
                                     </div>

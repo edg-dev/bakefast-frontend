@@ -62,6 +62,9 @@ export default class Login extends React.Component {
             })
         }
     }
+    shoot = (a) => {
+        alert(a);
+    }
 
 
 
@@ -92,7 +95,7 @@ export default class Login extends React.Component {
                                             </select>
                                         </Form.Group>
 
-                                        <ButtonSubmit button="Login"/>
+                                    <ButtonSubmit onClick={() => this.shoot("Logado Com Sucesso")} button="Login" />
                                 </Form>
                                 <div><Link to="/CadastroCliente/">Não é Cadastrado?</Link></div>
                                 </Col>
