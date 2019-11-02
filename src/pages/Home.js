@@ -18,7 +18,6 @@ function Home() {
                                 <div><h1>Bem vindo ao Bake Fast</h1></div>
                                 <div><h5>Escolha como deseja continuar:</h5></div>
                                 <div><Link to="/cliente/"><ButtonPrimary button="Cliente"/></Link></div>  
-                                <div><Link to="/padaria"><ButtonPrimary button="Padaria"/></Link></div>
                             </Col>
                             <Col></Col>
                         </Row>
