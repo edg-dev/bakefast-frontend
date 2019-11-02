@@ -12,7 +12,7 @@ function Notificacoes() {
                     <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
                                     <h2>Notificações</h2>
                                         <Table responsive>
                                             <thead>

@@ -13,7 +13,7 @@ function VizualizarPadaria() {
             <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
                                 <div>
                                     <h2>Padaria Vesúvio</h2>
                                 </div>

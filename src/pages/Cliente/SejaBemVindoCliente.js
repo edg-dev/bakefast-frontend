@@ -13,7 +13,7 @@ function SejaBemVindoCliente() {
                  <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={7}>
+                            <Col xs={8}>
                                 <h1>Seja Bem Vindo Cliente</h1>
                                 <p>Acordou atrasado para ir ao trabalho e não tem tempe de tomar um café, mas consegue ir a padaria?</p>
                                 <p>Quer ganhar um tempinho antes daquela aula e ver aquele video que você deixou pra mais tarde?</p>

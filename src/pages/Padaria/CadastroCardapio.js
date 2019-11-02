@@ -12,7 +12,7 @@ function CadastroCardapio() {
             <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
                                 <div>
                                     <h2>Coloque aqui uma imagem de seus cardápio contendo seus produtos.</h2>
                                 </div>
