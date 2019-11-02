@@ -8,6 +8,7 @@ import Pedidos from '../../pages/Cliente/Pedidos';
 import PerfilCliente from '../../pages/Cliente/PerfilCliente';
 import IntroducaoPadaria from '../../pages/Padaria/IntroducaoPadaria';
 import CadastroPadaria from '../../pages/Padaria/CadastroPadaria';
+import CadastroCliente from '../../pages/Cliente/CadastroCliente';
 import PerfilPadaria from '../../pages/Padaria/PerfilPadaria';
 import CadastroCardapio from '../../pages/Padaria/CadastroCardapio';
 import CadastroProdutos from '../../pages/Padaria/CadastroProdutos';
@@ -39,6 +40,7 @@ function Main() {
           <Route path="/InformacoesEstatisticas/" component={InformacoesEstatisticas} />
           <Route path="/VizualizarPadaria/" component={VizualizarPadaria} />
           <Route path="/RealizarPedido/" component={RealizarPedido} />
+          <Route path="/CadastroCliente/" component={CadastroCliente} />
         </Switch>
     </main>
               );
