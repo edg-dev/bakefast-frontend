@@ -60,6 +60,9 @@ export default class CadastroPadaria extends React.Component {
             console.log(error.response)
         });
     }
+    shoot = (a) => {
+        alert(a);
+    }
 
     render() {  
         return (
@@ -117,7 +120,7 @@ export default class CadastroPadaria extends React.Component {
                                     </Form.Group>
 
                                     <div>
-                                        <ButtonPrimary type="submit" button="Cadastrar" >
+                                        <ButtonPrimary onClick={() => this.shoot("Padaria Cadastrada Com Sucesso")} type="submit" button="Cadastrar" >
                                             Cadastrar
                                         </ButtonPrimary>
                                     </div>
