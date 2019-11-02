@@ -12,7 +12,7 @@ function CadastroProdutos() {
             <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
                                     <h2>Cadastre aqui imagens de seus produtos:</h2>
                                 <p>
                                     Quem nunca ficou com vontade de comer aquele pedaço de bolo só de ver o chocolate escorrendo pela massa? Nós entendemos muito bem,

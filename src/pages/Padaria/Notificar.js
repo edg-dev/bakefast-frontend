@@ -13,7 +13,7 @@ function Notificar() {
                     <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
                                     <h2>Notificações</h2>
                                     <p>Acabaram de sair bolos do forno! <ButtonPrimary button="Notificar" /></p>
                                     <p>Pães quentinhos do forno <ButtonPrimary button="Notificar" /></p>

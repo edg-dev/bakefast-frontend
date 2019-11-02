@@ -49,7 +49,7 @@ export default class RealizarPedido extends React.Component{
 
                             <Row>
                                 <Col></Col>
-                                <Col xs={6}>
+                                <Col xs={8}>
                                     
                                 <h3>Seu Pedido foi:</h3>
     

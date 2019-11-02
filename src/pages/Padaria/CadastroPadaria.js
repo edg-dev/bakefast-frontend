@@ -68,10 +68,8 @@ export default class CadastroPadaria extends React.Component {
                     <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={4}>
-                            
+                            <Col xs={8}>
 
-                                
                                 <Form onSubmit={this.handleSubmit}>
                                     <div>
                                         <h2>Cadastre sua Padaria aqui!</h2>

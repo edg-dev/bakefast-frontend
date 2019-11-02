@@ -13,7 +13,7 @@ function Home() {
                     <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
                                 <div><Image src={logo_color} roundedCircle thumbnail/></div>
                                 <div><h1>Bem vindo ao Bake Fast</h1></div>
                                 <div><h5>Escolha como deseja continuar:</h5></div>

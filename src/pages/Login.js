@@ -72,7 +72,7 @@ export default class Login extends React.Component {
                         <Container>
                             <Row>
                                 <Col></Col>
-                                <Col xs={4}>
+                                <Col xs={8}>
                                     <div><Image src={logo_color} roundedCircle thumbnail/></div>
                                     <Form onSubmit={this.handleSubmit}>
                                         <Form.Group controlId="formUsername">

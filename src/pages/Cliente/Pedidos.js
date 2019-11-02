@@ -10,7 +10,7 @@ function Pedido() {
                     <Container>
                         <Row>
                             <Col></Col>
-                            <Col xs={6}>
+                            <Col xs={8}>
 
                                 <h1>Fazer Pedido</h1>
 
