@@ -3,9 +3,29 @@ import '../../App.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+//import { ReactComponent } from '*.svg';
 
-function PerfilCliente() {
-        return (
+export default class PerfilCliente extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            id: this.props.id,
+            nome: this.props.nome,
+            res: this.props.dados
+        }
+    }   
+
+
+    componentDidMount(){
+        //console.log(this.state.res);
+    }
+    
+    shoot = (a) => {
+        alert(a);
+    }
+
+    render (){  
+        return (     
             <div className="App">
                 <header className="App-header">
                     <Container>
@@ -55,7 +75,7 @@ function PerfilCliente() {
                     </Container>
                 </header>
             </div>
-        );
+        )
+    }
 }
 
-export default PerfilCliente;
