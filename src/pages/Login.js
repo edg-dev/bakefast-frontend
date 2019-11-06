@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { Image, Container, Row, Col, Form } from "react-bootstrap";
 
-import {Dropdown, Image, Container, Row, Col, Form } from "react-bootstrap";
-import '../App.css';
+import React from 'react';
+import api from '../config/api';
 import logo_color from "../images/logo_256x.png";
 import ButtonSubmit from '../components/cssComponents/buttonSubmit';
 
-import api from '../config/api';
+import '../App.css';
 
 export default class Login extends React.Component {
     constructor(props){
@@ -14,8 +14,7 @@ export default class Login extends React.Component {
 
         this.state = {
             username: '',
-            senha: '',
-            tipoLogin: ''
+            senha: ''
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -31,42 +30,55 @@ export default class Login extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        if(this.state.tipoLogin == 1){
-            //Loga como usuário
-            api.post('cliente/login', {
-                username: this.state.username,
-                senha: this.state.senha
-            })
-            .then(res => {
-                //redireciona
-                console.log('cliente logado');
-                console.log(res);
-            })
-            .catch(error => {
-                console.log(error.response);
-            })
-        }
+        //Tenta logar como cliente
+        api.post('cliente/login', {
+            username: this.state.username,
+            senha: this.state.senha
+        })
+        .then(res => {
+            if(res.data == ""){
 
-        if(this.state.tipoLogin == 2){
-            //Loga como padaria
-            api.post('padaria/login', {
-                username: this.state.username,
-                senha: this.state.senha
-            })
-            .then(res => {
-                console.log('padaria logada');
+                //Se não conseguir, tenta como padaria
+                api.post('padaria/login', {
+                    username: this.state.username,
+                    senha: this.state.senha
+                })
+                .then(res => {
+                    if(res.data == ""){
+                        //Se não conseguir, faz a validação
+                        console.log(res);
+                        localStorage.setItem('@bakefast-frontend/username', null);
+                        this.loginFailed();
+                    } else{
+                        console.log(res);
+                        localStorage.setItem('@bakefast-frontend/username', JSON.stringify(res.data));
+                        this.props.history.push('/PerfilPadaria');
+                    }
+                })
+                .catch(error => {
+                    console.log(error.response);
+                    this.shoot('Erro: ' + error.response);
+                })
+
+            } else {
                 console.log(res);
-            })
-            .catch(error => {
-                console.log(error.response);
-            })
-        }
+                localStorage.setItem('@bakefast-frontend/username', JSON.stringify(res.data));
+                this.props.history.push('/PerfilCliente');
+            }                          
+        })
+        .catch(error => {
+            console.log(error.response);
+            this.shoot('Erro: ' + error.response);
+        });   
     }
+
+    loginFailed = () => {
+        this.shoot('Falha no login! Usuário não encontrado!');       
+    }
+    
     shoot = (a) => {
         alert(a);
     }
-
-
 
     render(){
         return (
@@ -85,14 +97,6 @@ export default class Login extends React.Component {
                                         <Form.Group controlId="formSenha">
                                             <Form.Label>Senha: </Form.Label>
                                             <Form.Control type="password" placeholder="Senha" name="senha" value={this.state.value} onChange={this.handleChange}/>
-                                        </Form.Group>
-
-                                        <h3>Selecione o tipo de login</h3>
-                                        <Form.Group>
-                                            <select name="tipoLogin" value={this.state.value} onChange={this.handleChange}>
-                                                <option value="1">Cliente</option>
-                                                <option value="2">Padaria</option>
-                                            </select>
                                         </Form.Group>
 
                                     <ButtonSubmit onClick={() => this.shoot("Logado Com Sucesso")} button="Login" />
