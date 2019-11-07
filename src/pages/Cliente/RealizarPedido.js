@@ -39,18 +39,15 @@ export default class RealizarPedido extends React.Component{
             <div className="App">
                 <header className="App-header">
                     <Container>
-                        <Form onSubmit={this.handleSubmit}>
-                            <Form.Group controlID="formTempoChegada">
-                                <Form.Label>Tempo de Chegada: </Form.Label>
-                                <Form.Control type="number" placeholder="Tempo de chegada" name="tempo" value={this.state.value} onChange={this.handleChange}/>
-                            </Form.Group>
-                        </Form>
-
-
                             <Row>
                                 <Col></Col>
                                 <Col xs={8}>
-                                    
+                                <Form onSubmit={this.handleSubmit}>
+                                    <Form.Group controlID="formTempoChegada">
+                                        <Form.Label>Tempo de Chegada: </Form.Label>
+                                        <Form.Control type="number" placeholder="Tempo de chegada" name="tempo" value={this.state.value} onChange={this.handleChange}/>
+                                    </Form.Group>
+                                </Form>
                                 <h3>Seu Pedido foi:</h3>
     
                             <div>
