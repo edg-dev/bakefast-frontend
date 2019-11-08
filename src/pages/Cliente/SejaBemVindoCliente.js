@@ -24,10 +24,10 @@ function SejaBemVindoCliente() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h1>Seja Bem Vindo Cliente</h1>
+                                <h1>Bem Vindo </h1>
                                 <p>Acordou atrasado para ir ao trabalho e não tem tempe de tomar um café, mas consegue ir a padaria?</p>
                                 <p>Quer ganhar um tempinho antes daquela aula e ver aquele video que você deixou pra mais tarde?</p>
-                                <p>Pois saiba que com o App Bake Fast você consegue fazer tudo isso! </p>
+                                <p>Saiba que com o App Bake Fast você consegue fazer tudo isso! </p>
                                     <Link to="/ModoDeUsar/">
                                         <ButtonInfo button="Modo de usar"/>
                                     </Link>
