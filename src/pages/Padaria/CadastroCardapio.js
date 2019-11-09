@@ -14,7 +14,7 @@ function CadastroCardapio() {
                             <Col></Col>
                             <Col xs={8}>
                                 <div>
-                                    <h2>Coloque aqui uma imagem de seus cardápio contendo seus produtos.</h2>
+                                    <h4>Coloque uma imagem de seu cardápio.</h4>
                                 </div>
                                 <p>
                                     Para facilitar sua vida e a dos clientes, os produtos não necessitam ser cadastrados, evitando assim gasto de tempo desnecessário em cadastro ou alteração de produtos para
@@ -24,7 +24,7 @@ function CadastroCardapio() {
                                 <div>
                                     <Image src="" />
                                 </div>
-                                <div><Link to="/CadastroProdutos"><ButtonPrimary button="Cadastrar Cardápio" /></Link></div>
+                                <div><Link to="/CadastroProdutos"><ButtonPrimary button="Cadastrar Produto" /></Link></div>
                             </Col>
                             <Col></Col>
                         </Row>

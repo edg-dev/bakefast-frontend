@@ -13,7 +13,7 @@ function InformacoesEstatisticas() {
                         <Col></Col>
                         <Col xs={8}>
                                 <div>
-                                    <h2>Informações Estatísticas!</h2>
+                                    <h3>Informações Estatísticas!</h3>
                                 </div>
 
                                 <div>

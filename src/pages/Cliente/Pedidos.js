@@ -12,7 +12,7 @@ function Pedido() {
                             <Col></Col>
                             <Col xs={8}>
 
-                                <h1>Fazer Pedido</h1>
+                                <h2>Fazer Pedido</h2>
 
                                 <Dropdown>
                                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
@@ -33,7 +33,7 @@ function Pedido() {
                         <Row>
                         <Col></Col>
                             <Col xs={8}>
-                            <h3>Produtos</h3>
+                            <h4>Produtos</h4>
 
                             <Table responsive>
                                 <thead>
@@ -62,10 +62,10 @@ function Pedido() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h3>Tempo estimado de chegada:</h3>
+                                <h4>Tempo estimado de chegada:</h4>
                                 <label>20 minutos</label>
 
-                                <p>Importante: O tempo de chegada é o tempo que você estima chegar a padaria para pegar o pedido.</p>
+                                <p><b>Importante:</b> O tempo de chegada é o tempo que você estima chegar a padaria para pegar o pedido.</p>
                                 
                                 <Button type="submit" variant="primary">Pedir</Button> 
                             </Col>

@@ -32,11 +32,11 @@ export default class PerfilCliente extends React.Component {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h1>Logado como: Usuário</h1>
+                                <h3>Logado como: Usuário</h3>
                                 <label>Buscar Padarias</label>
 
                             <div>
-                                <h3>Padarias favoritas:</h3>
+                                <h4>Padarias favoritas:</h4>
           
                                 <Dropdown>
                                     <Dropdown.Toggle variant="warning" id="dropdown-basic">
@@ -50,7 +50,7 @@ export default class PerfilCliente extends React.Component {
                                 </Dropdown>
                             </div>
 
-                                <h3>Pedidos Recentes:</h3>
+                                <h4>Pedidos Recentes:</h4>
                                     <Table responsive>
                                         <thead>
                                             <tr>

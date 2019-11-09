@@ -13,7 +13,7 @@ function Notificacoes() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                    <h2>Notificações</h2>
+                                    <h3>Notificações</h3>
                                         <Table responsive>
                                             <thead>
                                                 <tr>
@@ -25,12 +25,12 @@ function Notificacoes() {
                                             <tbody>
                                                 <tr>
                                                     <td>Bolos</td>
-                                                    <td>"Bolos Fresquinhos ..."</td>
+                                                    <td>"Bolos Fresquinhos"</td>
                                                     <td><a href="">Edit</a></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Pães</td>
-                                                    <td>"Pães acabam de sair ..."</td>
+                                                    <td>"Pães acabam de sair"</td>
                                                     <td><a href="">Edit</a></td>
                                                 </tr>
                                                 <tr>
