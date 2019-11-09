@@ -69,7 +69,7 @@ export default class CadastroCliente extends React.Component {
 
                                 <Form onSubmit={this.handleSubmit}>
                                     <div>
-                                        <h2>Cadastre aqui!</h2>
+                                        <h3>Cadastre aqui!</h3>
                                     </div>
                                     <Form.Group controlId="nome">
                                         <Form.Label>Nome:</Form.Label>
@@ -81,7 +81,7 @@ export default class CadastroCliente extends React.Component {
                                         <Form.Control type="number" name="telefone" placeholder="Telefone" value={this.state.value} onChange={this.handleChange} />
                                     </Form.Group>
 
-                                    <h2>Informações de Login</h2>
+                                    <h4>Informações de Login</h4>
 
                                     <Form.Group controlId="username">
                                         <Form.Label>Usuario</Form.Label>

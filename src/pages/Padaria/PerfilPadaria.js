@@ -15,8 +15,9 @@ function PerfilPadaria() {
                             <Col></Col>
                             <Col xs={8}>
 
-                                    <h1>Logado como: Vesúvio Padarias</h1>
-                                    <h3>Seus Pedidos:</h3>
+                                <h3>Logado como: Vesúvio Padarias</h3>
+                                <p></p>
+                                    <h4>Seus Pedidos:</h4>
                                         <Table responsive>
                                             <thead>
                                                 <tr>
@@ -44,7 +45,7 @@ function PerfilPadaria() {
                                     <p>Cadastre imagens de seus produtos:
                                         <div><Link to="/CadastroProdutos/"><ButtonPrimary button="Cadastrar"/></Link></div></p>
                                     <p>Veja informações sobre vendas:
-                                        <div><ButtonInfo button="Informações"/></div></p>
+                                        <div><Link to="/InformacoesEstatisticas/"><ButtonInfo button="Informações" /></Link></div></p>
                             </Col>
                             <Col></Col>
                         </Row>
