@@ -51,7 +51,8 @@ export default class Login extends React.Component {
                         this.loginFailed();
                     } else{
                         console.log(res);
-                        localStorage.setItem('@bakefast-frontend/username', JSON.stringify(res.data));
+                        localStorage.setItem('@bakefast/username', JSON.stringify(res.data));
+                        localStorage.setItem('@bakefast/idPadaria', JSON.stringify(res.data._id));
                         this.props.history.push('/PerfilPadaria');
                     }
                 })
@@ -99,7 +100,7 @@ export default class Login extends React.Component {
                                             <Form.Control type="password" placeholder="Senha" name="senha" value={this.state.value} onChange={this.handleChange}/>
                                         </Form.Group>
 
-                                    <ButtonSubmit onClick={() => this.shoot("Logado Com Sucesso")} button="Login" />
+                                    <ButtonSubmit button="Login" />
                                 </Form>
                                 <div><Link to="/CadastroCliente/">Não é Cadastrado?</Link></div>
                                 </Col>
