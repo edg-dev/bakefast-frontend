@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../App.css';
 
 import { Table, Container, Row, Col } from "react-bootstrap";
@@ -25,18 +25,18 @@ function Notificacoes() {
                                             <tbody>
                                                 <tr>
                                                     <td>Bolos</td>
-                                                    <td>"Bolos Fresquinhos"</td>
-                                                    <td><a href="">Edit</a></td>
+                                                    <td>"Bolos Fresquinhos ..."</td>
+                                                    <td><p>Editar</p></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Pães</td>
-                                                    <td>"Pães acabam de sair"</td>
-                                                    <td><a href="">Edit</a></td>
+                                                    <td>"Pães acabam de sair ..."</td>
+                                                    <td><p>Editar</p></td>
                                                 </tr>
                                                 <tr>
                                                     <td>Doces</td>
                                                     <td>"Bolos, tortas e etc ..."</td>
-                                                    <td><a href="">Edit</a></td>
+                                                    <td><p>Editar</p></td>
                                                 </tr>
                                             </tbody>
                                         </Table>

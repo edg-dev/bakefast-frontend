@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
 
-import { Image, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ButtonSucess from '../../components/cssComponents/buttonSucess';
 
 function ModoDeUsar() {

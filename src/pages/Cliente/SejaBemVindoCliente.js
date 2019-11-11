@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
-import {Image, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import '../../App.css';
 
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
