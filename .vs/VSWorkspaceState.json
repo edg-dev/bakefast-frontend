@@ -4,10 +4,10 @@
     "\\src",
     "\\src\\components",
     "\\src\\components\\cssComponents",
+    "\\src\\components\\mainComponents",
     "\\src\\pages",
-    "\\src\\pages\\Cliente",
-    "\\src\\pages\\Padaria"
+    "\\src\\pages\\Cliente"
   ],
-  "SelectedNode": "\\src\\pages\\Cliente",
+  "SelectedNode": "\\src\\pages\\Cliente\\RealizarPedido.js",
   "PreviewInSolutionExplorer": false
 }

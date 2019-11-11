@@ -15,7 +15,7 @@ function Home() {
                             <Col></Col>
                             <Col xs={8}>
                                 <div><Image src={logo_color} roundedCircle thumbnail/></div>
-                                <div><h1>Bem vindo ao Bake Fast</h1></div>
+                                <div><h2>Bem vindo ao Bake Fast</h2></div>
                                 <div><h5>Dê um Bake Fast na sua vida:</h5></div>
                                 <div><Link to="/cliente/"><ButtonPrimary button="Vamos lá"/></Link></div>  
                             </Col>

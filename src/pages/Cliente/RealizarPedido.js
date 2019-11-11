@@ -44,11 +44,11 @@ export default class RealizarPedido extends React.Component{
                                 <Col xs={8}>
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlID="formTempoChegada">
-                                        <Form.Label>Tempo de Chegada: </Form.Label>
+                                        <Form.Label><h5>Tempo de Chegada: </h5></Form.Label>
                                         <Form.Control type="number" placeholder="Tempo de chegada" name="tempo" value={this.state.value} onChange={this.handleChange}/>
                                     </Form.Group>
                                 </Form>
-                                <h3>Seu Pedido foi:</h3>
+                                <h4>Seu Pedido foi:</h4>
     
                             <div>
                                 <Table responsive>
@@ -69,9 +69,10 @@ export default class RealizarPedido extends React.Component{
                             </div>
     
                             <div>
-                                <h4>Deseja realizar o pedido?</h4>
-                                <div><Link to="/"><ButtonWarning button="Confirmar"/></Link></div> 
-                                <div><Link to="/PerfilCliente/"><ButtonWarning button="Voltar"/></Link></div> 
+                                <h5>Deseja realizar o pedido?</h5>
+                                <Link to="/"><ButtonWarning button="Confirmar" /></Link>
+                                <p></p>
+                                <Link to="/PerfilCliente/"><ButtonWarning button="Voltar"/></Link>
                             </div>
                                 </Col>
                                 <Col></Col>

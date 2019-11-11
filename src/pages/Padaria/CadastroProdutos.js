@@ -13,7 +13,7 @@ function CadastroProdutos() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                    <h2>Cadastre aqui imagens de seus produtos:</h2>
+                                    <h4>Cadastre aqui imagens de seus produtos:</h4>
                                 <p>
                                     Quem nunca ficou com vontade de comer aquele pedaço de bolo só de ver o chocolate escorrendo pela massa? Nós entendemos muito bem,
                                     e por isso você pode colocar fotos de seus produtos, para que os clientes tambem fiquem com água na boca!
@@ -21,9 +21,6 @@ function CadastroProdutos() {
                                     <ButtonPrimary button="Upload de Imagens" />
                                 <div>
                                     <Image src="" />
-                                </div>
-                                <div>
-                                    <Link to="/"><ButtonPrimary button="Cadastrar Imagens" /></Link>
                                 </div>
                             </Col>
                             <Col></Col>
