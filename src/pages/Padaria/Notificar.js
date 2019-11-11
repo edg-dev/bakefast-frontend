@@ -14,9 +14,9 @@ function Notificar() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                    <h2>Notificações</h2>
+                                    <h3>Notificações</h3>
                                     <p>Acabaram de sair bolos do forno! <ButtonPrimary button="Notificar" /></p>
-                                    <p>Pães quentinhos do forno <ButtonPrimary button="Notificar" /></p>
+                                    <p>Pães quentinhos do forno! <ButtonPrimary button="Notificar" /></p>
                                     <p>Notificações cadastradas : 3/3</p>
                                     <Link to="/Notificacoes/"><ButtonInfo button="Gerenciar Notificações" /></Link>
                             </Col>

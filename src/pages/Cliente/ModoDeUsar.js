@@ -12,7 +12,7 @@ function ModoDeUsar() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h1>Então se interessou pelo App hein? Vamos colocar manteiga no pão?</h1>
+                                <h5>Então se interessou pelo App hein? Vamos colocar manteiga no pão?</h5>
                                 <p> Primeiro de tudo ache uma padaria no aplicativo bem proxima a você.</p>
                                 <p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.</p>
                                 <p>Crie seu pedido e pegue o pombo, digo, o pão!</p>

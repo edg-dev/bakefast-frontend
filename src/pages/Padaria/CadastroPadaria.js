@@ -72,7 +72,7 @@ export default class CadastroPadaria extends React.Component {
 
                                 <Form onSubmit={this.handleSubmit}>
                                     <div>
-                                        <h2>Cadastre sua Padaria aqui!</h2>
+                                        <h4>Cadastre sua Padaria aqui!</h4>
                                     </div>
                                     <Form.Group controlId="nome">
                                         <Form.Label>Nome:</Form.Label>
@@ -104,7 +104,7 @@ export default class CadastroPadaria extends React.Component {
                                         <Form.Control type="text" name="bairro" placeholder="Bairro" value={this.state.value} onChange={this.handleChange} />
                                     </Form.Group>
 
-                                    <h2>Informações de Login</h2>
+                                    <h4>Informações de Login</h4>
 
                                     <Form.Group controlId="username">
                                           <Form.Label>Login</Form.Label>
@@ -121,6 +121,8 @@ export default class CadastroPadaria extends React.Component {
                                             Cadastrar
                                         </ButtonPrimary>
                                     </div>
+                                    <p></p>
+                                    
                                 </Form>
                                 
                                 </Col>

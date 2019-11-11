@@ -107,7 +107,6 @@ export default class RealizarPedido extends React.Component{
             <div className="App">
                 <header className="App-header">
                     <Container>
-
                         <select name="idPadariaSelecionada" value={this.state.value} onChange={this.handleChange}>
                             {this.state.padarias.map(padarias => <option  value={padarias._id}> {padarias.nome} </option>)}
                         </select>
@@ -138,6 +137,7 @@ export default class RealizarPedido extends React.Component{
                                             <Form.Label>Produto: </Form.Label>
                                             <Form.Control name="produto" type="text"value={this.state.value} onChange={this.handleChange} ></Form.Control>                                       
                                     </Form.Group>
+
                                 </Col>
 
                                 <Col sm={4}>
@@ -148,10 +148,7 @@ export default class RealizarPedido extends React.Component{
                                 </Col>
  
                             </Row>
-
-
-                            
-
+                   
                             <button type="submit"> Pedir! </button>
                         </Form>
                     </Container>

@@ -15,13 +15,14 @@ function VizualizarPadaria() {
                             <Col></Col>
                             <Col xs={8}>
                                 <div>
-                                    <h2>Padaria Vesúvio</h2>
+                                    <h3>Padaria Vesúvio</h3>
                                 </div>
                                 <div>
                                     <h4>Cardapio</h4>
-                                    <Image src="logo.src" />
+                                    <Image src="../../images/logo_256x.png" />
                                 </div>
                                 <div><ButtonInfo button="Vizualizar Produtos" /></div>
+                                <p></p>
                                 <div><Link to="/Pedidos/"><ButtonPrimary button="Fazer Pedido!" /></Link></div>
                             </Col>
                             <Col></Col>

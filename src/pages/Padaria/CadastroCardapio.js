@@ -1,7 +1,6 @@
 import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
-
 import { Image, Container, Row, Col, Form } from "react-bootstrap";
 
 export default class CadastroCardapio extends React.Component {
@@ -74,6 +73,7 @@ export default class CadastroCardapio extends React.Component {
         if(localStorage.getItem('upload') || this.state.fileName){
             let imagem = localStorage.getItem('upload');
             let imagem2 = this.state.fileName;
+
 
             console.log(imagem);
             console.log(imagem2);
