@@ -36,7 +36,7 @@ export default class Login extends React.Component {
             senha: this.state.senha
         })
         .then(res => {
-            if(res.data == ""){
+            if(res.data === ""){
 
                 //Se não conseguir, tenta como padaria
                 api.post('padaria/login', {
@@ -44,15 +44,15 @@ export default class Login extends React.Component {
                     senha: this.state.senha
                 })
                 .then(res => {
-                    if(res.data == ""){
+                    if(res.data === ""){
                         //Se não conseguir, faz a validação
-                        console.log(res);
+                        console.log(res);                      
                         localStorage.setItem('@bakefast-frontend/username', null);
                         this.loginFailed();
                     } else{
                         console.log(res);
-                        localStorage.setItem('@bakefast/username', JSON.stringify(res.data));
-                        localStorage.setItem('@bakefast/idPadaria', JSON.stringify(res.data._id));
+                        localStorage.setItem('@bakefast/username', res.data.nome.toString());
+                        localStorage.setItem('@bakefast/idPadaria', res.data._id.toString());
                         this.props.history.push('/PerfilPadaria');
                     }
                 })
@@ -63,7 +63,8 @@ export default class Login extends React.Component {
 
             } else {
                 console.log(res);
-                localStorage.setItem('@bakefast-frontend/username', JSON.stringify(res.data));
+                localStorage.setItem('@bakefast/idCliente', res.data._id.toString())
+                localStorage.setItem('@bakefast/username', res.data.nome.toString());
                 this.props.history.push('/PerfilCliente');
             }                          
         })

@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
-import {Image, Container, Row, Col, Form } from "react-bootstrap";
+import React from 'react';
+import {Container, Row, Col, Form } from "react-bootstrap";
 import '../../App.css';
-import { thisExpression } from '@babel/types';
-import axios from 'axios';
 import api from '../../config/api'
 import ButtonPrimary from '../../components/cssComponents/buttonSubmit';
 

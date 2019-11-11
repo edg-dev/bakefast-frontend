@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import '../../App.css';
 
-import { Image, Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
 function IntrocucaoPadaria() {
@@ -15,14 +15,14 @@ function IntrocucaoPadaria() {
                             <Col xs={8}>
                             
                                 <h2>Seus cliente agora poderão fazer pedidos antecipados!</h2>                    
-                                <img src="" /><p>Aumente a quantidade de vendas em horários de pico.</p>
+                                <img src="" alt="a" /><p>Aumente a quantidade de vendas em horários de pico.</p>
                          
                                 <h3>
                                     Com o App Bake Fast, seus cliente te encontram em nossa rede de padarias cadastradas em nossa rede de padarias cadastradas,
                                     efetuam "pedidos" de maneira antecipada e agilizam processos de pagamento.
                                 </h3>
                           
-                                <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" />
+                                <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" alt="a"/>
                             
 
                             <Link to="/CadastroPadaria/"><ButtonPrimary button="Cadastrar Agora"/></Link>

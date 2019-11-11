@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';

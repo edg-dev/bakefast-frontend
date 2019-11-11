@@ -1,9 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
-
-import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
 
 import { Image, Container, Row, Col, Form } from "react-bootstrap";
 
@@ -11,7 +8,8 @@ export default class CadastroCardapio extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            file: ''
+            file: '',
+            fileName: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -29,13 +27,13 @@ export default class CadastroCardapio extends React.Component {
         });
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         const data = new FormData();
         const idPadaria = localStorage.getItem('@bakefast/idPadaria');
 
         if(this.state.file){
             data.append('file', this.state.file, this.state.file.name);
-            api.post('upload/single', data, {
+            await api.post('upload/single', data, {
                 headers: {
                     'accept': 'application/json',
                     'Accept-Language': 'en-US,en; q=0.8',
@@ -55,10 +53,15 @@ export default class CadastroCardapio extends React.Component {
                             this.shoot(response.data.error);
                         }                      
                     } else {
-                        let fileName = response.data;
-                        console.log('Filedata: ', fileName);
+                        let fileName = response.location;
+                        console.log(response);
+                        localStorage.setItem('upload', fileName);
+                        this.setState({fileName: fileName});
                         this.shoot('Arquivo cadastrado');
                     }
+
+                    console.log(response.location);
+                    localStorage.setItem('location', response.location);
                 }
             })
             .catch((error) => {
@@ -68,7 +71,25 @@ export default class CadastroCardapio extends React.Component {
             this.shoot('Favor selecionar um arquivo');            
         }
 
+        if(localStorage.getItem('upload') || this.state.fileName){
+            let imagem = localStorage.getItem('upload');
+            let imagem2 = this.state.fileName;
 
+            console.log(imagem);
+            console.log(imagem2);
+
+            api.post('cardapio/', {
+                idPadaria: idPadaria,
+                imagem: imagem
+            },
+            { headers: { 'Content-type': 'application/json' }})
+            .then(res => {
+                console.log(res);
+            }) 
+            .catch(error => {
+                console.log(error.response);
+            });
+        }
     }
 
     shoot = (a) => {
@@ -97,14 +118,16 @@ export default class CadastroCardapio extends React.Component {
                                             <Form.Control type="file" name="file" onChange={this.singleFileChagedHandler}/>
                                         </Form.Group>
 
-                                        <ButtonSubmit button="Cadastrar" />
+                                        <button type="submit">
+                                            Cadastrar teste
+                                        </button>
 
                                         
                                     </Form>
                                    
-                                    <div>
+                                    {/* <div>
                                         <Image src="" />
-                                    </div>
+                                    </div> */}
                                    
                                 </Col>
                                 <Col></Col>
