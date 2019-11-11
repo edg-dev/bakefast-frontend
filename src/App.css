@@ -9,14 +9,16 @@
 }
 
 .App-header {
-    min-height: 100vh;
+    min-height: 90vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
-    border-style: solid;
+
+    border-top: 50px solid transparent;
+    border-image: url(./images/nuvem.png) 200 round;
 }
 
 .App-link {
