@@ -6,7 +6,7 @@ import { Nav, Navbar} from "react-bootstrap";
 import { IoIosCafe, IoIosHome, IoIosMan} from "react-icons/io";
 
 import '../../App.css';
-function Header() {
+function Menu() {
     return (
     <header>
             <Navbar bg="light" variant="light" expand="lg" >
@@ -22,4 +22,4 @@ function Header() {
     );
 }
         
-export default Header;
+export default Menu;
