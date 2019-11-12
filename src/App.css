@@ -1,9 +1,11 @@
 .App {
     text-align: center;
     background-image: url(./images/back.jpg);
-    background-position: center;
-    background-size: 35em;
-    border: 3px solid white;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    border: 1px solid white;
 }
 
 .App-logo {
