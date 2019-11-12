@@ -1,10 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
-import {Link} from 'react-router-dom';
-import { Container, Row, Col, Table, Form, Image } from 'react-bootstrap';
-import ButtonWarning from '../../components/cssComponents/buttonPrimary';
-import pedidoInput from '../../components/customComponents/pedidoInput';
+import { Container, Row, Col, Form } from 'react-bootstrap';
 
 export default class RealizarPedido extends React.Component{
     constructor(props){
@@ -13,12 +10,13 @@ export default class RealizarPedido extends React.Component{
         this.state = {
             tempo: '',
             padarias: [],
-            idPadariaSelecionada: '',
             src: '',
             produtos: [{
                 produto: '',
                 quantidade: ''
-            }]      
+            }],
+            produto: '',
+            quantidade: ''      
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -34,21 +32,14 @@ export default class RealizarPedido extends React.Component{
         });
     }
    
-    handleChange = event => {
+    handleChange = async event => {
         let name = event.target.name;
         let value = event.target.value;
         this.setState({ [name]: value });
 
-        if(event.target.name === 'produto' || event.target.name === 'quantidade'){
-            this.setState({
-                produto: this.state.produto, 
-                quantidade: this.state.quantidade
-            });
-        }
-        
         if(event.target.name === 'idPadariaSelecionada'){
             let idPadaria = this.state.idPadariaSelecionada;
-            api.post('cardapio/getCardapio', {
+            await api.post('cardapio/getCardapio', {
                 idPadaria: idPadaria
             })
             .then(res => {
@@ -61,11 +52,33 @@ export default class RealizarPedido extends React.Component{
         }
     }
 
+    pushProduto = event => {
+        event.preventDefault();
+
+        let elemento = {
+            nome: this.state.produto,
+            quantidade: this.state.quantidade
+        }
+
+        this.setState({
+            produtos: [...this.state.produtos, elemento]
+        })
+    }
+
     handleSubmit = event => {
         event.preventDefault();
 
         let idPadaria = this.state.idPadariaSelecionada;
         let idCliente = localStorage.getItem('@bakefast/idCliente');
+        let tempo = this.state.tempo;
+
+        if(idPadaria === undefined){
+            this.shoot('Favor selecionar uma padaria');
+        }
+
+        if(tempo === undefined || tempo === '0' || tempo === ""){
+            this.shoot('Favor selecionar o tempo');
+        }
 
         var data = new Date();
         var hora = data.getHours();
@@ -78,31 +91,42 @@ export default class RealizarPedido extends React.Component{
             status: 1,
             tempoInicio: str_hora,
             idPadaria: idPadaria,
-            idCliente: idCliente
+            idCliente: idCliente,
+            tempo: tempo,
+            produtos: this.state.produtos
         }
 
         console.log(teste);
 
-        // api.post('pedido', {
-        //     status: 1,
-            
-        //     tempoInicio: str_hora,
-        //     produtos: [{
-        //         nome: '',
-        //         quantidade: ''
-        //     }]
-        // })
-        // .then(res => {
-        //     console.log(res);
-        //     this.setState({src: res.data.imagem});
-        // })
-        // .catch(error => {
-        //     console.log(error.response);
-        // });
+        let produtos = this.state.produtos;
+
+        if(produtos[0].produto === "" && produtos[0].quantidade === ""){
+            produtos.shift();
+        }
+
+        console.log(produtos);
+
+        api.post('pedido', {
+            idPadaria: idPadaria,
+            idCliente: idCliente,
+            status: 1,
+            tempoChegada: tempo,
+            tempoInicio: str_hora,
+            produtos: this.state.produtos
+        })
+        .then(res => {
+            console.log(res);
+        })
+        .catch(error => {
+            console.log(error.response);
+        });
+    }
+
+    shoot = (a) => {
+        alert(a);
     }
 
     render(){
-        console.log(this.state);
         return (
             <div className="App">
                 <header className="App-header">
@@ -121,6 +145,7 @@ export default class RealizarPedido extends React.Component{
                             <Form.Group controlID="formTempoChegada">
                                 <Form.Label>Tempo de Chegada: </Form.Label>
                                 <select name="tempo" value={this.state.value} onChange={this.handleChange}>
+                                    <option value="0">Selecione o tempo...</option>
                                     <option value="5">5 min.</option>
                                     <option value="10">10 min.</option>
                                     <option value="15">15 min.</option>
@@ -150,6 +175,7 @@ export default class RealizarPedido extends React.Component{
                             </Row>
                    
                             <button type="submit"> Pedir! </button>
+                            <button type="button" onClick={this.pushProduto}> Adicionar produto </button>
                         </Form>
                     </Container>
                   

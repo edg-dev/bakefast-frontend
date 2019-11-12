@@ -26,13 +26,15 @@ export default class CadastroCardapio extends React.Component {
         });
     }
 
-    handleSubmit = async event => {
+    handleSubmit = event => {
+        event.preventDefault();
+
         const data = new FormData();
         const idPadaria = localStorage.getItem('@bakefast/idPadaria');
 
         if(this.state.file){
             data.append('file', this.state.file, this.state.file.name);
-            await api.post('upload/single', data, {
+            api.post('upload/single', data, {
                 headers: {
                     'accept': 'application/json',
                     'Accept-Language': 'en-US,en; q=0.8',
@@ -48,19 +50,25 @@ export default class CadastroCardapio extends React.Component {
                             this.shoot('Limite máximo: 2mb');
                         } else {
                             console.log(response.data);    
-                            
-                            this.shoot(response.data.error);
                         }                      
                     } else {
-                        let fileName = response.location;
-                        console.log(response);
-                        localStorage.setItem('upload', fileName);
-                        this.setState({fileName: fileName});
-                        this.shoot('Arquivo cadastrado');
-                    }
+                        let fileName = response.data.location;
 
-                    console.log(response.location);
-                    localStorage.setItem('location', response.location);
+                        api.post('cardapio/', {
+                            idPadaria: idPadaria,
+                            imagem: fileName
+                        },
+                        { headers: { 'Content-type': 'application/json' }})
+                        .then(res => {
+                            console.log(res);
+                        }) 
+                        .catch(error => {
+                            console.log(error.response);
+                        });
+
+                        this.shoot('Arquivo cadastrado');
+                        this.props.history.push('/PerfilPadaria');
+                    }
                 }
             })
             .catch((error) => {
@@ -68,27 +76,6 @@ export default class CadastroCardapio extends React.Component {
             });
         } else {
             this.shoot('Favor selecionar um arquivo');            
-        }
-
-        if(localStorage.getItem('upload') || this.state.fileName){
-            let imagem = localStorage.getItem('upload');
-            let imagem2 = this.state.fileName;
-
-
-            console.log(imagem);
-            console.log(imagem2);
-
-            api.post('cardapio/', {
-                idPadaria: idPadaria,
-                imagem: imagem
-            },
-            { headers: { 'Content-type': 'application/json' }})
-            .then(res => {
-                console.log(res);
-            }) 
-            .catch(error => {
-                console.log(error.response);
-            });
         }
     }
 
