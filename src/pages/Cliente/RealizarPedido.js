@@ -116,6 +116,8 @@ export default class RealizarPedido extends React.Component{
         })
         .then(res => {
             console.log(res);
+            this.shoot('Pedido realizado com sucesso!');
+            this.props.history.push('/PerfilCliente');
         })
         .catch(error => {
             console.log(error.response);
