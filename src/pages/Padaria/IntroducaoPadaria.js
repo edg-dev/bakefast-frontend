@@ -15,14 +15,14 @@ function IntrocucaoPadaria() {
                             <Col xs={8}>
                             
                                 <h2>Seus cliente agora poderão fazer pedidos antecipados!</h2>                    
-                                <img src="" alt="a" /><p>Aumente a quantidade de vendas em horários de pico.</p>
+                                <p>Aumente a quantidade de vendas em horários de pico.</p>
                          
                                 <p>
                                     Com o App Bake Fast, seus cliente te encontram em nossa rede de padarias cadastradas em nossa rede de padarias cadastradas,
                                     efetuam "pedidos" de maneira antecipada e agilizam processos de pagamento.
                                 </p>
                           
-                                <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p><img src="" alt="a"/>
+                                <p>Menos Filas</p><p>Mais produtos vendidos!</p><p>Mais clientes satisfeitos!</p>
                             
 
                             <Link to="/CadastroPadaria/"><ButtonPrimary button="Cadastrar Agora"/></Link>
