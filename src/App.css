@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+    text-align: center;
+    background-image: url(./images/back.jpg);
+    background-position: center;
+    background-size: 35em;
+    border: 3px solid white;
 }
 
 .App-logo {
@@ -16,9 +20,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
-
-    border-top: 50px solid transparent;
-    border-image: url(./images/nuvem.png) 200 round;
+ 
 }
 
 .App-link {

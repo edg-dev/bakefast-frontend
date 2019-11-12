@@ -1,13 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src",
-    "\\src\\components",
-    "\\src\\components\\cssComponents",
-    "\\src\\components\\mainComponents",
-    "\\src\\pages",
-    "\\src\\pages\\Cliente"
+    "\\src\\components"
   ],
-  "SelectedNode": "\\src\\pages\\Cliente\\RealizarPedido.js",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }
