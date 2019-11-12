@@ -42,8 +42,6 @@ function PerfilPadaria() {
                                         <div><Link to="/Notificar/"><ButtonPrimary button="Notificar"/></Link></div></p>
                                     <p>Cadastre uma imagem de seu cardápio:
                                         <div><Link to="/CadastroCardapio/"><ButtonPrimary button="Cadastrar"/></Link></div></p>
-                                    <p>Cadastre imagens de seus produtos:
-                                        <div><Link to="/CadastroProdutos/"><ButtonPrimary button="Cadastrar"/></Link></div></p>
                                     <p>Veja informações sobre vendas:
                                         <div><Link to="/InformacoesEstatisticas/"><ButtonInfo button="Informações" /></Link></div></p>
                             </Col>
