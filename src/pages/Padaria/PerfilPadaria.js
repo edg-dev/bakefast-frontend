@@ -3,12 +3,13 @@ import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
 
+
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 import { Link } from "react-router-dom";
 import { Table, Container, Row, Col } from "react-bootstrap";
-
+const axios = require('axios');
 export default class PerfilPadaria extends React.Component{
     constructor(props){
         super(props);
@@ -20,15 +21,16 @@ export default class PerfilPadaria extends React.Component{
 
     componentDidMount(){
         let idPadaria = localStorage.getItem('@bakefast/idPadaria');
-        console.log(idPadaria);
-        api.post('/pedido/getPedidos', {
-            idPadaria: idPadaria
-        })
+        console.log(`pedido?idPadaria=${idPadaria}`);
+        axios.get('http://localhost:4000/api/pedido?idPadaria=5db4a00f8f03184a445b612f')
         .then(res => {
-            const pedidos = res.data;
+            const pedidos = res.data.produtos;
+            console.log(res.data);
             this.setState({pedidos: pedidos});
+            console.log(pedidos);
+            
         })
-        console.log(this.state.pedidos);
+        
     }
 
     render() {
