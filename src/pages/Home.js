@@ -1,13 +1,27 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Image, Container, Row, Col } from "react-bootstrap";
+import { messaging } from '../init-fcm'
 
 import ButtonPrimary from '../components/cssComponents/buttonPrimary';
 import logo_color from "../images/logo_256x.png";
 
 import '../App.css';
 
-function Home() {
+export default class Home extends React.Component {
+
+    async componentDidMount() {
+        messaging.requestPermission()
+          .then(async function() {
+                  const token = await messaging.getToken();
+                  console.log(token);
+          })
+          .catch(function(err) {
+            console.log("Unable to get permission to notify.", err);
+          });  navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
+      }
+
+    render() {
         return (
             <header className="App-header">
                     <Container>
@@ -24,6 +38,8 @@ function Home() {
                     </Container>
             </header>
         );
+    }
 }
 
-export default Home;
+
+
