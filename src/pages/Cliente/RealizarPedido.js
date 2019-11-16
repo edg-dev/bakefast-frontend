@@ -133,54 +133,59 @@ export default class RealizarPedido extends React.Component{
             <div className="App">
                 <header className="App-header">
                     <Container>
-                        <select name="idPadariaSelecionada" value={this.state.value} onChange={this.handleChange}>
-                            {this.state.padarias.map(padarias => <option  value={padarias._id}> {padarias.nome} </option>)}
-                        </select>
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8}>
 
-                        <img name="src" src={this.state.src}>
+                                <p><b>Realizar Pedido</b></p>
 
-                        </img>
+                                <br />
 
-                        <br />
+                                <p>Buscar Padaria</p>
 
-                        <Form onSubmit={this.handleSubmit}>
-                            <Form.Group controlID="formTempoChegada">
-                                <Form.Label>Tempo de Chegada: </Form.Label>
-                                <select name="tempo" value={this.state.value} onChange={this.handleChange}>
-                                    <option value="0">Selecione o tempo...</option>
-                                    <option value="5">5 min.</option>
-                                    <option value="10">10 min.</option>
-                                    <option value="15">15 min.</option>
-                                    <option value="20">20 min.</option>
-                                    <option value="30">30 min.</option>
-                                    <option value="60">1 hora</option>
+                                <select name="idPadariaSelecionada" value={this.state.value} onChange={this.handleChange}>
+                                    {this.state.padarias.map(padarias => <option  value={padarias._id}> {padarias.nome} </option>)}
                                 </select>
-                            </Form.Group>
 
+                                <br />
 
-                            <Row>
-                                <Col sm={8}>
-                                    <Form.Group>                                       
-                                            <Form.Label>Produto: </Form.Label>
-                                            <Form.Control name="produto" type="text"value={this.state.value} onChange={this.handleChange} ></Form.Control>                                       
+                                <img name="src" src={this.state.src}></img>
+
+                                <br />
+
+                                <Form onSubmit={this.handleSubmit}>
+                                    <Form.Group controlID="formTempoChegada">
+                                        <Form.Label>Tempo de Chegada: </Form.Label>
+                                        <select name="tempo" value={this.state.value} onChange={this.handleChange}>
+                                            <option value="0">Selecione o tempo...</option>
+                                            <option value="5">5 min.</option>
+                                            <option value="10">10 min.</option>
+                                            <option value="15">15 min.</option>
+                                            <option value="20">20 min.</option>
+                                            <option value="30">30 min.</option>
+                                            <option value="60">1 hora</option>
+                                        </select>
                                     </Form.Group>
 
-                                </Col>
+                                    <Form.Group>                                       
+                                        <Form.Label>Produto: </Form.Label>
+                                        <Form.Control name="produto" type="text"value={this.state.value} onChange={this.handleChange} ></Form.Control>                                       
+                                    </Form.Group>
 
-                                <Col sm={4}>
                                     <Form.Group>
                                         <Form.Label>Quantidade: </Form.Label>
                                         <Form.Control name="quantidade" type="Number" value={this.state.value} onChange={this.handleChange} ></Form.Control> 
                                     </Form.Group>
-                                </Col>
- 
-                            </Row>
-                   
-                            <button type="submit"> Pedir! </button>
-                            <button type="button" onClick={this.pushProduto}> Adicionar produto </button>
-                        </Form>
-                    </Container>
-                  
+
+                                    <button type="submit"> Pedir! </button>
+                                    <br />
+                                    <br />
+                                    <button type="button" onClick={this.pushProduto}> Adicionar produto </button>
+                                </Form>
+                            </Col>
+                            <Col></Col>
+                        </Row>
+                    </Container>             
                 </header>
             </div>
         );
