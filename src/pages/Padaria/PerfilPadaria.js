@@ -1,36 +1,67 @@
 import React from 'react';
 
 import '../../App.css';
+
 import api from '../../config/api';
-
-
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import ButtonInfo from '../../components/cssComponents/buttonInfo';
+import Produtos from '../../components/customComponents/produtos';
 
 import { Link } from "react-router-dom";
-import { Table, Container, Row, Col } from "react-bootstrap";
-const axios = require('axios');
+import { Container, Row, Col } from "react-bootstrap";
+
 export default class PerfilPadaria extends React.Component{
     constructor(props){
         super(props);
 
         this.state = {
+            nomePadaria: localStorage.getItem('@bakefast/username'),
+            idPedido: '',
             pedidos: []
         }
     }
 
     componentDidMount(){
         let idPadaria = localStorage.getItem('@bakefast/idPadaria');
-        console.log(`pedido?idPadaria=${idPadaria}`);
-        axios.get('http://localhost:4000/api/pedido?idPadaria=5db4a00f8f03184a445b612f')
+
+        api.get(`pedido?idPadaria=${idPadaria}`)
         .then(res => {
-            const pedidos = res.data.produtos;
             console.log(res.data);
-            this.setState({pedidos: pedidos});
-            console.log(pedidos);
-            
+
+            for(var key in res.data){                
+                this.setState({
+                    pedidos: [...this.state.pedidos, res.data[key]]
+                });
+                console.log(res.data[key].produtos);
+            }
+            console.log(this.state.pedidos);           
+        });      
+    }
+
+    finalizaEntrega = event => {
+        this.setState({idPedido: event.target.value});
+        console.log(this.state.idPedido);
+       
+        if(this.state.idPedido === ""){
+            return;
+        }
+        const idPedido = this.state.idPedido
+
+        console.log(idPedido);
+        api.put(`pedido/${idPedido}`, {
+            status: 0
         })
-        
+        .then(res => {
+            this.shoot('Pedido finalizado e entregue!');
+            this.props.history.push('/PerfilPadaria');
+        })
+        .catch(error => {
+            this.shoot('Ah não, ocorreu algum erro. Tente novamente');
+        });
+    }
+
+    shoot = (a) => {
+        alert(a);
     }
 
     render() {
@@ -42,27 +73,21 @@ export default class PerfilPadaria extends React.Component{
                                 <Col></Col>
                                 <Col xs={8}>
     
-                                    <h3>Logado como: Vesúvio Padarias</h3>
+                                    <h3>Logado como: {this.state.nomePadaria}</h3>
                                     <p></p>
-                                        <h4>Seus Pedidos:</h4>
-                                            <Table responsive>
-                                                <thead>
-                                                    <tr>
-                                                    <th>Produto</th>
-                                                    <th>Quantidade</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                    <td>Pão Francês</td>
-                                                    <td>10</td>
-                                                    </tr>
-                                                    <tr>
-                                                    <td>Pão de Queijo</td>
-                                                    <td>2</td>
-                                                    </tr>
-                                                </tbody>
-                                            </Table>
+                                        <h4>Pedidos:</h4>
+
+                                        <div name="localPedidos">
+
+
+                                            {this.state.pedidos.map(pedidos => 
+                                                <div>
+                                                    <Produtos pedidos={pedidos.produtos}></Produtos>
+                                                    <p>Status: {pedidos.status === 0 ? "Finalizado" : "Em aberto" }</p>
+                                                    <button style={pedidos.status === 0 ? {display:`none`} : {display:`inline`}} name="finalizar" value={pedidos._id} onClick={this.finalizaEntrega}>Entregue!</button>
+                                                </div>
+                                            )}
+                                        </div>
     
                                         <p>Foram realizados X pedidos nos ultimos 30min:</p>
                                         <p>Acesse e dispare notificações aos seus clientes:
@@ -74,10 +99,7 @@ export default class PerfilPadaria extends React.Component{
                                 </Col>
                                 <Col></Col>
                             </Row>
-                        </Container>
-    
-    
-    
+                        </Container>   
                 </header>
             </div>
         );
