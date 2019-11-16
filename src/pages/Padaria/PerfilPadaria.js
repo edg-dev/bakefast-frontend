@@ -60,6 +60,28 @@ export default class PerfilPadaria extends React.Component{
         });
     }
 
+    cancelarEntrega = event => {
+        this.setState({idPedido: event.target.value});
+        console.log(this.state.idPedido);
+       
+        if(this.state.idPedido === ""){
+            return;
+        }
+        const idPedido = this.state.idPedido
+
+        console.log(idPedido);
+        api.put(`pedido/${idPedido}`, {
+            status: 2
+        })
+        .then(res => {
+            this.shoot('Pedido cancelado!');
+            this.props.history.push('/PerfilPadaria');
+        })
+        .catch(error => {
+            this.shoot('Ah não, ocorreu algum erro. Tente novamente');
+        });
+    }
+
     shoot = (a) => {
         alert(a);
     }
@@ -83,8 +105,10 @@ export default class PerfilPadaria extends React.Component{
                                             {this.state.pedidos.map(pedidos => 
                                                 <div>
                                                     <Produtos pedidos={pedidos.produtos}></Produtos>
+                                                    <p>Tempo de chegada: {pedidos.tempoChegada} min.</p>
                                                     <p>Status: {pedidos.status === 0 ? "Finalizado" : "Em aberto" }</p>
-                                                    <button style={pedidos.status === 0 ? {display:`none`} : {display:`inline`}} name="finalizar" value={pedidos._id} onClick={this.finalizaEntrega}>Entregue!</button>
+                                                    <button style={pedidos.status === 0 || pedidos.status === 2 ? {display:`none`} : {display:`inline`}} name="finalizar" value={pedidos._id} onClick={this.finalizaEntrega}>Entregue</button>
+                                                    <button style={pedidos.status === 0 || pedidos.status === 2 ? {display:`none`} : {display:`inline`}} name="cancelar" value={pedidos._id} onClick={this.cancelarEntrega}>Cancelar</button>
                                                 </div>
                                             )}
                                         </div>
