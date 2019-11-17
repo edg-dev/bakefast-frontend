@@ -14,7 +14,7 @@ function IntrocucaoPadaria() {
                             <Col></Col>
                             <Col xs={8}>
                             
-                                <h2>Seus cliente agora poderão fazer pedidos antecipados!</h2>                    
+                                <h3>Pedidos antecipados!</h3>                    
                                 <p>Aumente a quantidade de vendas em horários de pico.</p>
                          
                                 <p>

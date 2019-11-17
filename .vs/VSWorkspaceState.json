@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
+    "\\src",
     "\\src\\components"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\pages",
   "PreviewInSolutionExplorer": false
 }
