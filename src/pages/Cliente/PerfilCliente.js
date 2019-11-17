@@ -1,27 +1,48 @@
 import React from 'react';
+
 import '../../App.css';
+import api from '../../config/api';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import Produtos from '../../components/customComponents/produtos';
+
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-//import { ReactComponent } from '*.svg';
 
 export default class PerfilCliente extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             id: this.props.id,
-            nome: this.props.nome,
-            res: this.props.dados
+            nome: localStorage.getItem('@bakefast/username'),
+            res: this.props.dados,
+            pedidos: []
         }
     }   
 
-
     componentDidMount(){
-        //console.log(this.state.res);
+        let idCliente = localStorage.getItem('@bakefast/idCliente');
+        api.get(`pedido?idCliente=${idCliente}&limit=5`)
+        .then(res => {
+            console.log(res.data);
+
+            for(var key in res.data){
+                this.setState({
+                    pedidos: [...this.state.pedidos, res.data[key]]
+                });
+            }
+            console.log(this.state.pedidos);
+        })
+        .catch(error => {
+            console.log(error.response);
+        });
     }
     
     shoot = (a) => {
         alert(a);
+    }
+
+    galeria = event => {
+        this.props.history.push('/Galeria');
     }
 
     render (){  
@@ -32,37 +53,27 @@ export default class PerfilCliente extends React.Component {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h3>Logado como: Usuário</h3>
-                                <label>Buscar Padarias</label>
+                                <h3>Logado como: {this.state.nome}</h3>
 
-                            <div>
-                                <h4>Padarias favoritas:</h4>
-          
-                                <Dropdown>
-                                    <Dropdown.Toggle variant="warning" id="dropdown-basic">
-                                        Selecionar padaria
-                                    </Dropdown.Toggle>
-                                    <Dropdown.Menu>
-                                        <Dropdown.Item href="#/action-1">ElisMarina</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-2">Vesúvio</Dropdown.Item>
-                                        <Dropdown.Item href="#/action-3">Pão Quente</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                            </div>
+                                <p>Veja os produtos das padarias!</p>
+                                <button onClick={this.galeria}>
+                                    Visualizar
+                                </button>
 
                                 <h4>Pedidos Recentes:</h4>
                                     <Table responsive>
                                         <thead>
                                             <tr>
-                                            <th>Produto</th>
+                                                <th>Pedidos</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                            <td>Pão Francês</td>
-                                            </tr>
-                                            <tr>
-                                            <td>Pão de Queijo</td>
+                                                {this.state.pedidos.map(pedidos => 
+                                                    <td><Produtos pedidos={pedidos.produtos}>
+                                                    </Produtos></td>
+                                                )}
+                                                
                                             </tr>
                                         </tbody>
                                     </Table>

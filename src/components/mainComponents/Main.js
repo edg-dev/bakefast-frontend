@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SejaBemVindoCliente from '../../pages/Cliente/SejaBemVindoCliente';
 import Login from '../../pages/Login';
 import ModoDeUsar from '../../pages/Cliente/ModoDeUsar';
-import Pedidos from '../../pages/Cliente/Pedidos';
+import Galeria from '../../pages/Cliente/Galeria';
 import PerfilCliente from '../../pages/Cliente/PerfilCliente';
 import IntroducaoPadaria from '../../pages/Padaria/IntroducaoPadaria';
 import CadastroPadaria from '../../pages/Padaria/CadastroPadaria';
@@ -18,6 +18,7 @@ import InformacoesEstatisticas from '../../pages/Padaria/InformacoesEstatisticas
 import VizualizarPadaria from '../../pages/Padaria/VizualizarPadaria';
 import RealizarPedido from '../../pages/Cliente/RealizarPedido';
 import Home from '../../pages/Home';
+import VisualizarGaleria from '../../pages/Cliente/VisualizarGaleria';
 
 function Main() {
     return (
@@ -27,7 +28,7 @@ function Main() {
           <Route path="/cliente/" component={SejaBemVindoCliente} />
           <Route path="/padaria/" component={IntroducaoPadaria} />
           <Route path="/ModoDeUsar/" component={ModoDeUsar} />
-          <Route path="/Pedidos/" component={Pedidos} />
+          <Route path="/Galeria/" component={Galeria} />
           <Route path="/PerfilCliente/" component={PerfilCliente} />
           <Route path="/Login/" component={Login} />
           <Route path="/IntroducaoPadaria/" component={IntroducaoPadaria} />
@@ -41,6 +42,7 @@ function Main() {
           <Route path="/VizualizarPadaria/" component={VizualizarPadaria} />
           <Route path="/RealizarPedido/" component={RealizarPedido} />
           <Route path="/CadastroCliente/" component={CadastroCliente} />
+          <Route path="/VisualizarGaleria/" component={VisualizarGaleria} />
         </Switch>
     </main>
               );

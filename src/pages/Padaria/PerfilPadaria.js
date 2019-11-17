@@ -32,9 +32,11 @@ export default class PerfilPadaria extends React.Component{
                 this.setState({
                     pedidos: [...this.state.pedidos, res.data[key]]
                 });
-                console.log(res.data[key].produtos);
             }
             console.log(this.state.pedidos);           
+        })
+        .catch(error => {
+            console.log(error.response);
         });      
     }
 
@@ -114,10 +116,16 @@ export default class PerfilPadaria extends React.Component{
                                         </div>
     
                                         <p>Foram realizados X pedidos nos ultimos 30min:</p>
+                                        
                                         <p>Acesse e dispare notificações aos seus clientes:
                                             <div><Link to="/Notificar/"><ButtonPrimary button="Notificar"/></Link></div></p>
+                                        
                                         <p>Cadastre uma imagem de seu cardápio:
                                             <div><Link to="/CadastroCardapio/"><ButtonPrimary button="Cadastrar"/></Link></div></p>
+                                        
+                                        <p>Cadastre imagens de seus produtos
+                                            <div><Link to="/CadastroProdutos/"><ButtonPrimary button="CadastrarProdutos"/></Link></div></p>
+                                        
                                         <p>Veja informações sobre vendas:
                                             <div><Link to="/InformacoesEstatisticas/"><ButtonInfo button="Informações" /></Link></div></p>
                                 </Col>

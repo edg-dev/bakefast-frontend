@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
-import { Image, Container, Row, Col, Form } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 
 export default class CadastroCardapio extends React.Component {
     constructor(props){
@@ -20,7 +20,7 @@ export default class CadastroCardapio extends React.Component {
         this.setState({ [name]: value });           
     }
 
-    singleFileChagedHandler = event => {        
+    singleFileChangedHandler = event => {        
         this.setState({
             file: event.target.files[0]
         });
@@ -102,7 +102,7 @@ export default class CadastroCardapio extends React.Component {
                                     <Form onSubmit={this.handleSubmit}>
                                         <Form.Group controlId="formImagem">
                                             <Form.Label>Imagem: </Form.Label>
-                                            <Form.Control type="file" name="file" onChange={this.singleFileChagedHandler}/>
+                                            <Form.Control type="file" name="file" onChange={this.singleFileChangedHandler}/>
                                         </Form.Group>
 
                                         <button type="submit">
