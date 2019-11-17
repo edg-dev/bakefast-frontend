@@ -1,31 +1,83 @@
 import React from 'react';
+
 import '../../App.css';
-import { Link } from "react-router-dom";
 
-import { Container, Row, Col } from "react-bootstrap";
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
+import { Container, Form } from "react-bootstrap";
 
-function Notificar() {
-    return (
-        <div className="App">
-            <header className="App-header">
-                    <Container>
-                        <Row>
-                            <Col></Col>
-                            <Col xs={8}>
-                                    <h3>Notificações</h3>
-                                    <p>Acabaram de sair bolos do forno! <ButtonPrimary button="Notificar" /></p>
-                                    <p>Pães quentinhos do forno! <ButtonPrimary button="Notificar" /></p>
-                                    <p>Notificações cadastradas : 3/3</p>
-                                    <Link to="/Notificacoes/"><ButtonInfo button="Gerenciar Notificações" /></Link>
-                            </Col>
-                            <Col></Col>
-                        </Row>
-                    </Container>
-            </header>
-        </div>
-    );
+import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
+import axios from 'axios';
+
+export default class Notificar extends React.Component{
+    constructor(props){
+        super(props);
+
+        this.state = {
+            tipo: null,
+            texto: null
+        }
+
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);   
+    }
+
+    handleChange = event => {
+        let name = event.target.name;
+        let value = event.target.value;
+        this.setState({ [name]: value });           
+    }
+
+    handleSubmit = event => {
+        event.preventDefault();
+        let texto = this.state.texto;
+        let titulo = localStorage.getItem('@bakefast/username') + ' - ' + this.state.tipo;
+
+        axios.post('https://fcm.googleapis.com/fcm/send', 
+        {
+            "notification": {
+                "title": titulo,
+                "body": texto,
+                "click_action": "http://localhost:3000/perfilCliente",
+                "icon": "http://localhost:3000/logo192.png"
+            },
+            "to": "/topics/all"
+        }, {
+            headers: {
+                "Authorization": ""
+            }
+        })
+        .then(res => {
+            console.log(res);
+            this.shoot('Notificação enviada');
+        })
+        .catch(err => {
+            console.log('Erro: ', err)
+        });
+    }
+
+    shoot = (a) => {
+        alert(a);
+    }
+
+    render(){
+        return (
+            <div className="App">
+                <header className="App-header">
+                        <Container>
+                            <Form onSubmit={this.handleSubmit}>
+                                <Form.Group controlId="form">
+                                    <Form.Label>Tipo: </Form.Label>
+                                    <Form.Control type="text" placeholder="Tipo da notificação" name="tipo" value={this.state.value} onChange={this.handleChange}/>
+                                </Form.Group>
+                                <Form.Group controlId="formSenha">
+                                    <Form.Label>Texto: </Form.Label>
+                                    <Form.Control type="text" placeholder="Texto da notificação" name="texto" value={this.state.value} onChange={this.handleChange}/>
+                                </Form.Group>
+
+                                <ButtonSubmit button="Notificar"></ButtonSubmit>
+                            </Form>
+                        </Container>
+                </header>
+            </div>
+        );
+    }
 }
-
-export default Notificar;

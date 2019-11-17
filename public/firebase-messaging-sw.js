@@ -26,6 +26,23 @@ messaging.setBackgroundMessageHandler(function(payload) {
     return promiseChain;
   });
   
+
+  messaging.getToken().then((currentToken) => {
+    if (currentToken) {
+      sendTokenToServer(currentToken);
+      updateUIForPushEnabled(currentToken);
+    } else {
+      // Show permission request.
+      console.log('No Instance ID token available. Request permission to generate one.');
+      // Show permission UI.
+      updateUIForPushPermissionRequired();
+      setTokenSentToServer(false);
+    }
+  }).catch((err) => {
+    console.log('An error occurred while retrieving token. ', err);
+    showToken('Error retrieving Instance ID token. ', err);
+    setTokenSentToServer(false);
+  });
   
   self.addEventListener('notificationclick', function(event) {
         console.log('alerta clicado');

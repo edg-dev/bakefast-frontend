@@ -10,17 +10,6 @@ import '../App.css';
 
 export default class Home extends React.Component {
 
-    async componentDidMount() {
-        messaging.requestPermission()
-          .then(async function() {
-                  const token = await messaging.getToken();
-                  console.log(token);
-          })
-          .catch(function(err) {
-            console.log("Unable to get permission to notify.", err);
-          });  navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
-      }
-
     render() {
         return (
             <header className="App-header">

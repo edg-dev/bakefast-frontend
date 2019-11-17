@@ -10,10 +10,13 @@ const initializedFirebaseApp = firebase.initializeApp({
   storageBucket: "",
   messagingSenderId: "",
   appId: ""
-
 });
 
-const messaging = initializedFirebaseApp.messaging();messaging.usePublicVapidKey(
+const messaging = initializedFirebaseApp.messaging();
+
+
+
+messaging.usePublicVapidKey(
 	// Project Settings => Cloud Messaging => Web Push certificates
   ""
 );
