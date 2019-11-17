@@ -3,8 +3,8 @@ import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
 
-import { Link } from "react-router-dom";
-import { Container, Row, Col, Form } from 'react-bootstrap';
+import { Button, Container, Row, Col, Form, Image } from 'react-bootstrap';
+import { IoIosAdd } from "react-icons/io";
 
 export default class RealizarPedido extends React.Component{
     constructor(props){
@@ -152,14 +152,14 @@ export default class RealizarPedido extends React.Component{
 
                                 <br />
 
-                                <img name="src" src={this.state.src}></img>
+                                <Image name="src" rounded src={this.state.src}></Image>
 
                                 <br />
 
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlID="formTempoChegada">
                                         <Form.Label>Tempo de Chegada: </Form.Label>
-                                        <select name="tempo" value={this.state.value} onChange={this.handleChange}>
+                                        <Form.Control as="select" name="tempo" value={this.state.value} onChange={this.handleChange}>
                                             <option value="0">Selecione o tempo...</option>
                                             <option value="5">5 min.</option>
                                             <option value="10">10 min.</option>
@@ -167,7 +167,7 @@ export default class RealizarPedido extends React.Component{
                                             <option value="20">20 min.</option>
                                             <option value="30">30 min.</option>
                                             <option value="60">1 hora</option>
-                                        </select>
+                                        </Form.Control>
                                     </Form.Group>
 
                                     <Form.Group>                                       
@@ -180,10 +180,10 @@ export default class RealizarPedido extends React.Component{
                                         <Form.Control name="quantidade" type="Number" value={this.state.value} onChange={this.handleChange} ></Form.Control> 
                                     </Form.Group>
 
-                                    <button type="submit"> Pedir! </button>
+                                    <Button type="submit" onClick={this.pushProduto} variant="warning"> <IoIosAdd></IoIosAdd> Adicionar produto</Button>  
                                     <br />
                                     <br />
-                                    <button type="button" onClick={this.pushProduto}> Adicionar produto </button>
+                                    <Button type="submit" variant="success">Pedir!</Button>
                                 </Form>
                             </Col>
                             <Col></Col>

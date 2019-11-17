@@ -2,10 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\components",
-    "\\src\\pages",
-    "\\src\\pages\\Padaria"
+    "\\src\\components"
   ],
-  "SelectedNode": "\\src\\pages\\Padaria\\IntroducaoPadaria.js",
+  "SelectedNode": "\\src\\pages",
   "PreviewInSolutionExplorer": false
 }

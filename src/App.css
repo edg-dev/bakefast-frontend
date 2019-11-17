@@ -5,7 +5,9 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-    border: 1px solid white;
+
+    padding-top: 5%;
+    
 }
 
 .App-logo {
@@ -22,7 +24,7 @@
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
- 
+    padding-bottom: 5%;
 }
 
 .App-link {
