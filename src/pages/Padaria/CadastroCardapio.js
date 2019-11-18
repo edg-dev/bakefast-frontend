@@ -3,6 +3,10 @@ import '../../App.css';
 import api from '../../config/api';
 import { Container, Row, Col, Form } from "react-bootstrap";
 
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
 export default class CadastroCardapio extends React.Component {
     constructor(props){
         super(props);
@@ -102,12 +106,27 @@ export default class CadastroCardapio extends React.Component {
                                     <Form onSubmit={this.handleSubmit}>
                                         <Form.Group controlId="formImagem">
                                             <Form.Label>Imagem: </Form.Label>
-                                            <Form.Control type="file" name="file" onChange={this.singleFileChangedHandler}/>
+                                            <br></br>
+                                        <Button
+                                                variant="contained"
+                                                color="default"
+                                                startIcon={<CloudUploadIcon />}
+                                        >
+                                               <Form.Control type="file" name="file" onChange={this.singleFileChangedHandler}/>
+                                        </Button>
                                         </Form.Group>
 
-                                        <button type="submit">
-                                            Cadastrar teste
-                                        </button>
+                                        <br></br>
+                                        <div>
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            type="submit"                                       
+                                            endIcon={<Icon>send</Icon>}
+                                            >
+                                            Cadastrar
+                                        </Button>
+                                        </div>
 
                                         
                                     </Form>
