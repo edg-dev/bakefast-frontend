@@ -180,10 +180,10 @@ export default class RealizarPedido extends React.Component{
                                         <Form.Control name="quantidade" type="Number" value={this.state.value} onChange={this.handleChange} ></Form.Control> 
                                     </Form.Group>
 
-                                    <Button type="submit" onClick={this.pushProduto} variant="warning"> <IoIosAdd></IoIosAdd> Adicionar produto</Button>  
+                                    <Button type="submit" onClick={this.pushProduto} variant="success"> <IoIosAdd></IoIosAdd> Adicionar produto</Button>  
                                     <br />
                                     <br />
-                                    <Button type="submit" variant="success">Pedir!</Button>
+                                    <Button type="submit" variant="primary">Pedir!</Button>
                                 </Form>
                             </Col>
                             <Col></Col>
