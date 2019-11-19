@@ -32,7 +32,7 @@ export default class PerfilCliente extends React.Component {
 
                 axios.post(`https://iid.googleapis.com/iid/v1/${token}/rel/topics/all`, null, {
                     headers: {
-                        "Authorization": ""
+                        "Authorization": "key=AAAAPxpI230:APA91bEgNkyS4ES0V-gEFf-_xMb4cqNMCJVtPufACihrjWM8rK4wT408q0mSOjzKf0vLCbLE4t-BlGgbRtASw7KSanUi3zQrOXZw9YPLXZxcQ3BQrPRyyItKzHOyxSRVqNwc4BdzhMhi"
                     }
                 })
                 .then(res => {

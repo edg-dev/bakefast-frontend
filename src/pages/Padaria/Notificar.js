@@ -42,7 +42,7 @@ export default class Notificar extends React.Component{
             "to": "/topics/all"
         }, {
             headers: {
-                "Authorization": ""
+                "Authorization": "key=AAAAPxpI230:APA91bEgNkyS4ES0V-gEFf-_xMb4cqNMCJVtPufACihrjWM8rK4wT408q0mSOjzKf0vLCbLE4t-BlGgbRtASw7KSanUi3zQrOXZw9YPLXZxcQ3BQrPRyyItKzHOyxSRVqNwc4BdzhMhi"
             }
         })
         .then(res => {
