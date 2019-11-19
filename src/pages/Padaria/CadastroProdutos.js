@@ -5,6 +5,9 @@ import api from '../../config/api';
 import Galeria from '../../components/customComponents/galeria';
 
 import { Form, Container, Row, Col } from "react-bootstrap";
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 export default class CadastroProdutos extends React.Component {
     constructor(props){
@@ -109,13 +112,29 @@ export default class CadastroProdutos extends React.Component {
                                     <Form onSubmit={this.handleSubmit}>
                                         <Form.Group controlId="formImagem">
                                             <Form.Label>Imagem: </Form.Label>
-                                            <Form.Control type="file" multiple name="file" onChange={this.multipleFileChangeHandler}/>
+                                            <br></br>
+                                            <Button
+                                                    variant="contained"
+                                                    color="default"
+                                                    startIcon={<CloudUploadIcon />}
+                                            >
+                                                <Form.Control type="file" multiple name="file" onChange={this.multipleFileChangeHandler}/>
+                                            </Button>
                                         </Form.Group>
-
-                                        <button type="submit">
+                                        <br></br>
+                                        <div>
+                                        <Button
+                                            variant="contained"
+                                            color="primary"
+                                            type="submit"                                       
+                                            endIcon={<Icon>send</Icon>}
+                                            >
                                             Cadastrar
-                                        </button>
+                                        </Button>
+                                        </div>
                                     </Form>
+                                    <br></br>
+
 
                                    <Galeria
                                     idGaleria={localStorage.getItem('@bakefast/idPadaria')} 
@@ -124,6 +143,7 @@ export default class CadastroProdutos extends React.Component {
                                     onClick={() => this.verGaleria()}>                                  
                                    </Galeria>
                                    
+
                                 </Col>
                                 <Col></Col>
                             </Row>

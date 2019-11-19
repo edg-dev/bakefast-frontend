@@ -9,6 +9,8 @@ import Produtos from '../../components/customComponents/produtos';
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
 import { messaging } from '../../init-fcm';
+import Fab from '@material-ui/core/Fab';
+import NavigationIcon from '@material-ui/icons/Navigation';
 
 export default class PerfilCliente extends React.Component {
     constructor(props){
@@ -84,17 +86,29 @@ export default class PerfilCliente extends React.Component {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h3>Logado como: {this.state.nome}</h3>
-
+                                <h3>Olá {this.state.nome}</h3>
+                                <br></br>
                                 <p>Veja os produtos das padarias!</p>
-                                <button onClick={this.galeria}>
-                                    Visualizar
-                                </button>
+
+                                    <Fab
+                                    onClick={this.galeria}
+                                    variant="extended"
+                                    size="small"
+                                    color="primary"
+                                    aria-label="add"
+                                    >
+                                    <NavigationIcon />
+                                    Visualizar 
+                                    </Fab>
+
+                                    <br/><br/>
 
                                 <h4>Pedidos Recentes:</h4>
                                 {this.state.pedidos.map(pedidos =>
                                    <Produtos pedidos={pedidos.produtos}></Produtos>
                                 )}
+
+                                <br/>
                                 
                                 <div><Link to="/RealizarPedido/"><ButtonPrimary button="Fazer Pedido"/></Link></div> 
 
