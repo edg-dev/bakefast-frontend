@@ -7,7 +7,7 @@ import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import Produtos from '../../components/customComponents/produtos';
 
 import { Link } from "react-router-dom";
-import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
+import { Container, Row, Col,} from 'react-bootstrap';
 import { messaging } from '../../init-fcm';
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';

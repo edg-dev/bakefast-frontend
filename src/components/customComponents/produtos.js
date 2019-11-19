@@ -5,7 +5,7 @@ function Produtos(props) {
     const pedidos = props.pedidos;
 
     return (
-        <Table className="Table">
+        <Table>
             <tr>
                 <th>Nome</th>
                 <th>Quantidade</th>
