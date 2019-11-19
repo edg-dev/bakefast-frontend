@@ -93,15 +93,9 @@ export default class PerfilCliente extends React.Component {
 
                                 <h4>Pedidos Recentes:</h4>
                                 {this.state.pedidos.map(pedidos =>
-                                    <Table responsive className="Table">
-                                        <tr>
-                                            <th>Pedido 1</th>
-                                        </tr>
-                                        <tr>
-                                            <td><Produtos pedidos={pedidos.produtos}></Produtos></td>
-                                        </tr>
-                                    </Table>
+                                   <Produtos pedidos={pedidos.produtos}></Produtos>
                                 )}
+                                
                                 <div><Link to="/RealizarPedido/"><ButtonPrimary button="Fazer Pedido"/></Link></div> 
 
                             </Col>
