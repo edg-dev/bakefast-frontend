@@ -2,9 +2,8 @@ import React from 'react';
 import '../../App.css';
 import { Link } from "react-router-dom";
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
 
 function Notificar() {
     return (
@@ -18,7 +17,9 @@ function Notificar() {
                                     <p>Acabaram de sair bolos do forno! <ButtonPrimary button="Notificar" /></p>
                                     <p>Pães quentinhos do forno! <ButtonPrimary button="Notificar" /></p>
                                     <p>Notificações cadastradas : 3/3</p>
-                                    <Link to="/Notificacoes/"><ButtonInfo button="Gerenciar Notificações" /></Link>
+                                    <Link to="">
+                                        <Button variant="info" disabled> Gerenciar Notificações </Button>
+                                    </Link>
                             </Col>
                             <Col></Col>
                         </Row>
