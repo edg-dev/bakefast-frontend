@@ -30,6 +30,13 @@
   color: #61dafb;
 }
 
+Table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  width: 20%;
+  height: 50px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

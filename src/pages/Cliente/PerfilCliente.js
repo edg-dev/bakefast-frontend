@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import '../../App.css';
 import api from '../../config/api';
@@ -7,6 +8,7 @@ import Produtos from '../../components/customComponents/produtos';
 
 import { Link } from "react-router-dom";
 import { Container, Row, Col, Table, Dropdown } from 'react-bootstrap';
+import { messaging } from '../../init-fcm';
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
 
@@ -17,11 +19,40 @@ export default class PerfilCliente extends React.Component {
             id: this.props.id,
             nome: localStorage.getItem('@bakefast/username'),
             res: this.props.dados,
-            pedidos: []
+            pedidos: [],
+            token: ''
         }
     }   
 
-    componentDidMount(){
+    async componentDidMount(){
+
+        //Validação das notificações
+        messaging.requestPermission()
+        .then(async function() {
+                const token = await messaging.getToken();               
+                console.log(token);
+
+                axios.post(`https://iid.googleapis.com/iid/v1/${token}/rel/topics/all`, null, {
+                    headers: {
+                        "Authorization": "key=AAAAPxpI230:APA91bEgNkyS4ES0V-gEFf-_xMb4cqNMCJVtPufACihrjWM8rK4wT408q0mSOjzKf0vLCbLE4t-BlGgbRtASw7KSanUi3zQrOXZw9YPLXZxcQ3BQrPRyyItKzHOyxSRVqNwc4BdzhMhi"
+                    }
+                })
+                .then(res => {
+                    console.log('Sucesso', res);
+                })
+                .catch(err => {
+                    console.log('Erro', err);
+                })
+
+        })
+        .catch(err =>  {
+          console.log("Não foi possível obter token.", err);
+        });  
+
+        navigator.serviceWorker.addEventListener("message", (message) => console.log(message));
+
+
+        //Carregamento de pedidos recentes do cliente
         let idCliente = localStorage.getItem('@bakefast/idCliente');
         api.get(`pedido?idCliente=${idCliente}&limit=5`)
         .then(res => {
