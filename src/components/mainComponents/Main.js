@@ -12,7 +12,6 @@ import CadastroCliente from '../../pages/Cliente/CadastroCliente';
 import PerfilPadaria from '../../pages/Padaria/PerfilPadaria';
 import CadastroCardapio from '../../pages/Padaria/CadastroCardapio';
 import CadastroProdutos from '../../pages/Padaria/CadastroProdutos';
-import Notificacoes from '../../pages/Padaria/Notificacoes';
 import Notificar from '../../pages/Padaria/Notificar';
 import InformacoesEstatisticas from '../../pages/Padaria/InformacoesEstatisticas';
 import VizualizarPadaria from '../../pages/Padaria/VizualizarPadaria';
@@ -36,7 +35,6 @@ function Main() {
           <Route path="/PerfilPadaria/" component={PerfilPadaria} />
           <Route path="/CadastroCardapio/" component={CadastroCardapio} />
           <Route path="/CadastroProdutos/" component={CadastroProdutos} />
-          <Route path="/Notificacoes/" component={Notificacoes} />
           <Route path="/Notificar/" component={Notificar} />
           <Route path="/InformacoesEstatisticas/" component={InformacoesEstatisticas} />
           <Route path="/VizualizarPadaria/" component={VizualizarPadaria} />
