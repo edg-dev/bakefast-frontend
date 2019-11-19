@@ -4,7 +4,6 @@ import '../../App.css';
 
 import api from '../../config/api';
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
 import Produtos from '../../components/customComponents/produtos';
 
 import { Link } from "react-router-dom";
