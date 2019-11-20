@@ -5,7 +5,6 @@
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
-
     padding-top: 5%;
     
 }
@@ -38,4 +37,11 @@
   to {
     transform: rotate(360deg);
   }
+}
+table, tr,th, td {
+    border: 2px solid black;
+    text-align: center;
+    border-collapse: collapse;
+    width: 20%;
+    height: 50px;
 }

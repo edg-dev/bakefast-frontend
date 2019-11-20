@@ -4,7 +4,6 @@ import '../../App.css';
 
 import api from '../../config/api';
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
 import Produtos from '../../components/customComponents/produtos';
 
 import { Link } from "react-router-dom";
@@ -97,7 +96,7 @@ export default class PerfilPadaria extends React.Component{
                                 <Col></Col>
                                 <Col xs={8}>
     
-                                    <h3>Logado como: {this.state.nomePadaria}</h3>
+                                    <h3>{this.state.nomePadaria}</h3>
                                     <p></p>
                                         <h4>Pedidos:</h4>
 
@@ -114,9 +113,7 @@ export default class PerfilPadaria extends React.Component{
                                                 </div>
                                             )}
                                         </div>
-    
-                                        <p>Foram realizados X pedidos nos ultimos 30min:</p>
-                                        
+                              
                                         <p>Acesse e dispare notificações aos seus clientes:
                                             <div><Link to="/Notificar/"><ButtonPrimary button="Notificar"/></Link></div></p>
                                         
@@ -126,8 +123,6 @@ export default class PerfilPadaria extends React.Component{
                                         <p>Cadastre imagens de seus produtos
                                             <div><Link to="/CadastroProdutos/"><ButtonPrimary button="CadastrarProdutos"/></Link></div></p>
                                         
-                                        <p>Veja informações sobre vendas:
-                                            <div><Link to="/InformacoesEstatisticas/"><ButtonInfo button="Informações" /></Link></div></p>
                                 </Col>
                                 <Col></Col>
                             </Row>

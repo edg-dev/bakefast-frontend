@@ -16,7 +16,7 @@ function ModoDeUsar() {
                                 <p> Primeiro de tudo ache uma padaria no aplicativo bem proxima a você.</p>
                                 <p>Depois, procure o que voce deseja comprar, baseado no que a padaria tem a oferecer.</p>
                                 <p>Crie seu pedido e pegue o pombo, digo, o pão!</p>
-                                <Link to="/Pedidos/">
+                                <Link to="/RealizarPedido/">
                                     <ButtonSucess button="Entendi"/>
                                 </Link>
                             </Col>
