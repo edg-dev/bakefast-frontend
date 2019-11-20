@@ -3,7 +3,7 @@ import React from 'react';
 import '../../App.css';
 import api from '../../config/api';
 
-import { Container } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 
 export default class Pedidos extends React.Component {
     constructor(props){
@@ -33,11 +33,19 @@ export default class Pedidos extends React.Component {
             <div className="App">
                 <header className="App-header">
                     <Container>
-                        <h3>Galeria: {localStorage.getItem('@bakefast/nomeGaleria')}</h3>
-
-                        {this.state.imagens.map(imagem => 
-                            <img src={imagem} style={{width: '30%'}}></img>    
-                        )}
+                        <Row>
+                            <Col></Col>
+                            <Col xs={8}>
+                                <h3>Galeria: {localStorage.getItem('@bakefast/nomeGaleria')}</h3>
+                                {this.state.imagens.map(imagem => 
+                                <div>  
+                                        <br />
+                                        <img src={imagem} style={{ width: '100%', border: 'solid'}}></img>
+                                </div>     
+                                )}
+                            </Col>
+                            <Col></Col>
+                        </Row>
                     </Container>
                 </header>
             </div>
