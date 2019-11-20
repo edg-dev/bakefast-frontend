@@ -21,12 +21,12 @@ export default class Galeria extends React.Component {
             <Fab
             onClick={this.handleClick}
             variant="extended"
-            size="medium"
-            color="primary"
+            size="small"
+            color=""
             aria-label="add"
             >
             <NavigationIcon />
-            Visualizar Galeria 
+            Visualizar
             </Fab>
         );
     }
