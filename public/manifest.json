@@ -1,26 +1,53 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  
+  "name": "BakeFast",
+  "short_name": "BakeFast",
+  "theme_color": "#e7c316",
+  "background_color": "#e7c316",
+  "scope": ".",
+  "start_url": ".",
+  "orientation": "landscape",
+  "display": "standalone",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
     },
     {
-      "src": "logo192.png",
+      "src": "icon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "icon-128x128.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "icon-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "icon-384x384.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "icon-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "gcm_sender_id": "271023922045"
+  ]
 }
