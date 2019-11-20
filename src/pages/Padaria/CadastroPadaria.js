@@ -52,6 +52,8 @@ export default class CadastroPadaria extends React.Component {
         .then(res => {
             console.log(res);
             console.log(res.data);
+            this.shoot('Padaria cadastrada com sucesso!');
+            this.props.history.push('/login');
         })
         .catch(error => {
             console.log(error.response)
@@ -117,7 +119,7 @@ export default class CadastroPadaria extends React.Component {
                                     </Form.Group>
 
                                     <div>
-                                        <ButtonPrimary onClick={() => this.shoot("Padaria Cadastrada Com Sucesso")} type="submit" button="Cadastrar" >
+                                        <ButtonPrimary type="submit" button="Cadastrar" >
                                             Cadastrar
                                         </ButtonPrimary>
                                     </div>
