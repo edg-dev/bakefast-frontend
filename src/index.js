@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
+import { registerServiceWorker } from './serviceWorker'
 import * as serviceWorker from './serviceWorker';
 
 if ("serviceWorker" in navigator) {
@@ -30,4 +31,5 @@ ReactDOM.render(
 // Learn more about service workers: https://bit.ly/CRA-PWA
 //serviceWorker.unregister();
 serviceWorker.register();
+registerServiceWorker();
 
