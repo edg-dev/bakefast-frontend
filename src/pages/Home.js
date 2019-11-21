@@ -2,13 +2,20 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Image, Container, Row, Col } from "react-bootstrap";
 import { messaging } from '../init-fcm'
-
+import App from '../App';
 import ButtonPrimary from '../components/cssComponents/buttonPrimary';
 import logo_color from "../images/logo_256x.png";
 
 import '../App.css';
 
 export default class Home extends React.Component {
+    componentDidUpdate(){
+        App();
+    }
+
+    async componentDidMount(){
+        if(!window.location.hash) { window.location = window.location + '#loaded'; window.location.reload(); }  
+    }
 
     render() {
         return (

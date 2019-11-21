@@ -5,6 +5,7 @@ import '../../App.css';
 import api from '../../config/api';
 import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import Produtos from '../../components/customComponents/produtos';
+import App from '../../App';
 
 import { Link } from "react-router-dom";
 import { Container, Row, Col,} from 'react-bootstrap';
@@ -24,7 +25,13 @@ export default class PerfilCliente extends React.Component {
         }
     }   
 
+    componentDidUpdate(){
+        App();
+    }
+
     async componentDidMount(){
+
+        if(!window.location.hash) { window.location = window.location + '#loaded'; window.location.reload(); }
 
         //Validação das notificações
         messaging.requestPermission()
