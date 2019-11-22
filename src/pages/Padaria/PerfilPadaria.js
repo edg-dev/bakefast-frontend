@@ -1,13 +1,14 @@
 import React from 'react';
 
-import '../../App.css';
-
-import api from '../../config/api';
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import Produtos from '../../components/customComponents/produtos';
-
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
+
+import App from '../../App';
+import api from '../../config/api';
+import Produtos from '../../components/customComponents/produtos';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+
+import '../../App.css';
 
 export default class PerfilPadaria extends React.Component{
     constructor(props){
@@ -18,9 +19,16 @@ export default class PerfilPadaria extends React.Component{
             idPedido: '',
             pedidos: []
         }
+    }    
+    
+    componentDidUpdate(){
+        new App();
     }
 
-    componentDidMount(){
+    async componentDidMount(){
+
+        if(!window.location.hash) { window.location = window.location + '#loaded'; window.location.reload(); }
+
         let idPadaria = localStorage.getItem('@bakefast/idPadaria');
 
         api.get(`pedido?idPadaria=${idPadaria}`)

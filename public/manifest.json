@@ -8,6 +8,7 @@
   "start_url": ".",
   "orientation": "landscape",
   "display": "standalone",
+  "gcm_sender_id": "271023922045",
   "icons": [
     {
       "src": "icon-72x72.png",

@@ -1,9 +1,10 @@
 import React from 'react';
 
-import '../../App.css';
+import { Container, Row, Col} from 'react-bootstrap';
+
 import api from '../../config/api';
 
-import { Container, Row, Col} from 'react-bootstrap';
+import '../../App.css';
 
 export default class Pedidos extends React.Component {
     constructor(props){
@@ -40,7 +41,7 @@ export default class Pedidos extends React.Component {
                                 {this.state.imagens.map(imagem => 
                                 <div>  
                                         <br />
-                                        <img src={imagem} style={{ width: '100%', border: 'solid'}}></img>
+                                        <img alt="gallery"src={imagem} style={{ width: '100%', border: 'solid'}}></img>
                                 </div>     
                                 )}
                             </Col>

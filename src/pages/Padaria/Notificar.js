@@ -1,11 +1,12 @@
 import React from 'react';
 
-import '../../App.css';
-
 import { Container, Form } from "react-bootstrap";
 
-import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
 import axios from 'axios';
+
+import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
+
+import '../../App.css';
 
 export default class Notificar extends React.Component{
     constructor(props){
@@ -37,7 +38,7 @@ export default class Notificar extends React.Component{
                 "title": titulo,
                 "body": texto,
                 "click_action": "http://localhost:3000/perfilCliente",
-                "icon": "http://localhost:3000/logo192.png"
+                "icon": "http://localhost:3000/icon-192x192.png"
             },
             "to": "/topics/all"
         }, {
