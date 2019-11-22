@@ -1,11 +1,12 @@
 import React from 'react';
+
 import { Link } from "react-router-dom";
 import { Button } from 'react-bootstrap';
 import { Nav, Navbar} from "react-bootstrap";
-
 import { IoIosCafe, IoIosHome, IoIosMan} from "react-icons/io";
 
 import '../../App.css';
+
 function Menu() {
     return (
     <header>

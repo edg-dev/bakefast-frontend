@@ -2,9 +2,9 @@ import React from 'react';
 
 import './App.css';
 
-import Menu from './components/mainComponents/Menu';
 import Main from './components/mainComponents/Main';
-import MenuPadaria from './components/mainComponents/MenuPadaria'
+import MenuPadaria from './components/materialComponents/menuPadaria'
+import MenuCliente from './components/materialComponents/menuCliente'
 
 function App() {
 
@@ -17,8 +17,8 @@ function App() {
     <div className="App" >
 
       <Main></Main>
-      {isCliente != null ? <Menu></Menu> : <div></div>}
-      {isPadaria != null ? <MenuPadaria></MenuPadaria> : <div></div>}
+      {isCliente != null ? <MenuCliente></MenuCliente> : <br/>}
+      {isPadaria != null ? <MenuPadaria></MenuPadaria> : <br/>}
 
     </div>
   );

@@ -1,7 +1,8 @@
+import React from 'react';
+
 import { Link } from "react-router-dom";
 import { Image, Container, Row, Col, Form } from "react-bootstrap";
 
-import React from 'react';
 import api from '../config/api';
 import logo_color from "../images/logo_256x.png";
 import ButtonSubmit from '../components/cssComponents/buttonSubmit';

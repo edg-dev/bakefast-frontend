@@ -1,10 +1,15 @@
-import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+
 import { BrowserRouter } from "react-router-dom";
 import { registerServiceWorker } from './serviceWorker'
+
+import ReactDOM from 'react-dom';
+
+import App from './App';
+
+import './index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
 import * as serviceWorker from './serviceWorker';
 
 if ("serviceWorker" in navigator) {
@@ -29,7 +34,7 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-//serviceWorker.unregister();
+serviceWorker.unregister();
 serviceWorker.register();
 registerServiceWorker();
 

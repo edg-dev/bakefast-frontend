@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Form } from "react-bootstrap";
+
+import { Form } from "react-bootstrap";
 
 export class pedidoInput extends React.Component {
     render(){

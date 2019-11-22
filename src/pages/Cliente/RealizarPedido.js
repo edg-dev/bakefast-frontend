@@ -1,10 +1,11 @@
 import React from 'react';
 
-import '../../App.css';
+import { IoIosAdd } from "react-icons/io";
+import { Button, Container, Row, Col, Form, Image } from 'react-bootstrap';
+
 import api from '../../config/api';
 
-import { Button, Container, Row, Col, Form, Image } from 'react-bootstrap';
-import { IoIosAdd } from "react-icons/io";
+import '../../App.css';
 
 export default class RealizarPedido extends React.Component{
     constructor(props){

@@ -1,17 +1,20 @@
 import React from 'react';
-import axios from 'axios';
-
-import '../../App.css';
-import api from '../../config/api';
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-import Produtos from '../../components/customComponents/produtos';
-import App from '../../App';
 
 import { Link } from "react-router-dom";
-import { Container, Row, Col,} from 'react-bootstrap';
 import { messaging } from '../../init-fcm';
+import { Container, Row, Col } from 'react-bootstrap';
+
+import axios from 'axios';
+
 import Fab from '@material-ui/core/Fab';
 import NavigationIcon from '@material-ui/icons/Navigation';
+
+import App from '../../App';
+import api from '../../config/api';
+import Produtos from '../../components/customComponents/produtos';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+
+import '../../App.css';
 
 export default class PerfilCliente extends React.Component {
     constructor(props){

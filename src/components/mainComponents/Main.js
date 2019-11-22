@@ -1,23 +1,24 @@
 import React from 'react';
+
 import { Route, Switch } from "react-router-dom";
 
-import SejaBemVindoCliente from '../../pages/Cliente/SejaBemVindoCliente';
+import Home from '../../pages/Home';
 import Login from '../../pages/Login';
-import ModoDeUsar from '../../pages/Cliente/ModoDeUsar';
 import Galeria from '../../pages/Cliente/Galeria';
+import Notificar from '../../pages/Padaria/Notificar';
+import ModoDeUsar from '../../pages/Cliente/ModoDeUsar';
 import PerfilCliente from '../../pages/Cliente/PerfilCliente';
-import IntroducaoPadaria from '../../pages/Padaria/IntroducaoPadaria';
+import PerfilPadaria from '../../pages/Padaria/PerfilPadaria';
+import RealizarPedido from '../../pages/Cliente/RealizarPedido';
 import CadastroPadaria from '../../pages/Padaria/CadastroPadaria';
 import CadastroCliente from '../../pages/Cliente/CadastroCliente';
-import PerfilPadaria from '../../pages/Padaria/PerfilPadaria';
 import CadastroCardapio from '../../pages/Padaria/CadastroCardapio';
 import CadastroProdutos from '../../pages/Padaria/CadastroProdutos';
-import Notificar from '../../pages/Padaria/Notificar';
-import InformacoesEstatisticas from '../../pages/Padaria/InformacoesEstatisticas';
+import IntroducaoPadaria from '../../pages/Padaria/IntroducaoPadaria';
 import VizualizarPadaria from '../../pages/Padaria/VizualizarPadaria';
-import RealizarPedido from '../../pages/Cliente/RealizarPedido';
-import Home from '../../pages/Home';
 import VisualizarGaleria from '../../pages/Cliente/VisualizarGaleria';
+import SejaBemVindoCliente from '../../pages/Cliente/SejaBemVindoCliente';
+import InformacoesEstatisticas from '../../pages/Padaria/InformacoesEstatisticas';
 
 function Main() {
     return (

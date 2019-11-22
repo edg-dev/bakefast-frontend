@@ -1,13 +1,15 @@
 import React from 'react';
 
-import '../../App.css';
+import { Form, Container, Row, Col } from "react-bootstrap";
+
+import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
 import api from '../../config/api';
 import Galeria from '../../components/customComponents/galeria';
 
-import { Form, Container, Row, Col } from "react-bootstrap";
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+import '../../App.css';
 
 export default class CadastroProdutos extends React.Component {
     constructor(props){

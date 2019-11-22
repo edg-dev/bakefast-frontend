@@ -1,10 +1,11 @@
 import React from 'react';
+
 import { Link } from "react-router-dom";
 import { Image, Container, Row, Col } from "react-bootstrap";
-import { messaging } from '../init-fcm'
+
 import App from '../App';
-import ButtonPrimary from '../components/cssComponents/buttonPrimary';
 import logo_color from "../images/logo_256x.png";
+import ButtonPrimary from '../components/cssComponents/buttonPrimary';
 
 import '../App.css';
 

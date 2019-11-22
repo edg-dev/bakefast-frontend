@@ -1,8 +1,11 @@
 import React from 'react';
+
 import { Container, Row, Col, Form } from "react-bootstrap";
-import '../../App.css';
+
 import api from '../../config/api'
 import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
+
+import '../../App.css';
 
 export default class CadastroCliente extends React.Component {
     constructor(props){

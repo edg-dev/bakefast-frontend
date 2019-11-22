@@ -1,11 +1,14 @@
 import React from 'react';
-import '../../App.css';
-import api from '../../config/api';
+
 import { Container, Row, Col, Form } from "react-bootstrap";
 
-import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
+
+import api from '../../config/api';
+
+import '../../App.css';
 
 export default class CadastroCardapio extends React.Component {
     constructor(props){

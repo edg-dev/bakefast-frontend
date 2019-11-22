@@ -1,11 +1,12 @@
 import React from 'react';
+
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
-import '../../App.css';
 
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 import ButtonInfo from '../../components/cssComponents/buttonInfo';
+import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
 
+import '../../App.css';
 
 function SejaBemVindoCliente() {
         return (

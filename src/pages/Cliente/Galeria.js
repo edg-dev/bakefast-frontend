@@ -1,10 +1,11 @@
 import React from 'react';
 
-import '../../App.css';
+import { Container, Table, Row, Col } from 'react-bootstrap';
+
 import api from '../../config/api';
 import Galeria from '../../components/customComponents/galeria';
 
-import { Container, Table, Row, Col } from 'react-bootstrap';
+import '../../App.css';
 
 export default class Pedidos extends React.Component {
     constructor(props){
