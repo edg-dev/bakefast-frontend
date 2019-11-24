@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Fab from '@material-ui/core/Fab';
+import Button from '@material-ui/core/Button';
 import NavigationIcon from '@material-ui/icons/Navigation';
 
 export default class Galeria extends React.Component {
@@ -18,16 +18,9 @@ export default class Galeria extends React.Component {
     render() {
         return (
 
-            <Fab
-            onClick={this.handleClick}
-            variant="extended"
-            size="small"
-            color=""
-            aria-label="add"
-            >
-            <NavigationIcon />
-            Visualizar
-            </Fab>
+            <Button onClick={this.handleClick} style={{color: 'blue'}}>
+                Visualizar <NavigationIcon />
+            </Button>
         );
     }
 }

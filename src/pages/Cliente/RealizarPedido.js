@@ -1,18 +1,27 @@
 import React from 'react';
 
-import { IoIosAdd } from "react-icons/io";
 import { Button, Container, Row, Col, Form, Image } from 'react-bootstrap';
 
 import api from '../../config/api';
 
 import '../../App.css';
 
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
+
+import AddIcon from '@material-ui/icons/Add';
+import CheckIcon from '@material-ui/icons/Check';
+import TextField from '@material-ui/core/TextField';
+import Chip from '@material-ui/core/Chip';
+import FreeBreakfastIcon from '@material-ui/icons/FreeBreakfast';
+
 export default class RealizarPedido extends React.Component{
     constructor(props){
         super(props);
 
-        this.state = {
-            tempo: '',
+        this.state = {          
             padarias: [],
             src: '',
             produtos: [{
@@ -23,12 +32,21 @@ export default class RealizarPedido extends React.Component{
             quantidade: ''      
         }
 
+        this.state.produtos.map(produto => {
+            if(produto.nome === undefined){
+                this.state.produtos.splice(0,1);
+            }
+            return null;
+        });
+        
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.handleDelete = this.handleDelete.bind(this);
+        this.pushProduto = this.pushProduto.bind(this);
     }
 
     componentDidMount(){
+        console.log(this.state);
         api.get('/padaria')
         .then(res => {
             const padarias = res.data;
@@ -36,14 +54,21 @@ export default class RealizarPedido extends React.Component{
         });
     }
    
-    handleChange = async event => {
+    handleDelete = (produto) => {
+        var index = this.state.produtos.indexOf(produto);
+        this.state.produtos.splice(index, 1);
+        this.setState({ghostState: ''});
+    }
+   
+    handleChange = event => {
+       
         let name = event.target.name;
         let value = event.target.value;
-        this.setState({ [name]: value });
-
+        this.setState((state) => ({ [name]: value }));
+        console.log(this.state);
         if(event.target.name === 'idPadariaSelecionada'){
             let idPadaria = this.state.idPadariaSelecionada;
-            await api.post('cardapio/getCardapio', {
+            api.post('cardapio/getCardapio', {
                 idPadaria: idPadaria
             })
             .then(res => {
@@ -53,7 +78,7 @@ export default class RealizarPedido extends React.Component{
             .catch(error => {
                 console.log(error.response);
             });
-        }
+        }       
     }
 
     pushProduto = event => {
@@ -66,7 +91,7 @@ export default class RealizarPedido extends React.Component{
 
         this.setState({
             produtos: [...this.state.produtos, elemento]
-        })
+        });
     }
 
     handleSubmit = event => {
@@ -90,17 +115,6 @@ export default class RealizarPedido extends React.Component{
         var str_hora = hora + ':' + min;
 
         console.log(str_hora);
-
-        var teste = {
-            status: 1,
-            tempoInicio: str_hora,
-            idPadaria: idPadaria,
-            idCliente: idCliente,
-            tempo: tempo,
-            produtos: this.state.produtos
-        }
-
-        console.log(teste);
 
         let produtos = this.state.produtos;
 
@@ -142,25 +156,45 @@ export default class RealizarPedido extends React.Component{
                             <Col xs={8}>
 
                                 <p><b>Realizar Pedido</b></p>
+                                   
+                                <br />
+
+                                <div>          
+                                    <FormControl style={{width: '200px'}}>
+                                        <InputLabel>Selecione a padaria</InputLabel>
+                                        <Select onChange={this.handleChange} name="idPadariaSelecionada" value={this.state.value}>
+                                            {this.state.padarias.map(padaria => 
+                                                <MenuItem value={padaria._id}> {padaria.nome} </MenuItem>
+                                            )}
+                                        </Select>
+                                    </FormControl>
+                                </div>
 
                                 <br />
 
-                                <p>Buscar Padaria</p>
-
-                                <select name="idPadariaSelecionada" value={this.state.value} onChange={this.handleChange}>
-                                    {this.state.padarias.map(padarias => <option  value={padarias._id}> {padarias.nome} </option>)}
-                                </select>
-
-                                <br />
-
-                                <Image name="src" rounded src={this.state.src}></Image>
+                                <Image style={{width: '50%'}} name="src" rounded src={this.state.src}></Image>
 
                                 <br />
 
                                 <Form onSubmit={this.handleSubmit}>
                                     <Form.Group controlID="formTempoChegada">
                                         <Form.Label>Tempo de Chegada: </Form.Label>
-                                        <Form.Control as="select" name="tempo" value={this.state.value} onChange={this.handleChange}>
+
+                                        <div>          
+                                            <FormControl name="tempo" style={{width: '200px'}}>
+                                                <InputLabel>Selecione o tempo...</InputLabel>
+                                                <Select name="tempo" onChange={this.handleChange} value={this.state.value}>
+                                                    <MenuItem value={5}>5 min.</MenuItem>
+                                                    <MenuItem value={10}>10 min.</MenuItem>
+                                                    <MenuItem value={15}>15 min.</MenuItem>
+                                                    <MenuItem value={20}>20 min.</MenuItem>
+                                                    <MenuItem value={30}>30 min.</MenuItem>
+                                                    <MenuItem value={60}>1 hora</MenuItem>
+                                                </Select>
+                                            </FormControl>
+                                        </div>
+
+                                        {/* <Form.Control as="select" name="tempo" value={this.state.value} onChange={this.handleChange}>
                                             <option value="0">Selecione o tempo...</option>
                                             <option value="5">5 min.</option>
                                             <option value="10">10 min.</option>
@@ -168,27 +202,39 @@ export default class RealizarPedido extends React.Component{
                                             <option value="20">20 min.</option>
                                             <option value="30">30 min.</option>
                                             <option value="60">1 hora</option>
-                                        </Form.Control>
+                                        </Form.Control> */}
                                     </Form.Group>
 
-                                    <Form.Group>                                       
-                                        <Form.Label>Produto: </Form.Label>
-                                        <Form.Control name="produto" type="text"value={this.state.value} onChange={this.handleChange} ></Form.Control>                                       
+                                    <Form.Group> 
+                                        <TextField name="produto" type="text" value={this.state.value} onChange={this.handleChange} id="standard-basic" label="Produto:" />                           
                                     </Form.Group>
 
                                     <Form.Group>
-                                        <Form.Label>Quantidade: </Form.Label>
-                                        <Form.Control name="quantidade" type="Number" value={this.state.value} onChange={this.handleChange} ></Form.Control> 
+                                        <TextField name="quantidade" type="Number" value={this.state.value} onChange={this.handleChange} id="standard-basic" label="Quantidade:" />
                                     </Form.Group>
 
-                                    <Button type="submit" onClick={this.pushProduto} variant="success"> <IoIosAdd></IoIosAdd> Adicionar produto</Button>  
-                                    <br />
-                                    <br />
-                                    <Button type="submit" variant="primary">Pedir!</Button>
+                                    <Form.Group>
+                                        <Col md="auto">
+                                            <Button type="submit" onClick={this.pushProduto} style={{marginRight: '10px'}}> <AddIcon /> </Button>  
+                                            
+                                            <Button type="submit" variant="success" style={{marginLeft: '10px'}}> <CheckIcon /></Button>
+                                        </Col>                                      
+                                    </Form.Group>
+
                                 </Form>
                             </Col>
                             <Col></Col>
                         </Row>
+                        <p>Produtos adicionados</p>
+
+                        {this.state.produtos.map(produto =>
+                            <Chip
+                                icon={<FreeBreakfastIcon />}
+                                label={'Produto: ' + produto.nome + ', Quantidade: ' + produto.quantidade}
+                                onDelete={() => this.handleDelete(produto)}
+                                variant="outlined"
+                            /> 
+                        )}
                     </Container>             
                 </header>
             </div>

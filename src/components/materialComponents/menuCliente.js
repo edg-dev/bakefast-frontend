@@ -10,7 +10,8 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 import '../../App.css';
 
-const style = { color : 'black', fontSize: '30' };
+const style = { color : 'black', fontSize: '25' };
+const style2 = { color : 'red', fontSize: '25' };
 const buttonStyle = { 'background-color': 'transparent', border: 'none'};
 
 export default class MenuCliente extends React.Component {
@@ -50,7 +51,7 @@ export default class MenuCliente extends React.Component {
                 <Navbar.Brand>
                     <Link to="/">
                         <Button class="btn" style={buttonStyle}> 
-                            <ExitToAppIcon color="primary" style={style} onClick={this.handleLogout}/> 
+                            <ExitToAppIcon color="primary" style={style2} onClick={this.handleLogout}/> 
                         </Button>
                     </Link> 
                 </Navbar.Brand>

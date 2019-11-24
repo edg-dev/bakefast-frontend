@@ -1,13 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\public",
     "\\src",
     "\\src\\components",
     "\\src\\components\\customComponents",
-    "\\src\\pages",
     "\\src\\pages\\Cliente"
   ],
-  "SelectedNode": "\\src\\App.css",
+  "SelectedNode": "\\src\\components\\customComponents\\pedidoInput.js",
   "PreviewInSolutionExplorer": false
 }

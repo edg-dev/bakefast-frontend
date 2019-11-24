@@ -2,12 +2,12 @@ import React from 'react';
 
 import { Form, Container, Row, Col } from "react-bootstrap";
 
-import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 import api from '../../config/api';
 import Galeria from '../../components/customComponents/galeria';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import '../../App.css';
 
@@ -106,6 +106,9 @@ export default class CadastroProdutos extends React.Component {
                                 <Col></Col>
                                 <Col xs={8}>
                                         <h4>Cadastre aqui imagens de seus produtos:</h4>
+                                    <Col md>
+
+                                    
                                     <p>
                                         Quem nunca ficou com vontade de comer aquele pedaço de bolo só de ver o chocolate escorrendo pela massa? Nós entendemos muito bem,
                                         e por isso você pode colocar fotos de seus produtos, para que os clientes tambem fiquem com água na boca!
@@ -125,16 +128,12 @@ export default class CadastroProdutos extends React.Component {
                                         </Form.Group>
                                         <br></br>
                                         <div>
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            type="submit"                                       
-                                            endIcon={<Icon>send</Icon>}
-                                            >
-                                            Cadastrar
+                                        <Button type="submit" style={{color: 'green'}}>
+                                            Cadastrar <ChevronRightIcon/>
                                         </Button>
                                         </div>
                                     </Form>
+                                    </Col>
                                     <br></br>
 
 

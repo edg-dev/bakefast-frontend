@@ -1,18 +1,13 @@
 import React from 'react';
 
-import { Link } from "react-router-dom";
 import { messaging } from '../../init-fcm';
 import { Container, Row, Col } from 'react-bootstrap';
 
 import axios from 'axios';
 
-import Fab from '@material-ui/core/Fab';
-import NavigationIcon from '@material-ui/icons/Navigation';
-
 import App from '../../App';
 import api from '../../config/api';
-import Produtos from '../../components/customComponents/produtos';
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
+import PedidosCliente from '../../components/materialComponents/pedidosCliente';
 
 import '../../App.css';
 
@@ -64,7 +59,7 @@ export default class PerfilCliente extends React.Component {
 
         //Carregamento de pedidos recentes do cliente
         let idCliente = localStorage.getItem('@bakefast/idCliente');
-        api.get(`pedido?idCliente=${idCliente}&limit=5`)
+        api.get(`pedido?idCliente=${idCliente}&limit=5&sort=-status`)
         .then(res => {
             console.log(res.data);
 
@@ -98,29 +93,13 @@ export default class PerfilCliente extends React.Component {
                             <Col xs={8}>
                                 <h3>Olá {this.state.nome}</h3>
                                 <br></br>
-                                <p>Veja os produtos das padarias!</p>
-
-                                    <Fab
-                                    onClick={this.galeria}
-                                    variant="extended"
-                                    size="small"
-                                    color="primary"
-                                    aria-label="add"
-                                    >
-                                    <NavigationIcon />
-                                    Visualizar 
-                                    </Fab>
-
-                                    <br/><br/>
 
                                 <h4>Pedidos Recentes:</h4>
                                 {this.state.pedidos.map(pedidos =>
-                                   <Produtos pedidos={pedidos.produtos}></Produtos>
+                                   <PedidosCliente pedidos={pedidos.produtos} status={pedidos.status}></PedidosCliente>
                                 )}
-
+                                                           
                                 <br/>
-                                
-                                <div><Link to="/RealizarPedido/"><ButtonPrimary button="Fazer Pedido"/></Link></div> 
 
                             </Col>
                             <Col></Col>

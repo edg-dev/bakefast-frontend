@@ -5,7 +5,11 @@ import { Image, Container, Row, Col, Form } from "react-bootstrap";
 
 import api from '../config/api';
 import logo_color from "../images/logo_256x.png";
-import ButtonSubmit from '../components/cssComponents/buttonSubmit';
+
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import PersonIcon from '@material-ui/icons/Person';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
 import '../App.css';
 
@@ -91,20 +95,41 @@ export default class Login extends React.Component {
                             <Row>
                                 <Col></Col>
                                 <Col xs={8}>
-                                    <div><Image src={logo_color} roundedCircle thumbnail/></div>
-                                    <Form onSubmit={this.handleSubmit}>
-                                        <Form.Group controlId="formUsername">
-                                            <Form.Label>Usuário: </Form.Label>
-                                            <Form.Control type="text" placeholder="Username" name="username" value={this.state.value} onChange={this.handleChange}/>
-                                        </Form.Group>
-                                        <Form.Group controlId="formSenha">
-                                            <Form.Label>Senha: </Form.Label>
-                                            <Form.Control type="password" placeholder="Senha" name="senha" value={this.state.value} onChange={this.handleChange}/>
-                                        </Form.Group>
+                                    <div>
+                                        <Image alt="logo" src={logo_color} roundedCircle thumbnail/>
+                                    </div>
+                                        <Form onSubmit={this.handleSubmit}>
 
-                                    <ButtonSubmit button="Login" />
-                                </Form>
-                                <div><Link to="/CadastroCliente/">Não é Cadastrado?</Link></div>
+                                            <Form.Group controlId="formUsername">
+                                                <PersonIcon style={{marginTop: 25, marginRight: 15}}/>
+                                                <TextField type="text" name="username" value={this.state.value} onChange={this.handleChange} id="standard-basic" label="Usuário:" style={{width: 150}}/>                                                            
+                                            </Form.Group>
+
+                                            <Form.Group controlId="formSenha">
+                                                <VpnKeyIcon style={{marginTop: 25, marginRight: 15}}/>
+                                                <TextField type="password" name="senha" value={this.state.value} onChange={this.handleChange} id="standard-basic2" label="Senha:" style={{width: 150}}/>        
+                                            </Form.Group>
+
+                                        <Button type="submit"> Login </Button>
+                                    </Form>
+
+                                    <br />
+                                                                   
+                                    <h4>Não é cadastrado?</h4>
+
+                                    <br />
+
+                                    <div>
+                                        <Link to="/CadastroCliente/">Cadastrar como cliente</Link>
+                                    </div>
+
+                                    <br />
+
+                                    <div>
+                                        <Link to="/IntroducaoPadaria/">Cadastrar como padaria</Link>
+                                    </div>
+                                        
+
                                 </Col>
                                 <Col></Col>
                             </Row>

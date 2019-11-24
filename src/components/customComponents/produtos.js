@@ -1,25 +1,17 @@
 import React from 'react';
 
 import {Table} from 'react-bootstrap';
+import Typography from '@material-ui/core/Typography';
 
 function Produtos(props) {
     const pedidos = props.pedidos;
 
     return (
-        <Table>
-            <tr>
-                <th>Nome</th>
-                <th>Quantidade</th>
-            </tr>
-
+        <Typography>
             {pedidos.map(produto =>
-                <tr>
-                    <td>{produto.nome}</td>
-                    <td>{produto.quantidade}</td>
-                </tr>
+            <p>{produto.nome}, {produto.quantidade}</p>
             )}
-
-        </Table>
+        </Typography>
     )
 }
 

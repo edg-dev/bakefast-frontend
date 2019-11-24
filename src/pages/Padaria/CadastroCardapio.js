@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Row, Col, Form } from "react-bootstrap";
 
-import Icon from '@material-ui/core/Icon';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
@@ -99,7 +99,7 @@ export default class CadastroCardapio extends React.Component {
                                 <Col></Col>
                                 <Col xs={8}>
                                     <div>
-                                        <h2>Coloque aqui uma imagem de seus cardápio contendo seus produtos.</h2>
+                                        <h3>Coloque aqui uma imagem contendo seus produtos.</h3>
                                     </div>
                                     <p>
                                         Para facilitar sua vida e a dos clientes, os produtos não necessitam ser cadastrados, evitando assim gasto de tempo desnecessário em cadastro ou alteração de produtos para
@@ -119,16 +119,11 @@ export default class CadastroCardapio extends React.Component {
                                         </Button>
                                         </Form.Group>
 
-                                        <br></br>
+                                        
                                         <div>
-                                        <Button
-                                            variant="contained"
-                                            color="primary"
-                                            type="submit"                                       
-                                            endIcon={<Icon>send</Icon>}
-                                            >
-                                            Cadastrar
-                                        </Button>
+                                            <Button type="submit" style={{color: 'green'}}>
+                                                Cadastrar <ChevronRightIcon/>
+                                            </Button>
                                         </div>
 
                                         
