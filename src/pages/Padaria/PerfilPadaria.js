@@ -115,7 +115,10 @@ export default class PerfilPadaria extends React.Component{
                                                     <Box border={5} style={pedido.status === 1 ? { borderColor: '#00b4ffcf', borderRadius: 20} : { borderColor: 'green', borderRadius: 20}}>
                                                     {/* {() => this.renderSwitch(pedido.status)} */}
                                                     {/* <Box border={5}style={this.state.borderStyle}> */}
-                                                        <Paper>                                               
+                                                        <Paper>           
+                                                            <Typography>
+                                                                Cliente: {pedido.nomeCliente} {pedido.telefoneCliente}
+                                                            </Typography>                                    
                                                             {pedido.produtos.map(produto =>
                                                                 <Typography>
                                                                     Produto: {produto.nome}, Quantidade: {produto.quantidade}

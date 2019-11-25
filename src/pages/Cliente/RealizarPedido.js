@@ -99,6 +99,8 @@ export default class RealizarPedido extends React.Component{
 
         let idPadaria = this.state.idPadariaSelecionada;
         let idCliente = localStorage.getItem('@bakefast/idCliente');
+        let nomeCliente = localStorage.getItem('@bakefast/username');
+        let telefoneCliente = localStorage.getItem('@bakefast/telefone');
         let tempo = this.state.tempo;
 
         if(idPadaria === undefined){
@@ -130,7 +132,9 @@ export default class RealizarPedido extends React.Component{
             status: 1,
             tempoChegada: tempo,
             tempoInicio: str_hora,
-            produtos: this.state.produtos
+            produtos: this.state.produtos,
+            nomeCliente: nomeCliente,
+            telefoneCliente: telefoneCliente
         })
         .then(res => {
             console.log(res);

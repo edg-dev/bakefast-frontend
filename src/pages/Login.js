@@ -57,7 +57,7 @@ export default class Login extends React.Component {
                     } else{
                         console.log(res);
                         localStorage.setItem('@bakefast/username', res.data.nome.toString());
-                        localStorage.setItem('@bakefast/idPadaria', res.data._id.toString());
+                        localStorage.setItem('@bakefast/idPadaria', res.data._id.toString());                        
                         this.props.history.push('/PerfilPadaria');
                     }
                 })
@@ -70,6 +70,7 @@ export default class Login extends React.Component {
                 console.log(res);
                 localStorage.setItem('@bakefast/idCliente', res.data._id.toString())
                 localStorage.setItem('@bakefast/username', res.data.nome.toString());
+                localStorage.setItem('@bakefast/telefone', res.data.telefone.toString());
                 this.props.history.push('/PerfilCliente');
             }                          
         })
