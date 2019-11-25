@@ -1,10 +1,11 @@
 import React from 'react';
 
-import { Container, Form } from "react-bootstrap";
+import { Container, Form, Row, Col } from "react-bootstrap";
 
 import axios from 'axios';
 
-import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
+import Button from '@material-ui/core/Button';
+import AddAlertIcon from '@material-ui/icons/AddAlert';
 
 import '../../App.css';
 
@@ -64,18 +65,26 @@ export default class Notificar extends React.Component{
             <div className="App">
                 <header className="App-header">
                         <Container>
-                            <Form onSubmit={this.handleSubmit}>
-                                <Form.Group controlId="form">
-                                    <Form.Label>Tipo: </Form.Label>
-                                    <Form.Control type="text" placeholder="Tipo da notificação" name="tipo" value={this.state.value} onChange={this.handleChange}/>
-                                </Form.Group>
-                                <Form.Group controlId="formSenha">
-                                    <Form.Label>Texto: </Form.Label>
-                                    <Form.Control type="text" placeholder="Texto da notificação" name="texto" value={this.state.value} onChange={this.handleChange}/>
-                                </Form.Group>
+                            <Row>
+                                <Col></Col>
+                                    <Col xs={8}>
+                                    <Col md>
+                                        <Form onSubmit={this.handleSubmit}>
+                                            <Form.Group controlId="form">
+                                                <Form.Label>Tipo: </Form.Label>
+                                                <Form.Control type="text" placeholder="Tipo da notificação" name="tipo" value={this.state.value} onChange={this.handleChange}/>
+                                            </Form.Group>
+                                            <Form.Group controlId="formSenha">
+                                                <Form.Label>Texto: </Form.Label>
+                                                <Form.Control type="text" placeholder="Texto da notificação" name="texto" value={this.state.value} onChange={this.handleChange}/>
+                                            </Form.Group>
 
-                                <ButtonSubmit button="Notificar"></ButtonSubmit>
-                            </Form>
+                                            <Button style={{color: "blue"}}> <AddAlertIcon/> Notificar</Button>
+                                        </Form>  
+                                    </Col>                                 
+                                    </Col>
+                                <Col></Col>
+                            </Row>
                         </Container>
                 </header>
             </div>

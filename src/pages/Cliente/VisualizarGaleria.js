@@ -1,6 +1,9 @@
 import React from 'react';
 
 import { Container, Row, Col} from 'react-bootstrap';
+import { Link } from "react-router-dom";
+
+import Button from '@material-ui/core/Button';
 
 import api from '../../config/api';
 
@@ -41,9 +44,15 @@ export default class Pedidos extends React.Component {
                                 {this.state.imagens.map(imagem => 
                                 <div>  
                                         <br />
-                                        <img alt="gallery"src={imagem} style={{ width: '100%', border: 'solid'}}></img>
+                                        <img alt="gallery" src={imagem} style={{ width: '100%', border: 'solid'}}></img>
                                 </div>     
                                 )}
+
+                                    <Link to="/PerfilCliente/">
+                                        <Button style={{color: 'red'}}>
+                                            Voltar
+                                        </Button>
+                                    </Link>
                             </Col>
                             <Col></Col>
                         </Row>

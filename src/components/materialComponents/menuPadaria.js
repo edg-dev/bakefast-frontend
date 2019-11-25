@@ -11,7 +11,8 @@ import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 
 import '../../App.css';
 
-const style = { color : 'black', fontSize: '30' };
+const style = { color : 'black', fontSize: '25' };
+const style2 = { color : 'red', fontSize: '25' };
 const buttonStyle = { 'background-color': 'transparent', border: 'none'};
 
 export default class MenuCliente extends React.Component {
@@ -59,13 +60,10 @@ export default class MenuCliente extends React.Component {
                 <Navbar.Brand>
                     <Link to="/">
                         <Button class="btn" style={buttonStyle} onClick={this.handleLogout}> 
-                            <ExitToAppIcon color="secondary" style={style}/> 
+                            <ExitToAppIcon color="secondary" style={style2}/> 
                         </Button>
                     </Link> 
-                </Navbar.Brand>
-                
-
-                
+                </Navbar.Brand>           
             </Navbar>
         </header>
         );

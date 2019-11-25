@@ -3,9 +3,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import { Container, Row, Col } from "react-bootstrap";
 
-import ButtonInfo from '../../components/cssComponents/buttonInfo';
-import ButtonPrimary from '../../components/cssComponents/buttonPrimary';
-
+import Button from '@material-ui/core/Button';
 import '../../App.css';
 
 function SejaBemVindoCliente() {
@@ -15,9 +13,9 @@ function SejaBemVindoCliente() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <p>Já é Cadastrado? </p>
+                                <p>Já é cadastrado? </p>
                                 <Link to="/Login">
-                                    <ButtonPrimary button="Login" />
+                                    <Button style={{color: '#ffbf00'}}>Fazer login</Button>
                                     <p></p>
                                 </Link>
                             </Col>
@@ -26,13 +24,15 @@ function SejaBemVindoCliente() {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
-                                <h3>Bem Vindo </h3>
-                                <p>Acordou atrasado para ir ao trabalho e não tem tempe de tomar um café, mas consegue ir a padaria?</p>
-                                <p>Quer ganhar um tempinho antes daquela aula e ver aquele video que você deixou pra mais tarde?</p>
-                                <p>Saiba que com o App Bake Fast você consegue fazer tudo isso! </p>
-                                    <Link to="/ModoDeUsar/">
-                                        <ButtonInfo button="Modo de usar"/>
-                                    </Link>
+                                <Col md>
+                                    <h3>Seja bem vindo!</h3>
+                                    <p>Acordou atrasado para ir ao trabalho e não tem tempo de tomar um café, mas consegue ir a padaria?</p>
+                                    <p>Quer ganhar um tempinho antes daquela aula e ver aquele vídeo que você deixou pra mais tarde?</p>
+                                    <p>Saiba que com o App Bake Fast você consegue fazer tudo isso! </p>
+                                        <Link to="/ModoDeUsar/">
+                                            <Button style={{color: '#ffbf00'}}> Modo de usar</Button>
+                                        </Link>
+                                </Col>
                             </Col>
                             <Col></Col>
                         </Row>

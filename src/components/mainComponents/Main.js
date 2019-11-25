@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 
 import Home from '../../pages/Home';
 import Login from '../../pages/Login';
+import Sobre from '../../pages/Padaria/Sobre';
 import Galeria from '../../pages/Cliente/Galeria';
 import Notificar from '../../pages/Padaria/Notificar';
 import ModoDeUsar from '../../pages/Cliente/ModoDeUsar';
@@ -15,10 +16,8 @@ import CadastroCliente from '../../pages/Cliente/CadastroCliente';
 import CadastroCardapio from '../../pages/Padaria/CadastroCardapio';
 import CadastroProdutos from '../../pages/Padaria/CadastroProdutos';
 import IntroducaoPadaria from '../../pages/Padaria/IntroducaoPadaria';
-import VizualizarPadaria from '../../pages/Padaria/VizualizarPadaria';
 import VisualizarGaleria from '../../pages/Cliente/VisualizarGaleria';
 import SejaBemVindoCliente from '../../pages/Cliente/SejaBemVindoCliente';
-import InformacoesEstatisticas from '../../pages/Padaria/InformacoesEstatisticas';
 
 function Main() {
     return (
@@ -37,8 +36,7 @@ function Main() {
           <Route path="/CadastroCardapio/" component={CadastroCardapio} />
           <Route path="/CadastroProdutos/" component={CadastroProdutos} />
           <Route path="/Notificar/" component={Notificar} />
-          <Route path="/InformacoesEstatisticas/" component={InformacoesEstatisticas} />
-          <Route path="/VizualizarPadaria/" component={VizualizarPadaria} />
+          <Route path="/Sobre/" component={Sobre} />
           <Route path="/RealizarPedido/" component={RealizarPedido} />
           <Route path="/CadastroCliente/" component={CadastroCliente} />
           <Route path="/VisualizarGaleria/" component={VisualizarGaleria} />

@@ -1,9 +1,15 @@
 import React from 'react';
 
 import { Container, Row, Col, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import api from '../../config/api'
-import ButtonSubmit from '../../components/cssComponents/buttonSubmit';
+
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import PersonIcon from '@material-ui/icons/Person';
+import VpnKeyIcon from '@material-ui/icons/VpnKey';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 import '../../App.css';
 
@@ -66,40 +72,51 @@ export default class CadastroCliente extends React.Component {
                         <Row>
                             <Col></Col>
                             <Col xs={8}>
+                                <Col md>
 
+                                
                                 <Form onSubmit={this.handleSubmit}>
                                     <div>
                                         <h3>Cadastre aqui!</h3>
                                     </div>
+                                    <br />
+
                                     <Form.Group controlId="nome">
-                                        <Form.Label>Nome:</Form.Label>
-                                        <Form.Control type="text" name="nome" placeholder="Nome" value={this.state.value} onChange={this.handleChange} />
+                                        <PersonIcon style={{marginTop: 25, marginRight: 15}}/>
+                                        <TextField type="text" name="nome" value={this.state.value} onChange={this.handleChange} label="Nome:" style={{width: 140}}/>                                                            
                                     </Form.Group>
 
                                     <Form.Group controlId="telefone">
-                                        <Form.Label>Telefone:</Form.Label>
-                                        <Form.Control type="number" name="telefone" placeholder="Telefone" value={this.state.value} onChange={this.handleChange} />
+                                        <PhoneIcon style={{marginTop: 25, marginRight: 15}}/>
+                                        <TextField type="number" name="telefone" value={this.state.value} onChange={this.handleChange} label="Telefone:" style={{width: 140}}/>                                                            
                                     </Form.Group>
 
+                                    <br />
                                     <h4>Informações de Login</h4>
-
+                                    <br />
                                     <Form.Group controlId="username">
-                                        <Form.Label>Usuario</Form.Label>
-                                        <Form.Control type="text" name="username" placeholder="Username" value={this.state.value} onChange={this.handleChange} />
+                                        <PersonIcon style={{marginTop: 25, marginRight: 15}}/>
+                                        <TextField type="text" name="username" value={this.state.value} onChange={this.handleChange} label="Username:" style={{width: 140}}/>                                                            
                                     </Form.Group>
 
-                                    <Form.Group controlId="senha">
-                                        <Form.Label>Senha</Form.Label>
-                                        <Form.Control type="password" name="senha" placeholder="Senha" value={this.state.value} onChange={this.handleChange} />
+                                     <Form.Group controlId="senha">
+                                        <VpnKeyIcon style={{marginTop: 25, marginRight: 15}}/>
+                                        <TextField type="password" name="senha" value={this.state.value} onChange={this.handleChange} label="Senha:" style={{width: 140}}/>                                                            
                                     </Form.Group>
 
-                                    <div>
-                                        <ButtonSubmit button="Cadastrar" >
+                                    <div>                                       
+                                        <Link to="/Login/">
+                                            <Button style={{color: 'red'}}>
+                                                Voltar
+                                            </Button>
+                                        </Link>
+
+                                        <Button type="submit" style={{color: 'blue'}}>
                                             Cadastrar
-                                        </ButtonSubmit>
+                                        </Button>
                                     </div>
                                 </Form>
-
+                                </Col>
                             </Col>
                             <Col></Col>
                         </Row>

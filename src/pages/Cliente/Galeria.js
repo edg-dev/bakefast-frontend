@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Container, Table, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
 import api from '../../config/api';
-import Galeria from '../../components/customComponents/galeria';
+import PadariaGaleria from '../../components/materialComponents/padariaGaleria';
 
 import '../../App.css';
 
@@ -39,24 +39,7 @@ export default class Pedidos extends React.Component {
                             <Col></Col>
                             <Col xs={8}>
                                 <h3>Galeria de Imagens</h3>
-                                {this.state.padarias.map(padaria =>
-                                <Table responsive>
-                                    <tr>
-                                            <th>{padaria.nome}</th>
-                                    </tr>
-
-                                     <tr>                                      
-                                            <td>
-                                                <Galeria
-                                                    idGaleria={padaria._id} 
-                                                    nomeGaleria={padaria.nome}
-                                                    history={this.props.history}
-                                                    onClick={() => this.verGaleria()}>                                  
-                                                </Galeria>                                          
-                                            </td>                                 
-                                     </tr>
-                                </Table>
-                                )}
+                                <PadariaGaleria padarias={this.state.padarias}></PadariaGaleria>
                             </Col>
                             <Col></Col>
                         </Row>

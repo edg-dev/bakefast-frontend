@@ -10,7 +10,7 @@ function App() {
 
   const isCliente = localStorage.getItem('@bakefast/idCliente');
   const isPadaria = localStorage.getItem('@bakefast/idPadaria');
-  
+
   if(!window.location.hash) { window.location = window.location + '#loaded'; window.location.reload(); }
 
   return (
