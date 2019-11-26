@@ -11,6 +11,8 @@ import TextField from '@material-ui/core/TextField';
 import PersonIcon from '@material-ui/icons/Person';
 import VpnKeyIcon from '@material-ui/icons/VpnKey';
 
+import Snackbar from '@material-ui/core/Snackbar';
+
 import '../App.css';
 
 export default class Login extends React.Component {
@@ -19,12 +21,21 @@ export default class Login extends React.Component {
 
         this.state = {
             username: '',
-            senha: ''
+            senha: '',
+            snackbaropen: false,
+            snackbarmessage: '',
+            root: {
+                background: 'red'
+            }
         }
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    snackBarClose = event => {
+        this.setState({snackbaropen: false});
+    };
 
     handleChange = event => {
         let name = event.target.name;
@@ -57,13 +68,13 @@ export default class Login extends React.Component {
                     } else{
                         console.log(res);
                         localStorage.setItem('@bakefast/username', res.data.nome.toString());
-                        localStorage.setItem('@bakefast/idPadaria', res.data._id.toString());                        
+                        localStorage.setItem('@bakefast/idPadaria', res.data._id.toString());              
                         this.props.history.push('/PerfilPadaria');
                     }
                 })
                 .catch(error => {
                     console.log(error.response);
-                    this.shoot('Erro: ' + error.response);
+                    this.setState({snackbaropen: true, snackbarmessage: error.toString()});
                 })
 
             } else {
@@ -75,13 +86,13 @@ export default class Login extends React.Component {
             }                          
         })
         .catch(error => {
-            console.log(error.response);
-            this.shoot('Erro: ' + error.response);
+            console.log(error);
+            this.setState({snackbaropen: true, snackbarmessage: error.toString()});
         });   
     }
 
     loginFailed = () => {
-        this.shoot('Falha no login! Usuário não encontrado!');       
+        this.setState({snackbaropen: true, snackbarmessage: 'Falha no Login! Usuário não encontrado.'});
     }
     
     shoot = (a) => {
@@ -92,6 +103,16 @@ export default class Login extends React.Component {
         return (
             <div className="App">
                 <header className="App-header">
+
+                        <Snackbar
+                            anchorOrigin={{vertical: 'top', horizontal: 'center'}}
+                            open={this.state.snackbaropen}
+                            autoHideDuration={3000}
+                            onClose={this.snackBarClose}
+                            message={<span id="message-id"> {this.state.snackbarmessage} </span>}
+                            >
+                        </Snackbar>
+
                         <Container>
                             <Row>
                                 <Col></Col>

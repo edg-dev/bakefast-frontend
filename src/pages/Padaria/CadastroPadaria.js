@@ -66,6 +66,7 @@ export default class CadastroPadaria extends React.Component {
         .then(res => {
             console.log(res);
             console.log(res.data);
+            this.props.history.push('/Login');
         })
         .catch(error => {
             console.log(error.response)
@@ -106,7 +107,7 @@ export default class CadastroPadaria extends React.Component {
 
                                         <Form.Group controlId="numero">
                                             <ExposureZeroIcon style={{marginTop: 25, marginRight: 15}}/>
-                                            <TextField type="number" name="numeo" value={this.state.value} onChange={this.handleChange} label="Número:" style={{width: 140}}/>                                                            
+                                            <TextField type="number" name="numero" value={this.state.value} onChange={this.handleChange} label="Número:" style={{width: 140}}/>                                                            
                                         </Form.Group>
 
                                         <Form.Group controlId="complemento">

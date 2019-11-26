@@ -18,7 +18,7 @@ export default function padariaGaleria(props) {
   return (
     <div>
         {padarias.map(padaria =>
-            <Card style={{marginBottom: '30px', backgroundColor: '#ffc1076e'}}>
+            <Card id={padaria._id} style={{marginBottom: '30px', backgroundColor: '#ffc1076e'}}>
                 <CardActionArea onClick={() => handleClick(padaria._id, padaria.nome)}>
                 <Link to="/VisualizarGaleria/">
                     <CardContent>

@@ -1,30 +1,40 @@
-import React, { Component } from "react";
-//import ReactSnackBar from "react-js-snackbar";
+import React from 'react';
+import Snackbar from '@material-ui/core/Snackbar';
+import IconButton from '@material-ui/core/IconButton';
 
-class Demo extends Component {
-    constructor(props){
-        super(props);
-    }
-  state = {
-    Show: false,
-    Showing: false
+export default class Alert extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      snackbaropen: '', message: '' 
+    };
+  }
+
+  snackBarOpen(){
+    this.setState({snackbaropen: this.props.snackbaropen});
+  }
+
+  snackBarClose () {
+    this.setState({snackbaropen: this.props.snackbarclose});
   };
-
-  show = () => {
-    if (this.state.Showing) return;
-
-    this.setState({ Show: true, Showing: true });
-    setTimeout(() => {
-      this.setState({ Show: false, Showing: false });
-    }, 2000);
-  };
-  render() {
-    return (
-      <div>
-        <ReactSnackBar Icon={<span>🦄</span>} Show={this.state.Show}>
-            {this.props.message}
-        </ReactSnackBar>
-      </div>
+  
+  render(){
+    return(
+      <Snackbar
+        style={{backgroundColor: 'green'}}
+        anchorOrigin={{vertical: 'bottom', horizontal: 'center'}}
+        open={this.snackBarOpen}
+        autoHideDuration={3000}
+        onClose={this.snackBarClose}
+        message={<span id="message-id"> {this.props.message} </span>}
+        action={[<IconButton
+          key="close"
+          arial-label="Close"
+          color="inherit"
+          onClick={this.snackBarClose}
+        >x</IconButton>]}
+        >
+      </Snackbar>
     );
   }
 }
