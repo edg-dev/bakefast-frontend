@@ -9,7 +9,7 @@
     "bootstrap": "^4.3.1",
     "buttons": "^0.1.2",
     "dotenv": "^8.2.0",
-    "firebase": "^7.3.0",
+    "firebase": "^7.5.0",
     "material-ui": "^0.20.2",
     "react": "^16.10.1",
     "react-bootstrap": "^1.0.0-beta.14",

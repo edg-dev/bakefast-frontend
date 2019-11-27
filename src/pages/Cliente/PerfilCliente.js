@@ -11,6 +11,8 @@ import PedidosCliente from '../../components/materialComponents/pedidosCliente';
 
 import '../../App.css';
 
+import NoPedidos from '../../images/no-pedidos.jpg';
+
 export default class PerfilCliente extends React.Component {
     constructor(props){
         super(props);
@@ -19,7 +21,8 @@ export default class PerfilCliente extends React.Component {
             nome: localStorage.getItem('@bakefast/username'),
             res: this.props.dados,
             pedidos: [],
-            token: ''
+            token: '',
+            mostraNoPedidos: 'none'
         }
     }   
 
@@ -47,6 +50,9 @@ export default class PerfilCliente extends React.Component {
                 })
                 .catch(err => {
                     console.log('Erro', err);
+                    if(err === 'Error: "Network Error"'){
+                        console.log('Caiu a net');
+                    }
                 })
 
         })
@@ -69,9 +75,18 @@ export default class PerfilCliente extends React.Component {
                 });
             }
             console.log(this.state.pedidos);
+            if(this.state.pedidos.length === 0){
+                this.setState({mostraNoPedidos: 'inline'})
+            }
         })
         .catch(error => {
-            console.log(error.response);
+            console.log(error);
+            if(error === 'Error: "Network Error"'){
+                console.log('Caiu a net');
+            }
+            // if(error.response.status === 404){
+            //     this.erro404();
+            // }
         });
     }
     
@@ -81,6 +96,12 @@ export default class PerfilCliente extends React.Component {
 
     galeria = event => {
         this.props.history.push('/Galeria');
+    }
+
+    erro404 = () => {
+        return(
+            <p>Teste</p>
+        )
     }
 
     render (){  
@@ -95,7 +116,22 @@ export default class PerfilCliente extends React.Component {
                                 <br></br>
 
                                 <h4>Pedidos Recentes:</h4>
+
+                                <div style={{display: this.state.mostraNoPedidos}}>
+                                    <img src={NoPedidos} alt="noPedidos" style={{width: '80%'}}></img> 
+                                    <p>Parece que não há pedidos ainda :( </p>
+                                </div>
+                                
+                                {/* {this.state.pedidos.length === 0 ? 
+                                <div>
+                                    <img src={NoPedidos} alt="noPedidos" style={{width: '80%'}}></img> 
+                                    <p>Parece que não há pedidos ainda :( </p>
+                                </div>
+                                    
+                                    : <div></div> 
+                                }*/}
                                 {this.state.pedidos.map(pedidos =>
+                                
                                    <PedidosCliente pedidos={pedidos.produtos} status={pedidos.status}></PedidosCliente>
                                 )}
                                                            
