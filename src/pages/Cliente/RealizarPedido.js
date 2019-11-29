@@ -29,14 +29,14 @@ export default class RealizarPedido extends React.Component{
                 quantidade: ''
             }],
             produto: '',
-            quantidade: ''      
+            quantidade: ''   
         }
 
         this.state.produtos.map(produto => {
             if(produto.nome === undefined){
                 this.state.produtos.splice(0,1);
             }
-            return null;
+            return;
         });
         
         this.handleChange = this.handleChange.bind(this);
@@ -61,7 +61,7 @@ export default class RealizarPedido extends React.Component{
     }
    
     handleChange = event => {
-       
+        event.preventDefault();
         let name = event.target.name;
         let value = event.target.value;
         this.setState((state) => ({ [name]: value }));
@@ -89,6 +89,11 @@ export default class RealizarPedido extends React.Component{
             quantidade: this.state.quantidade
         }
 
+        if(elemento.nome === '' || elemento.quantidade === ''){
+            this.shoot('Favor adicionar o produto e a quantidade corretamente.');
+            return;
+        }
+
         this.setState({
             produtos: [...this.state.produtos, elemento]
         });
@@ -105,10 +110,12 @@ export default class RealizarPedido extends React.Component{
 
         if(idPadaria === undefined){
             this.shoot('Favor selecionar uma padaria');
+            return;
         }
 
         if(tempo === undefined || tempo === '0' || tempo === ""){
             this.shoot('Favor selecionar o tempo');
+            return;
         }
 
         var data = new Date();
@@ -119,6 +126,11 @@ export default class RealizarPedido extends React.Component{
         console.log(str_hora);
 
         let produtos = this.state.produtos;
+
+        if(produtos.length === 0){
+            this.shoot('Favor selecionar ao menos um produto, adicionando-o no "+"');
+            return;
+        }
 
         if(produtos[0].produto === "" && produtos[0].quantidade === ""){
             produtos.shift();

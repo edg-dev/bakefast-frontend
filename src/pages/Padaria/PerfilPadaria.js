@@ -13,6 +13,8 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import '../../App.css';
 
+import NoPedidos from '../../images/no-pedidos.jpg';
+
 export default class PerfilPadaria extends React.Component{
     constructor(props){
         super(props);
@@ -20,7 +22,8 @@ export default class PerfilPadaria extends React.Component{
         this.state = {
             nomePadaria: localStorage.getItem('@bakefast/username'),
             idPedido: '',
-            pedidos: []
+            pedidos: [],
+            mostraNoPedidos: 'none'
         }
     }    
     
@@ -43,7 +46,10 @@ export default class PerfilPadaria extends React.Component{
                     pedidos: [...this.state.pedidos, res.data[key]]
                 });
             }
-            console.log(this.state.pedidos);           
+            console.log(this.state.pedidos);
+            if(this.state.pedidos.length === 0){
+                this.setState({mostraNoPedidos: 'inline'})
+            }               
         })
         .catch(error => {
             console.log(error.response);
@@ -109,12 +115,15 @@ export default class PerfilPadaria extends React.Component{
                                     <p></p>
                                         <h4>Pedidos:</h4>
 
+                                        <div style={{display: this.state.mostraNoPedidos}}>
+                                            <img src={NoPedidos} alt="noPedidos" style={{width: '80%'}}></img> 
+                                            <p>Parece que não há pedidos ainda :( </p>
+                                        </div>
+
                                         <div name="localPedidos"> 
                                             {this.state.pedidos.map(pedido => 
                                                 <Box style={{ paddingBottom: '20px' }}>
                                                     <Box border={5} style={pedido.status === 1 ? { borderColor: '#00b4ffcf', borderRadius: 20} : { borderColor: 'green', borderRadius: 20}}>
-                                                    {/* {() => this.renderSwitch(pedido.status)} */}
-                                                    {/* <Box border={5}style={this.state.borderStyle}> */}
                                                         <Paper>           
                                                             <Typography>
                                                                 Cliente: {pedido.nomeCliente} {pedido.telefoneCliente}
@@ -130,7 +139,15 @@ export default class PerfilPadaria extends React.Component{
                                                             </Typography>
 
                                                             <Typography component="p">
-                                                                Status: {pedido.status === 0 ? "Entregue/Cancelado" : "Em aberto" }
+                                                                {/* Status: {pedido.status === 0 ? "Entregue/Cancelado" : "Em aberto" } */}
+                                                                    Status: {(() => {
+                                                                        switch(pedido.status){
+                                                                            case 0: return "Finalizado";
+                                                                            case 1: return "Ativo";
+                                                                            case 2: return "Finalizado";
+                                                                            default: return "Finalizado"
+                                                                        }
+                                                                    })()}
                                                             </Typography>
 
                                                             <Button 
