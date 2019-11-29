@@ -9,6 +9,8 @@ import api from '../../config/api';
 
 import '../../App.css';
 
+import noImages from '../../images/no-images.jpg';
+
 export default class Pedidos extends React.Component {
     constructor(props){
         super(props);
@@ -17,7 +19,8 @@ export default class Pedidos extends React.Component {
             imagens: [],
             style: {
                 width: '20%'
-            }
+            },
+            mostraNoPedidos: 'none'
         }
     }
 
@@ -26,9 +29,15 @@ export default class Pedidos extends React.Component {
         api.get(`galeria?idPadaria=${idPadaria}`)
         .then(res => {
             this.setState({ imagens: res.data[0].imagens });
+            if(this.state.imagens === 0){
+                this.setState({mostraNoPedidos: 'inline'});
+            }
         })
         .catch(error => {
-            console.log(error.response);
+            console.log(error);
+            if(error){
+                this.setState({mostraNoPedidos: 'inline'});
+            }
         });
     }
 
@@ -41,6 +50,12 @@ export default class Pedidos extends React.Component {
                             <Col></Col>
                             <Col xs={8}>
                                 <h3>Galeria: {localStorage.getItem('@bakefast/nomeGaleria')}</h3>
+
+                                <div style={{display: this.state.mostraNoPedidos}}>
+                                    <img src={noImages} alt="noImages" style={{width: '100%'}}></img> 
+                                    <p>Nenhuma imagem foi cadastrada ainda :( </p>
+                                </div>
+
                                 {this.state.imagens.map(imagem => 
                                 <div>  
                                         <br />

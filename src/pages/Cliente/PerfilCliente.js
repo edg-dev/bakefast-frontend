@@ -51,7 +51,7 @@ export default class PerfilCliente extends React.Component {
                 .catch(err => {
                     console.log('Erro', err);
                     if(err === 'Error: "Network Error"'){
-                        console.log('Caiu a net');
+                        console.log('Network Error');
                     }
                 })
 
@@ -96,12 +96,6 @@ export default class PerfilCliente extends React.Component {
 
     galeria = event => {
         this.props.history.push('/Galeria');
-    }
-
-    erro404 = () => {
-        return(
-            <p>Teste</p>
-        )
     }
 
     render (){  

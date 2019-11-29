@@ -79,7 +79,7 @@ export default class Notificar extends React.Component{
                                                 <Form.Control type="text" placeholder="Texto da notificação" name="texto" value={this.state.value} onChange={this.handleChange}/>
                                             </Form.Group>
 
-                                            <Button style={{color: "blue"}}> <AddAlertIcon/> Notificar</Button>
+                                            <Button style={{color: "blue"}} type="submit"> <AddAlertIcon/> Notificar</Button>
                                         </Form>  
                                     </Col>                                 
                                     </Col>
